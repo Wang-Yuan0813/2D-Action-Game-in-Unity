@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -427,13 +428,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 885119265
+    guid: -1966747931
     name: save
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: save_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +443,7 @@ ScriptedImporter:
         width: 9
         height: 12
       spriteId: c058b95467378134fac5a1e21db6ebf6
-    - name: save_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +452,7 @@ ScriptedImporter:
         width: 9
         height: 12
       spriteId: 5396befa428ceeb4c933c1e31f148ee3
-    - name: save_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +461,7 @@ ScriptedImporter:
         width: 9
         height: 12
       spriteId: 6eaad1be2544a1343bc48af21b141dbf
-    - name: save_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +470,7 @@ ScriptedImporter:
         width: 9
         height: 12
       spriteId: 2bf1c2103c14a2140a97b1f765683be2
-    - name: save_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -478,7 +479,7 @@ ScriptedImporter:
         width: 9
         height: 12
       spriteId: 1f69f332cc94cf14990b4d4d2bf05bdc
-    - name: save_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -487,7 +488,7 @@ ScriptedImporter:
         width: 9
         height: 15
       spriteId: cca987e56bc9bf64ca598cc1e5f230b5
-    - name: save_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -496,7 +497,7 @@ ScriptedImporter:
         width: 9
         height: 18
       spriteId: 243eb8dea829f144890755dbbd63412c
-    - name: save_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -505,7 +506,7 @@ ScriptedImporter:
         width: 9
         height: 19
       spriteId: 0a17042ec5d52004ab85c41a047a68f1
-    - name: save_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -514,7 +515,7 @@ ScriptedImporter:
         width: 9
         height: 19
       spriteId: 20fa2eaffd6249e45bf4e48f37bd5e5e
-    - name: save_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -523,7 +524,7 @@ ScriptedImporter:
         width: 9
         height: 19
       spriteId: 99a07ccbfaf62be468d2e6a66e69e545
-    - name: save_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -532,7 +533,7 @@ ScriptedImporter:
         width: 9
         height: 19
       spriteId: f4dc012a32faf704da3e621266722237
-    - name: save_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -541,7 +542,7 @@ ScriptedImporter:
         width: 9
         height: 17
       spriteId: 248ce139c8f74874880b9fa10efb107d
-    - name: save_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -550,7 +551,7 @@ ScriptedImporter:
         width: 9
         height: 17
       spriteId: b137e86e7ae6416468660c3bd78d43c0
-    - name: save_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -559,7 +560,7 @@ ScriptedImporter:
         width: 9
         height: 15
       spriteId: 28f57b77d2a7a834685240e3d7f88d5c
-    - name: save_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -575,3 +576,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 19}
+  previousTextureSize: {x: 64, y: 128}

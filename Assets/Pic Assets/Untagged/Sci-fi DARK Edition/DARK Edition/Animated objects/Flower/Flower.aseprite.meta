@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -247,13 +248,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -546962335
+    guid: -1007503579
     name: Flower
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Flower_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -262,7 +263,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 9cf85d0bc48647a45a3c4166bf820dda
-    - name: Flower_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -271,7 +272,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 1c369dffb06d5024d84d9548ed0056f2
-    - name: Flower_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -280,7 +281,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 077f94419d59a20429acaf6ffffecc48
-    - name: Flower_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -289,7 +290,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: ed9dbfb650c05214eb04bf52aa5ddc6e
-    - name: Flower_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -298,7 +299,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 5a7f5f4063407b84b93ea8dc99f2fef4
-    - name: Flower_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -314,3 +315,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 128}

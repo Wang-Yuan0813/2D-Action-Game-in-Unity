@@ -8301,11 +8301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452303213645681835, guid: 4a5b0dccd79920b4d8c0097f059abdc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 3452303213645681835, guid: 4a5b0dccd79920b4d8c0097f059abdc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3452303213645681835, guid: 4a5b0dccd79920b4d8c0097f059abdc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9202,6 +9202,7 @@ Transform:
   - {fileID: 2052356977}
   - {fileID: 64343316}
   - {fileID: 852841657}
+  - {fileID: 1955823216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158444434
@@ -11284,7 +11285,7 @@ Transform:
   m_GameObject: {fileID: 1501624365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.5, z: -7}
+  m_LocalPosition: {x: -5, y: 1, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12103,6 +12104,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909369539}
   m_CullTransparentMesh: 1
+--- !u!1 &1941647284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8852022973316682717, guid: 1fe52f6586c809142b75a3dbf9ba2f7e, type: 3}
+  m_PrefabInstance: {fileID: 1502334816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954042680
 GameObject:
   m_ObjectHideFlags: 0
@@ -12314,6 +12320,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954042680}
   m_CullTransparentMesh: 1
+--- !u!1 &1955823215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 1955823216}
+  - component: {fileID: 1955823218}
+  - component: {fileID: 1955823217}
+  m_Layer: 0
+  m_HasEditorInfo: 1
+  m_Name: AreaBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955823216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955823215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1111379786}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955823217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955823215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3833fdfb300ce4f896d8461f9dba08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1941647284}
+--- !u!61 &1955823218
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955823215}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.397894, y: 0.7023697}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 55.717304, y: 7.454941}
+  m_EdgeRadius: 0
 --- !u!1 &1976214644
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -167,13 +168,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1466009327
+    guid: -786061973
     name: Heart Hoarder Statue
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Heart Hoarder Statue_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -182,7 +183,7 @@ ScriptedImporter:
         width: 139
         height: 124
       spriteId: dbd18bd27dadb3244ad119184dc15212
-    - name: Heart Hoarder Statue_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -198,3 +199,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 139, y: 124}
+  previousTextureSize: {x: 256, y: 512}

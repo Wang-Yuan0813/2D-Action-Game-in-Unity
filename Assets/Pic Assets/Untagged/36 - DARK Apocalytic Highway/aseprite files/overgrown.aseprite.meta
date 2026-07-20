@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -167,13 +168,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 535636153
+    guid: -550397219
     name: overgrown
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: overgrown_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -182,7 +183,7 @@ ScriptedImporter:
         width: 577
         height: 384
       spriteId: c9c3f1e8c2728c745be5b9547361a828
-    - name: overgrown_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -198,3 +199,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 576, y: 384}
+  previousTextureSize: {x: 1024, y: 1024}

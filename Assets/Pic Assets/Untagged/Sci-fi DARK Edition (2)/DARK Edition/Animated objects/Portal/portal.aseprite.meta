@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -487,13 +488,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -875612064
+    guid: -1495166496
     name: portal
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: portal_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -502,7 +503,7 @@ ScriptedImporter:
         width: 28
         height: 9
       spriteId: 373fb8474302eaf449a675a57bd98a77
-    - name: portal_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -511,7 +512,7 @@ ScriptedImporter:
         width: 28
         height: 10
       spriteId: c6ea1804333414c4190dc30636ef13ec
-    - name: portal_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -520,7 +521,7 @@ ScriptedImporter:
         width: 28
         height: 11
       spriteId: b9ebe0ee3e4371b4bbed7bf122c0e07b
-    - name: portal_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -529,7 +530,7 @@ ScriptedImporter:
         width: 28
         height: 8
       spriteId: 7232c15ec273b8949adf4d7fd5b33b22
-    - name: portal_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -538,7 +539,7 @@ ScriptedImporter:
         width: 28
         height: 9
       spriteId: 68277c8203ade45498c23441a4f0a573
-    - name: portal_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -547,7 +548,7 @@ ScriptedImporter:
         width: 28
         height: 10
       spriteId: 45b8563b5066ed34aa743f1af1f7d701
-    - name: portal_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -556,7 +557,7 @@ ScriptedImporter:
         width: 28
         height: 11
       spriteId: be373bdb75c9e4341b282f63e5ed93ff
-    - name: portal_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -565,7 +566,7 @@ ScriptedImporter:
         width: 28
         height: 7
       spriteId: 4fa74a5261ed96c46bd02531f91ff157
-    - name: portal_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -574,7 +575,7 @@ ScriptedImporter:
         width: 28
         height: 8
       spriteId: 9ad56476da4f3354e9d6e1eef88ed2ed
-    - name: portal_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -583,7 +584,7 @@ ScriptedImporter:
         width: 28
         height: 33
       spriteId: 60995c84d41065f4895fb6da5d3995cf
-    - name: portal_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -592,7 +593,7 @@ ScriptedImporter:
         width: 28
         height: 36
       spriteId: b4fbd8c8bf651c342b418ae4e195e22a
-    - name: portal_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -601,7 +602,7 @@ ScriptedImporter:
         width: 28
         height: 38
       spriteId: 5247669146f66514ca323781720cb954
-    - name: portal_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -610,7 +611,7 @@ ScriptedImporter:
         width: 28
         height: 39
       spriteId: a8c5b26a0ee2313419175c85c740c1bb
-    - name: portal_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -619,7 +620,7 @@ ScriptedImporter:
         width: 28
         height: 40
       spriteId: 0dee229493a19bf4a9815d38c2f3bdb6
-    - name: portal_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -628,7 +629,7 @@ ScriptedImporter:
         width: 28
         height: 41
       spriteId: f19aa43aa7819e449b90d8ab02640e91
-    - name: portal_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -637,7 +638,7 @@ ScriptedImporter:
         width: 28
         height: 2
       spriteId: ae1eb5edd8f7525469e5dfb8c8921ab7
-    - name: portal_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -646,7 +647,7 @@ ScriptedImporter:
         width: 28
         height: 2
       spriteId: 839ccf042b378a840b7c76dac386e354
-    - name: portal_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -662,3 +663,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 28, y: 41}
+  previousTextureSize: {x: 128, y: 256}

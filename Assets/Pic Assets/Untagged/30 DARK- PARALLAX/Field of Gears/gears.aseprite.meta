@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -187,13 +188,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1241572834
+    guid: 479143914
     name: gears
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: gears_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -202,7 +203,7 @@ ScriptedImporter:
         width: 583
         height: 401
       spriteId: a6260075954acec4896db5c836e31095
-    - name: gears_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -211,7 +212,7 @@ ScriptedImporter:
         width: 583
         height: 401
       spriteId: cd18beb3afd7e614c903b0007734ece0
-    - name: gears_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -227,3 +228,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 576, y: 384}
+  previousTextureSize: {x: 1024, y: 2048}

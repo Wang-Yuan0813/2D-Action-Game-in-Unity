@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -347,13 +348,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 15487127
+    guid: 735700915
     name: UI - Ammo
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: UI - Ammo_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -362,7 +363,7 @@ ScriptedImporter:
         width: 16
         height: 10
       spriteId: ad10fa89dc06f42489db01a31bbe6c92
-    - name: UI - Ammo_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -371,7 +372,7 @@ ScriptedImporter:
         width: 11
         height: 10
       spriteId: bdfc05fadc8e46043863864d54fa145b
-    - name: UI - Ammo_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -380,7 +381,7 @@ ScriptedImporter:
         width: 6
         height: 10
       spriteId: 79809ec1312b7ec4db4f01317b116f41
-    - name: UI - Ammo_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -389,7 +390,7 @@ ScriptedImporter:
         width: 16
         height: 13
       spriteId: 91c2e0af316150e4dad6e74cfbc85b48
-    - name: UI - Ammo_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -398,7 +399,7 @@ ScriptedImporter:
         width: 11
         height: 13
       spriteId: 3594884476dbb594aab8d1f60a3c4b26
-    - name: UI - Ammo_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -407,7 +408,7 @@ ScriptedImporter:
         width: 6
         height: 13
       spriteId: c4656c52cae09c14994c006e7e2d25fa
-    - name: UI - Ammo_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -416,7 +417,7 @@ ScriptedImporter:
         width: 16
         height: 12
       spriteId: e5638deebb4a52148980e6acd20210ca
-    - name: UI - Ammo_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -425,7 +426,7 @@ ScriptedImporter:
         width: 13
         height: 12
       spriteId: 763c3f01cfb369c448604563aacface9
-    - name: UI - Ammo_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -434,7 +435,7 @@ ScriptedImporter:
         width: 10
         height: 12
       spriteId: 3dafa1fa08c14934f9b7ce4c2f3ecd4f
-    - name: UI - Ammo_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -443,7 +444,7 @@ ScriptedImporter:
         width: 7
         height: 12
       spriteId: eea1288a42c4f734588ef188d2b20fa3
-    - name: UI - Ammo_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -459,3 +460,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 64, y: 128}

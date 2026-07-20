@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -167,13 +168,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 850684199
+    guid: -289958269
     name: deadswamps
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: deadswamps_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -182,7 +183,7 @@ ScriptedImporter:
         width: 576
         height: 384
       spriteId: cbfbfec2ef28d29478869353149088d8
-    - name: deadswamps_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -198,3 +199,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 576, y: 377}
+  previousTextureSize: {x: 1024, y: 1024}

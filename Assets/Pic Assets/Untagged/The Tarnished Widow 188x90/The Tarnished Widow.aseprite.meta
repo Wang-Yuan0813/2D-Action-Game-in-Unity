@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -2507,13 +2508,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -2044943287
+    guid: -1865942867
     name: The Tarnished Widow
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: The Tarnished Widow_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -2522,7 +2523,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 44c0df807f415154591b6a5eb28b85cc
-    - name: The Tarnished Widow_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -2531,7 +2532,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 1bb5471698af7db42869b86ac978e484
-    - name: The Tarnished Widow_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -2540,7 +2541,7 @@ ScriptedImporter:
         width: 109
         height: 156
       spriteId: aa4d191d30c4b62469e694f4c37bc2c5
-    - name: The Tarnished Widow_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -2549,7 +2550,7 @@ ScriptedImporter:
         width: 109
         height: 157
       spriteId: 159c75b146bbfca4790035a1d1ba08f7
-    - name: The Tarnished Widow_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -2558,7 +2559,7 @@ ScriptedImporter:
         width: 109
         height: 156
       spriteId: 3b656b5ebe639f34796fbcaff9e413c3
-    - name: The Tarnished Widow_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -2567,7 +2568,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 6fe1cbe3c9943654b9692261b853327a
-    - name: The Tarnished Widow_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -2576,7 +2577,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 180d9b87857ddf641a18595f21c2eb1d
-    - name: The Tarnished Widow_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -2585,7 +2586,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 2aeb2bb67d164634783f39f167935738
-    - name: The Tarnished Widow_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -2594,7 +2595,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: bd1710e96e74561418d291ac0e34a22c
-    - name: The Tarnished Widow_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -2603,7 +2604,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 50b03b32c17f1a2409e698cd39ca0e9b
-    - name: The Tarnished Widow_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -2612,7 +2613,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 0742084dc5845f442ad91c0d93cb275f
-    - name: The Tarnished Widow_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -2621,7 +2622,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 4e9234b18aa492a4eb532bba42320f0c
-    - name: The Tarnished Widow_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -2630,7 +2631,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 68e9366c6ca970b4495aac7df86946c6
-    - name: The Tarnished Widow_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -2639,7 +2640,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: ca8be3553c35601488ed6a92f053fb74
-    - name: The Tarnished Widow_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -2648,7 +2649,7 @@ ScriptedImporter:
         width: 109
         height: 157
       spriteId: e54a8abee6629964cb5cd110a68ca9a1
-    - name: The Tarnished Widow_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -2657,7 +2658,7 @@ ScriptedImporter:
         width: 109
         height: 158
       spriteId: 91caaa638cbd44b44b3a6994df433045
-    - name: The Tarnished Widow_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -2666,7 +2667,7 @@ ScriptedImporter:
         width: 109
         height: 159
       spriteId: 5295eb149ac383847a52f6aa592863b4
-    - name: The Tarnished Widow_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -2675,7 +2676,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 031f3bd935178834da702e197318051d
-    - name: The Tarnished Widow_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -2684,7 +2685,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 6cdcc1cae6e13fe4587b483143b00fb7
-    - name: The Tarnished Widow_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -2693,7 +2694,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 6ec61906c123ec54c80f31b9f88f039b
-    - name: The Tarnished Widow_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -2702,7 +2703,7 @@ ScriptedImporter:
         width: 109
         height: 156
       spriteId: d5aeb26eed6ccac4e989abdc53fb181f
-    - name: The Tarnished Widow_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -2711,7 +2712,7 @@ ScriptedImporter:
         width: 109
         height: 157
       spriteId: 04714ada0f4976b48afaf76ee1dba254
-    - name: The Tarnished Widow_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -2720,7 +2721,7 @@ ScriptedImporter:
         width: 109
         height: 158
       spriteId: d661f974f13e4224e820686ff15ae70e
-    - name: The Tarnished Widow_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -2729,7 +2730,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: b7d5c020d83cc3a4fb58efa91a0299ae
-    - name: The Tarnished Widow_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -2738,7 +2739,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: f20816110d01c87498daa374e9b01727
-    - name: The Tarnished Widow_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -2747,7 +2748,7 @@ ScriptedImporter:
         width: 109
         height: 160
       spriteId: 48d0d18de93061f4491b35e8cbccf63b
-    - name: The Tarnished Widow_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -2756,7 +2757,7 @@ ScriptedImporter:
         width: 109
         height: 161
       spriteId: 19ac0dd0fb0b5bc488a8179ea364e9de
-    - name: The Tarnished Widow_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -2765,7 +2766,7 @@ ScriptedImporter:
         width: 109
         height: 162
       spriteId: 7c9ca7497abeb9249863e7e59faf4368
-    - name: The Tarnished Widow_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -2774,7 +2775,7 @@ ScriptedImporter:
         width: 123
         height: 153
       spriteId: 681061af3093fd94f83e332d4381353c
-    - name: The Tarnished Widow_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -2783,7 +2784,7 @@ ScriptedImporter:
         width: 130
         height: 153
       spriteId: 28da0e584cd76b742b568f8083ffc129
-    - name: The Tarnished Widow_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -2792,7 +2793,7 @@ ScriptedImporter:
         width: 132
         height: 153
       spriteId: 06295e2d260d5794cb1455de9c95232f
-    - name: The Tarnished Widow_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -2801,7 +2802,7 @@ ScriptedImporter:
         width: 133
         height: 153
       spriteId: f34846e204897cd47b3c1b456340627e
-    - name: The Tarnished Widow_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -2810,7 +2811,7 @@ ScriptedImporter:
         width: 135
         height: 153
       spriteId: 107d84c5da586d243ad0f91d0a9d6135
-    - name: The Tarnished Widow_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -2819,7 +2820,7 @@ ScriptedImporter:
         width: 138
         height: 153
       spriteId: 49399b9c636adde428ba764651d12259
-    - name: The Tarnished Widow_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -2828,7 +2829,7 @@ ScriptedImporter:
         width: 139
         height: 153
       spriteId: 116365bf6868bd4488b1b77ba3de1929
-    - name: The Tarnished Widow_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
@@ -2837,7 +2838,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: b89595a697acd344a88cf770335e5892
-    - name: The Tarnished Widow_Frame_36
+    - name: Frame_36
       frameIndex: 36
       additiveSortOrder: 0
       cellRect:
@@ -2846,7 +2847,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 4f26c52a3b058c34fa18e54a672da0d8
-    - name: The Tarnished Widow_Frame_37
+    - name: Frame_37
       frameIndex: 37
       additiveSortOrder: 0
       cellRect:
@@ -2855,7 +2856,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 49a21c1e0e1892241be0eb0744582ccf
-    - name: The Tarnished Widow_Frame_38
+    - name: Frame_38
       frameIndex: 38
       additiveSortOrder: 0
       cellRect:
@@ -2864,7 +2865,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: d604454014fb2f6428e47a14090fee10
-    - name: The Tarnished Widow_Frame_39
+    - name: Frame_39
       frameIndex: 39
       additiveSortOrder: 0
       cellRect:
@@ -2873,7 +2874,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 0e8e46adfb8ae2744b87ed36250f91bd
-    - name: The Tarnished Widow_Frame_40
+    - name: Frame_40
       frameIndex: 40
       additiveSortOrder: 0
       cellRect:
@@ -2882,7 +2883,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 274aec6ac9453cf42be984aeda9e519b
-    - name: The Tarnished Widow_Frame_41
+    - name: Frame_41
       frameIndex: 41
       additiveSortOrder: 0
       cellRect:
@@ -2891,7 +2892,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 8fb9b4e522517ed4292ac999b5071bc5
-    - name: The Tarnished Widow_Frame_42
+    - name: Frame_42
       frameIndex: 42
       additiveSortOrder: 0
       cellRect:
@@ -2900,7 +2901,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: b7bc43f57e07b1e4aaf9bac3c0497657
-    - name: The Tarnished Widow_Frame_43
+    - name: Frame_43
       frameIndex: 43
       additiveSortOrder: 0
       cellRect:
@@ -2909,7 +2910,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 64d39289077dd214583f10a7bf68facc
-    - name: The Tarnished Widow_Frame_44
+    - name: Frame_44
       frameIndex: 44
       additiveSortOrder: 0
       cellRect:
@@ -2918,7 +2919,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 0dcc7f394186c004c87b810ad6a8eb18
-    - name: The Tarnished Widow_Frame_45
+    - name: Frame_45
       frameIndex: 45
       additiveSortOrder: 0
       cellRect:
@@ -2927,7 +2928,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 96160a3e3061aee4996f871457b2c953
-    - name: The Tarnished Widow_Frame_46
+    - name: Frame_46
       frameIndex: 46
       additiveSortOrder: 0
       cellRect:
@@ -2936,7 +2937,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 9eb91d70b5bbee5439f9a93ae60fa33e
-    - name: The Tarnished Widow_Frame_47
+    - name: Frame_47
       frameIndex: 47
       additiveSortOrder: 0
       cellRect:
@@ -2945,7 +2946,7 @@ ScriptedImporter:
         width: 127
         height: 153
       spriteId: e4ad20c1313a2c54680ef23c7c228ccc
-    - name: The Tarnished Widow_Frame_48
+    - name: Frame_48
       frameIndex: 48
       additiveSortOrder: 0
       cellRect:
@@ -2954,7 +2955,7 @@ ScriptedImporter:
         width: 135
         height: 153
       spriteId: 1f90793cbfc25a742a519da71889e86e
-    - name: The Tarnished Widow_Frame_49
+    - name: Frame_49
       frameIndex: 49
       additiveSortOrder: 0
       cellRect:
@@ -2963,7 +2964,7 @@ ScriptedImporter:
         width: 145
         height: 153
       spriteId: 7f8f9b9e7ee7e634abe2c17e4e732148
-    - name: The Tarnished Widow_Frame_50
+    - name: Frame_50
       frameIndex: 50
       additiveSortOrder: 0
       cellRect:
@@ -2972,7 +2973,7 @@ ScriptedImporter:
         width: 146
         height: 153
       spriteId: d8b48489459d41546b2ac7ce1ba5c250
-    - name: The Tarnished Widow_Frame_51
+    - name: Frame_51
       frameIndex: 51
       additiveSortOrder: 0
       cellRect:
@@ -2981,7 +2982,7 @@ ScriptedImporter:
         width: 148
         height: 153
       spriteId: 57aa5aa3347f4e44ca1eaf399ffb73f2
-    - name: The Tarnished Widow_Frame_52
+    - name: Frame_52
       frameIndex: 52
       additiveSortOrder: 0
       cellRect:
@@ -2990,7 +2991,7 @@ ScriptedImporter:
         width: 120
         height: 153
       spriteId: d10ef32911937e24a8bb11e3431c03b6
-    - name: The Tarnished Widow_Frame_53
+    - name: Frame_53
       frameIndex: 53
       additiveSortOrder: 0
       cellRect:
@@ -2999,7 +3000,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 10446a45a232dc447acabd57304d4039
-    - name: The Tarnished Widow_Frame_54
+    - name: Frame_54
       frameIndex: 54
       additiveSortOrder: 0
       cellRect:
@@ -3008,7 +3009,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 3aa987fa88665a7488b1cdcb98607942
-    - name: The Tarnished Widow_Frame_55
+    - name: Frame_55
       frameIndex: 55
       additiveSortOrder: 0
       cellRect:
@@ -3017,7 +3018,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 886283844b7a8854c81958fd7cba7054
-    - name: The Tarnished Widow_Frame_56
+    - name: Frame_56
       frameIndex: 56
       additiveSortOrder: 0
       cellRect:
@@ -3026,7 +3027,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: e00e32a52ccc4d84c90b72c47645a3ec
-    - name: The Tarnished Widow_Frame_57
+    - name: Frame_57
       frameIndex: 57
       additiveSortOrder: 0
       cellRect:
@@ -3035,7 +3036,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 4f8d55c930fc6d5418940ab2f8014e12
-    - name: The Tarnished Widow_Frame_58
+    - name: Frame_58
       frameIndex: 58
       additiveSortOrder: 0
       cellRect:
@@ -3044,7 +3045,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 586d5041d1b428e49991666ac9cc40a0
-    - name: The Tarnished Widow_Frame_59
+    - name: Frame_59
       frameIndex: 59
       additiveSortOrder: 0
       cellRect:
@@ -3053,7 +3054,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 1b0a58fd5b560a24ba73e9d8fc70ec73
-    - name: The Tarnished Widow_Frame_60
+    - name: Frame_60
       frameIndex: 60
       additiveSortOrder: 0
       cellRect:
@@ -3062,7 +3063,7 @@ ScriptedImporter:
         width: 109
         height: 154
       spriteId: 069fc08f5332f6244ad22ff94fe13433
-    - name: The Tarnished Widow_Frame_61
+    - name: Frame_61
       frameIndex: 61
       additiveSortOrder: 0
       cellRect:
@@ -3071,7 +3072,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 47869348df71c9f499b239e6da9a0a3d
-    - name: The Tarnished Widow_Frame_62
+    - name: Frame_62
       frameIndex: 62
       additiveSortOrder: 0
       cellRect:
@@ -3080,7 +3081,7 @@ ScriptedImporter:
         width: 109
         height: 156
       spriteId: 96445b4cd5c411241b1992c563523393
-    - name: The Tarnished Widow_Frame_63
+    - name: Frame_63
       frameIndex: 63
       additiveSortOrder: 0
       cellRect:
@@ -3089,7 +3090,7 @@ ScriptedImporter:
         width: 109
         height: 157
       spriteId: 1a3d52b874e1a854c911392d08a941e0
-    - name: The Tarnished Widow_Frame_64
+    - name: Frame_64
       frameIndex: 64
       additiveSortOrder: 0
       cellRect:
@@ -3098,7 +3099,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 8939e8ea87549fb438cbac61bbafa572
-    - name: The Tarnished Widow_Frame_65
+    - name: Frame_65
       frameIndex: 65
       additiveSortOrder: 0
       cellRect:
@@ -3107,7 +3108,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 18c091502bcf31245bb454192261dcbf
-    - name: The Tarnished Widow_Frame_66
+    - name: Frame_66
       frameIndex: 66
       additiveSortOrder: 0
       cellRect:
@@ -3116,7 +3117,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 56effccb538a7bf45b8069c3f30fd2ac
-    - name: The Tarnished Widow_Frame_67
+    - name: Frame_67
       frameIndex: 67
       additiveSortOrder: 0
       cellRect:
@@ -3125,7 +3126,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 23ba1dfca86b3d3438da1c97e4aa22ed
-    - name: The Tarnished Widow_Frame_68
+    - name: Frame_68
       frameIndex: 68
       additiveSortOrder: 0
       cellRect:
@@ -3134,7 +3135,7 @@ ScriptedImporter:
         width: 109
         height: 190
       spriteId: e0909d6479e588648871e1d5a47c3a42
-    - name: The Tarnished Widow_Frame_69
+    - name: Frame_69
       frameIndex: 69
       additiveSortOrder: 0
       cellRect:
@@ -3143,7 +3144,7 @@ ScriptedImporter:
         width: 109
         height: 188
       spriteId: 1698b9f119beb3d4c8128f6726f556ae
-    - name: The Tarnished Widow_Frame_70
+    - name: Frame_70
       frameIndex: 70
       additiveSortOrder: 0
       cellRect:
@@ -3152,7 +3153,7 @@ ScriptedImporter:
         width: 109
         height: 194
       spriteId: 8cb76f4b6e4d03045acff6c767d0e536
-    - name: The Tarnished Widow_Frame_71
+    - name: Frame_71
       frameIndex: 71
       additiveSortOrder: 0
       cellRect:
@@ -3161,7 +3162,7 @@ ScriptedImporter:
         width: 109
         height: 196
       spriteId: 1f178fc785b304a43b5232339a8021b3
-    - name: The Tarnished Widow_Frame_72
+    - name: Frame_72
       frameIndex: 72
       additiveSortOrder: 0
       cellRect:
@@ -3170,7 +3171,7 @@ ScriptedImporter:
         width: 109
         height: 198
       spriteId: 629a0cd00ce44314c89f61b8d1b91a54
-    - name: The Tarnished Widow_Frame_73
+    - name: Frame_73
       frameIndex: 73
       additiveSortOrder: 0
       cellRect:
@@ -3179,7 +3180,7 @@ ScriptedImporter:
         width: 109
         height: 199
       spriteId: f15f9d1aeb80b6b43a9637f12c49a3e8
-    - name: The Tarnished Widow_Frame_74
+    - name: Frame_74
       frameIndex: 74
       additiveSortOrder: 0
       cellRect:
@@ -3188,7 +3189,7 @@ ScriptedImporter:
         width: 109
         height: 200
       spriteId: b4aa282c686e1e34ea887aff8b87105b
-    - name: The Tarnished Widow_Frame_75
+    - name: Frame_75
       frameIndex: 75
       additiveSortOrder: 0
       cellRect:
@@ -3197,7 +3198,7 @@ ScriptedImporter:
         width: 109
         height: 201
       spriteId: 2957194b78ca98e4d97eda3da5ceb263
-    - name: The Tarnished Widow_Frame_76
+    - name: Frame_76
       frameIndex: 76
       additiveSortOrder: 0
       cellRect:
@@ -3206,7 +3207,7 @@ ScriptedImporter:
         width: 109
         height: 194
       spriteId: 36d779f19e5a1ef4986b4871c7211784
-    - name: The Tarnished Widow_Frame_77
+    - name: Frame_77
       frameIndex: 77
       additiveSortOrder: 0
       cellRect:
@@ -3215,7 +3216,7 @@ ScriptedImporter:
         width: 109
         height: 190
       spriteId: 00441fc6d39762249b23fd82a38ad186
-    - name: The Tarnished Widow_Frame_78
+    - name: Frame_78
       frameIndex: 78
       additiveSortOrder: 0
       cellRect:
@@ -3224,7 +3225,7 @@ ScriptedImporter:
         width: 136
         height: 153
       spriteId: 24bc8e5978c1d2c48a232bd73c867f72
-    - name: The Tarnished Widow_Frame_79
+    - name: Frame_79
       frameIndex: 79
       additiveSortOrder: 0
       cellRect:
@@ -3233,7 +3234,7 @@ ScriptedImporter:
         width: 142
         height: 153
       spriteId: b8e623269961d1b4c816ae7bd00ba59a
-    - name: The Tarnished Widow_Frame_80
+    - name: Frame_80
       frameIndex: 80
       additiveSortOrder: 0
       cellRect:
@@ -3242,7 +3243,7 @@ ScriptedImporter:
         width: 145
         height: 153
       spriteId: 0688208da3ae2d543a79dbb0210bd688
-    - name: The Tarnished Widow_Frame_81
+    - name: Frame_81
       frameIndex: 81
       additiveSortOrder: 0
       cellRect:
@@ -3251,7 +3252,7 @@ ScriptedImporter:
         width: 147
         height: 153
       spriteId: 0c69daca4cdc8fa4fbb7a3d1ae5cbae4
-    - name: The Tarnished Widow_Frame_82
+    - name: Frame_82
       frameIndex: 82
       additiveSortOrder: 0
       cellRect:
@@ -3260,7 +3261,7 @@ ScriptedImporter:
         width: 143
         height: 153
       spriteId: 4f26bc461d238534fb9708183b1b75fe
-    - name: The Tarnished Widow_Frame_83
+    - name: Frame_83
       frameIndex: 83
       additiveSortOrder: 0
       cellRect:
@@ -3269,7 +3270,7 @@ ScriptedImporter:
         width: 145
         height: 153
       spriteId: 2530ae85acdd54b46b7eb2ee0013416c
-    - name: The Tarnished Widow_Frame_84
+    - name: Frame_84
       frameIndex: 84
       additiveSortOrder: 0
       cellRect:
@@ -3278,7 +3279,7 @@ ScriptedImporter:
         width: 147
         height: 157
       spriteId: 046092744e788964db81f4bcfcf4916f
-    - name: The Tarnished Widow_Frame_85
+    - name: Frame_85
       frameIndex: 85
       additiveSortOrder: 0
       cellRect:
@@ -3287,7 +3288,7 @@ ScriptedImporter:
         width: 127
         height: 156
       spriteId: b1a690b90528be44cb9dd59534903c18
-    - name: The Tarnished Widow_Frame_86
+    - name: Frame_86
       frameIndex: 86
       additiveSortOrder: 0
       cellRect:
@@ -3296,7 +3297,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: ef67057cf05739c48b6b471cff11a969
-    - name: The Tarnished Widow_Frame_87
+    - name: Frame_87
       frameIndex: 87
       additiveSortOrder: 0
       cellRect:
@@ -3305,7 +3306,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: e9cdc17ebe9988e49881321fed9cc3db
-    - name: The Tarnished Widow_Frame_88
+    - name: Frame_88
       frameIndex: 88
       additiveSortOrder: 0
       cellRect:
@@ -3314,7 +3315,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 3603a9c705297eb4ca7f191d9291cad8
-    - name: The Tarnished Widow_Frame_89
+    - name: Frame_89
       frameIndex: 89
       additiveSortOrder: 0
       cellRect:
@@ -3323,7 +3324,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: e9e976f9ebcf91040a9c338dd8adb3f1
-    - name: The Tarnished Widow_Frame_90
+    - name: Frame_90
       frameIndex: 90
       additiveSortOrder: 0
       cellRect:
@@ -3332,7 +3333,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: f5a0e4f04fc53684bb03e808f7d5e788
-    - name: The Tarnished Widow_Frame_91
+    - name: Frame_91
       frameIndex: 91
       additiveSortOrder: 0
       cellRect:
@@ -3341,7 +3342,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: 853c86ef1ebac784cab808d82ad70fa3
-    - name: The Tarnished Widow_Frame_92
+    - name: Frame_92
       frameIndex: 92
       additiveSortOrder: 0
       cellRect:
@@ -3350,7 +3351,7 @@ ScriptedImporter:
         width: 109
         height: 153
       spriteId: e62bec86f326c75439f5d778f6242a55
-    - name: The Tarnished Widow_Frame_93
+    - name: Frame_93
       frameIndex: 93
       additiveSortOrder: 0
       cellRect:
@@ -3359,7 +3360,7 @@ ScriptedImporter:
         width: 109
         height: 159
       spriteId: e117f44abc2a469429f357309a839fa0
-    - name: The Tarnished Widow_Frame_94
+    - name: Frame_94
       frameIndex: 94
       additiveSortOrder: 0
       cellRect:
@@ -3368,7 +3369,7 @@ ScriptedImporter:
         width: 109
         height: 162
       spriteId: e28316797d5c24a43ad80c10db597bbb
-    - name: The Tarnished Widow_Frame_95
+    - name: Frame_95
       frameIndex: 95
       additiveSortOrder: 0
       cellRect:
@@ -3377,7 +3378,7 @@ ScriptedImporter:
         width: 109
         height: 164
       spriteId: 14e27dcae113e2942b22263e13737ec0
-    - name: The Tarnished Widow_Frame_96
+    - name: Frame_96
       frameIndex: 96
       additiveSortOrder: 0
       cellRect:
@@ -3386,7 +3387,7 @@ ScriptedImporter:
         width: 109
         height: 165
       spriteId: 4474ad6d0df356440ae8836cf715547c
-    - name: The Tarnished Widow_Frame_97
+    - name: Frame_97
       frameIndex: 97
       additiveSortOrder: 0
       cellRect:
@@ -3395,7 +3396,7 @@ ScriptedImporter:
         width: 109
         height: 166
       spriteId: 91c340770f1a4554f86d72fb6131306a
-    - name: The Tarnished Widow_Frame_98
+    - name: Frame_98
       frameIndex: 98
       additiveSortOrder: 0
       cellRect:
@@ -3404,7 +3405,7 @@ ScriptedImporter:
         width: 109
         height: 167
       spriteId: 6a2f087c63c1c734a9c23cbcf1c6ec2b
-    - name: The Tarnished Widow_Frame_99
+    - name: Frame_99
       frameIndex: 99
       additiveSortOrder: 0
       cellRect:
@@ -3413,7 +3414,7 @@ ScriptedImporter:
         width: 109
         height: 167
       spriteId: 6ed422fe9fd81544fa5bf4456d61d69b
-    - name: The Tarnished Widow_Frame_100
+    - name: Frame_100
       frameIndex: 100
       additiveSortOrder: 0
       cellRect:
@@ -3422,7 +3423,7 @@ ScriptedImporter:
         width: 109
         height: 168
       spriteId: caaf6e043edcc6a479f2fdc22f346b41
-    - name: The Tarnished Widow_Frame_101
+    - name: Frame_101
       frameIndex: 101
       additiveSortOrder: 0
       cellRect:
@@ -3431,7 +3432,7 @@ ScriptedImporter:
         width: 109
         height: 165
       spriteId: 3924479f3d583de4e817a62a2739921c
-    - name: The Tarnished Widow_Frame_102
+    - name: Frame_102
       frameIndex: 102
       additiveSortOrder: 0
       cellRect:
@@ -3440,7 +3441,7 @@ ScriptedImporter:
         width: 109
         height: 165
       spriteId: f5318609b7fe88448b9c0f3ab71c624f
-    - name: The Tarnished Widow_Frame_103
+    - name: Frame_103
       frameIndex: 103
       additiveSortOrder: 0
       cellRect:
@@ -3449,7 +3450,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 0344b882c3a72c24884a322b0a49cd6f
-    - name: The Tarnished Widow_Frame_104
+    - name: Frame_104
       frameIndex: 104
       additiveSortOrder: 0
       cellRect:
@@ -3458,7 +3459,7 @@ ScriptedImporter:
         width: 109
         height: 155
       spriteId: 60b94d3af8db3a140b3533a9a09d2124
-    - name: The Tarnished Widow_Frame_105
+    - name: Frame_105
       frameIndex: 105
       additiveSortOrder: 0
       cellRect:
@@ -3467,7 +3468,7 @@ ScriptedImporter:
         width: 109
         height: 165
       spriteId: a48e908ff8878174189ccdf532cbd75e
-    - name: The Tarnished Widow_Frame_106
+    - name: Frame_106
       frameIndex: 106
       additiveSortOrder: 0
       cellRect:
@@ -3476,7 +3477,7 @@ ScriptedImporter:
         width: 116
         height: 170
       spriteId: 73ee285f90c76d84da338f0847a7f608
-    - name: The Tarnished Widow_Frame_107
+    - name: Frame_107
       frameIndex: 107
       additiveSortOrder: 0
       cellRect:
@@ -3485,7 +3486,7 @@ ScriptedImporter:
         width: 132
         height: 172
       spriteId: 42bd14805a30e8340a0c4e2ab24b74e6
-    - name: The Tarnished Widow_Frame_108
+    - name: Frame_108
       frameIndex: 108
       additiveSortOrder: 0
       cellRect:
@@ -3494,7 +3495,7 @@ ScriptedImporter:
         width: 145
         height: 173
       spriteId: 16e3cfaa59494cf4fafb535fb3f3f761
-    - name: The Tarnished Widow_Frame_109
+    - name: Frame_109
       frameIndex: 109
       additiveSortOrder: 0
       cellRect:
@@ -3503,7 +3504,7 @@ ScriptedImporter:
         width: 151
         height: 174
       spriteId: e03d81afa3320834dbf5fdff1de65dff
-    - name: The Tarnished Widow_Frame_110
+    - name: Frame_110
       frameIndex: 110
       additiveSortOrder: 0
       cellRect:
@@ -3512,7 +3513,7 @@ ScriptedImporter:
         width: 158
         height: 175
       spriteId: a6e6f769810e4434e9573a1e17389708
-    - name: The Tarnished Widow_Frame_111
+    - name: Frame_111
       frameIndex: 111
       additiveSortOrder: 0
       cellRect:
@@ -3521,7 +3522,7 @@ ScriptedImporter:
         width: 163
         height: 164
       spriteId: ce9752a13ca1c3e42b627220bf5589b8
-    - name: The Tarnished Widow_Frame_112
+    - name: Frame_112
       frameIndex: 112
       additiveSortOrder: 0
       cellRect:
@@ -3530,7 +3531,7 @@ ScriptedImporter:
         width: 164
         height: 165
       spriteId: f090d0fb56f911848b2513d5b4ad6852
-    - name: The Tarnished Widow_Frame_113
+    - name: Frame_113
       frameIndex: 113
       additiveSortOrder: 0
       cellRect:
@@ -3539,7 +3540,7 @@ ScriptedImporter:
         width: 149
         height: 155
       spriteId: 9aec76ab9993a1146b4c24b9042f563f
-    - name: The Tarnished Widow_Frame_114
+    - name: Frame_114
       frameIndex: 114
       additiveSortOrder: 0
       cellRect:
@@ -3548,7 +3549,7 @@ ScriptedImporter:
         width: 125
         height: 153
       spriteId: a1044ad0bddb4d443b12f9dab36490d9
-    - name: The Tarnished Widow_Frame_115
+    - name: Frame_115
       frameIndex: 115
       additiveSortOrder: 0
       cellRect:
@@ -3557,7 +3558,7 @@ ScriptedImporter:
         width: 149
         height: 153
       spriteId: 8e002e2058ae39e4cbd63621dbd727af
-    - name: The Tarnished Widow_Frame_116
+    - name: Frame_116
       frameIndex: 116
       additiveSortOrder: 0
       cellRect:
@@ -3566,7 +3567,7 @@ ScriptedImporter:
         width: 125
         height: 153
       spriteId: 2ac04d11a1d3a7e449c3be31356a6e94
-    - name: The Tarnished Widow_Frame_117
+    - name: Frame_117
       frameIndex: 117
       additiveSortOrder: 0
       cellRect:
@@ -3575,7 +3576,7 @@ ScriptedImporter:
         width: 149
         height: 153
       spriteId: 6b9cbbe863b4ef940abc723a47bdfada
-    - name: The Tarnished Widow_Frame_118
+    - name: Frame_118
       frameIndex: 118
       additiveSortOrder: 0
       cellRect:
@@ -3591,3 +3592,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 214, y: 203}
+  previousTextureSize: {x: 2048, y: 2048}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -1107,13 +1108,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1107560877
+    guid: -1214468257
     name: COncept Sheet
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: COncept Sheet_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -1122,7 +1123,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: a5c29eace17ae7a40a7afe1e1fa25ae4
-    - name: COncept Sheet_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -1131,7 +1132,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 9fbe6c9da9de3bb46b0886a3d4b9e576
-    - name: COncept Sheet_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -1140,7 +1141,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 1824b0d87d5886b4c90353426e5182e2
-    - name: COncept Sheet_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -1149,7 +1150,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: c98f5d79a12656c41a95451d641a00b0
-    - name: COncept Sheet_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -1158,7 +1159,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: e59b462b2b953ca448a8715b67975ebf
-    - name: COncept Sheet_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -1167,7 +1168,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 33f366dfbf380014aad0a0b55eae251b
-    - name: COncept Sheet_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -1176,7 +1177,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 5b9c8805efe658a45b7fe49001658708
-    - name: COncept Sheet_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -1185,7 +1186,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 551c3d3d9461fec4fa3e5a274151781b
-    - name: COncept Sheet_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -1194,7 +1195,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 9919bf9d658781b4181adb2b66847022
-    - name: COncept Sheet_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -1203,7 +1204,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 23dec31ce4f73cc468cb7a6b1a668ba4
-    - name: COncept Sheet_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -1212,7 +1213,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: b51d5654121411d4e827497bf685c2b1
-    - name: COncept Sheet_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -1221,7 +1222,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: be2cbfd427946af4097763207fb257a7
-    - name: COncept Sheet_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -1230,7 +1231,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: ecd9224fdb4d1aa408a0c1d79e23bd64
-    - name: COncept Sheet_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -1239,7 +1240,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: e7c8f690fcd3df74abb12ded912a75df
-    - name: COncept Sheet_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -1248,7 +1249,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 38eb93df87fac494db57959dc885b088
-    - name: COncept Sheet_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -1257,7 +1258,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 263979fa50ea5374dbe8ebbd98f48c88
-    - name: COncept Sheet_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -1266,7 +1267,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 57de1810f11e71b4bbfd5188b784f14a
-    - name: COncept Sheet_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -1275,7 +1276,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 31dba69ccf9859f4896316b3a13a94a2
-    - name: COncept Sheet_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -1284,7 +1285,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 1eddda73e38710f42b14f5d951870f56
-    - name: COncept Sheet_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1293,7 +1294,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 7f5f3738923f19043854a380925003b0
-    - name: COncept Sheet_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1302,7 +1303,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 1d029bf057fed7048bb9191e33e6999b
-    - name: COncept Sheet_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1311,7 +1312,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 88da38a1becbe5d409760e08808cf9f4
-    - name: COncept Sheet_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1320,7 +1321,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 2b48b0135dae55541bd3ce8ceb29b4b2
-    - name: COncept Sheet_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1329,7 +1330,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 07aa49931d0a8934b9bc59c8a2c18185
-    - name: COncept Sheet_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1338,7 +1339,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 5671d7239dd884740a22f6c796a7f086
-    - name: COncept Sheet_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1347,7 +1348,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 8a7916c851b85664594dc97a3e7a91fe
-    - name: COncept Sheet_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1356,7 +1357,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 181607cfefaf5d64e8c2a022e36d5410
-    - name: COncept Sheet_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1365,7 +1366,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 99f3c4d1db14936499a49a135bd86d7a
-    - name: COncept Sheet_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1374,7 +1375,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 1b2a4c8b74d2e7e449535fcf995197f0
-    - name: COncept Sheet_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1383,7 +1384,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: cf36c57b2c222b04085a52eed1170d18
-    - name: COncept Sheet_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1392,7 +1393,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: cbf7bb018402ad44592f5c8bbca8f731
-    - name: COncept Sheet_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1401,7 +1402,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 773a4c671d15e3d4e9bcf2857ba587ad
-    - name: COncept Sheet_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1410,7 +1411,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 0d9eea91f4f9f694f9baaf24bd5a5748
-    - name: COncept Sheet_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1419,7 +1420,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 74adde7e9075b1a40b7497fff40276cc
-    - name: COncept Sheet_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1428,7 +1429,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: e9f55550daebc7f43943245c5552624f
-    - name: COncept Sheet_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
@@ -1437,7 +1438,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: e18c8dd8c967a33419e1fd8a0f49528e
-    - name: COncept Sheet_Frame_36
+    - name: Frame_36
       frameIndex: 36
       additiveSortOrder: 0
       cellRect:
@@ -1446,7 +1447,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: fc47386de5289b04b984a5653a219aa4
-    - name: COncept Sheet_Frame_37
+    - name: Frame_37
       frameIndex: 37
       additiveSortOrder: 0
       cellRect:
@@ -1455,7 +1456,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 29262ac097bf71d42928556ac1398d2e
-    - name: COncept Sheet_Frame_38
+    - name: Frame_38
       frameIndex: 38
       additiveSortOrder: 0
       cellRect:
@@ -1464,7 +1465,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 9f1919f6a32a6e646917b70fc6be8639
-    - name: COncept Sheet_Frame_39
+    - name: Frame_39
       frameIndex: 39
       additiveSortOrder: 0
       cellRect:
@@ -1473,7 +1474,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 4d3aabdeda746584ea1348a40b49c339
-    - name: COncept Sheet_Frame_40
+    - name: Frame_40
       frameIndex: 40
       additiveSortOrder: 0
       cellRect:
@@ -1482,7 +1483,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 7f80bd0de911fdc48b4c9083b519daff
-    - name: COncept Sheet_Frame_41
+    - name: Frame_41
       frameIndex: 41
       additiveSortOrder: 0
       cellRect:
@@ -1491,7 +1492,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 356f302ef3e960a46aec729506ea3919
-    - name: COncept Sheet_Frame_42
+    - name: Frame_42
       frameIndex: 42
       additiveSortOrder: 0
       cellRect:
@@ -1500,7 +1501,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: ed152b69079272d4693ad039ed602f5d
-    - name: COncept Sheet_Frame_43
+    - name: Frame_43
       frameIndex: 43
       additiveSortOrder: 0
       cellRect:
@@ -1509,7 +1510,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: afa25d470f572a946abe9672496d56f5
-    - name: COncept Sheet_Frame_44
+    - name: Frame_44
       frameIndex: 44
       additiveSortOrder: 0
       cellRect:
@@ -1518,7 +1519,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 15034f1788d7f834a814a80c370f701f
-    - name: COncept Sheet_Frame_45
+    - name: Frame_45
       frameIndex: 45
       additiveSortOrder: 0
       cellRect:
@@ -1527,7 +1528,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: dba5b2b3749c6e148900dd996c9ba222
-    - name: COncept Sheet_Frame_46
+    - name: Frame_46
       frameIndex: 46
       additiveSortOrder: 0
       cellRect:
@@ -1536,7 +1537,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: d0022f36eb2313b4c8901ccf5499e0ed
-    - name: COncept Sheet_Frame_47
+    - name: Frame_47
       frameIndex: 47
       additiveSortOrder: 0
       cellRect:
@@ -1545,7 +1546,7 @@ ScriptedImporter:
         width: 270
         height: 128
       spriteId: 6141fd98c5b61e54f97f59a32055e7df
-    - name: COncept Sheet_Frame_48
+    - name: Frame_48
       frameIndex: 48
       additiveSortOrder: 0
       cellRect:
@@ -1561,3 +1562,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 270, y: 128}
+  previousTextureSize: {x: 2048, y: 1024}

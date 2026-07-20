@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -42387,7 +42388,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -1129102871
+    guid: 1587483853
     name: City Tileset
     layerFlags: 0
     layerType: 0
@@ -42400,7 +42401,7 @@ ScriptedImporter:
         x: 0
         y: 16
         width: 304
-        height: 304
+        height: 302
       spriteId: 71d731732536acb4f9b9ef1ac68a5611
     linkedCells: []
     parentIndex: -1
@@ -42461,3 +42462,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 320, y: 320}
+  previousTextureSize: {x: 512, y: 512}

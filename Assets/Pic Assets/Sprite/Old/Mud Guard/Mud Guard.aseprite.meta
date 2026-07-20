@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -807,13 +808,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -855754931
+    guid: -954188607
     name: Mud Guard
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Mud Guard_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -822,7 +823,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 282192df3d87f2c46a5ec3afacb93d6a
-    - name: Mud Guard_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -831,7 +832,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 0c1d598fb689b11418a82b562199bc24
-    - name: Mud Guard_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -840,7 +841,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 3bc8ad2345064b348a59fb4f0e0efb20
-    - name: Mud Guard_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -849,7 +850,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: ec22e4e78aeabbf4ca3deae8d4f23a34
-    - name: Mud Guard_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -858,7 +859,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 49dbb02845df3144c9f3779f140fe7e5
-    - name: Mud Guard_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -867,7 +868,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a39eefb2f6bb18747bbc7e2cee0d9395
-    - name: Mud Guard_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -876,7 +877,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: f050acecee69c414ea429f3c7d386c99
-    - name: Mud Guard_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -885,7 +886,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 3cab6f82dcc9e994e9adaa2f7736b115
-    - name: Mud Guard_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -894,7 +895,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 97e9ce8acbb93ff44bb12812056eed2a
-    - name: Mud Guard_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -903,7 +904,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 63ded2466b7298946aac04825ef1abb4
-    - name: Mud Guard_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -912,7 +913,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 1f6ce6a3c964e774ca2296888150352a
-    - name: Mud Guard_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -921,7 +922,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 4dee38df390d15544822d6fec190f678
-    - name: Mud Guard_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -930,7 +931,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: aa70721f790a92e4397d57a7512b2d4d
-    - name: Mud Guard_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -939,7 +940,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 17aec5350503d8d47b7d55f20f576499
-    - name: Mud Guard_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -948,7 +949,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: fc1eb27bb0bfcd845a227867a60be118
-    - name: Mud Guard_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -957,7 +958,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 4c69eaa193ab7d04680267691cbd47e0
-    - name: Mud Guard_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -966,7 +967,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: dc807b268433b8e48af29b61c05c4bd2
-    - name: Mud Guard_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -975,7 +976,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 2633b48e5ff5b884cbb666ee14c7f9e0
-    - name: Mud Guard_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -984,7 +985,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: c65a5186bc05db3498467d97b41c9bbd
-    - name: Mud Guard_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -993,7 +994,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: b9c7fffe7be56d047820ca3d2fafedde
-    - name: Mud Guard_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1002,7 +1003,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 705200dba8b228f4d9641c38bde10c13
-    - name: Mud Guard_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1011,7 +1012,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: af5d87d01c8165747a3e4702a2533dde
-    - name: Mud Guard_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1020,7 +1021,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: ad08b745d4154994c9e21cc16e3af05d
-    - name: Mud Guard_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1029,7 +1030,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 44774a838fd748640ab56767541590bd
-    - name: Mud Guard_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1038,7 +1039,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 3fe0a798fc8c0934f880ddb3081f6ed2
-    - name: Mud Guard_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1047,7 +1048,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 8503efdf2847fd9488155a17e8efc4cd
-    - name: Mud Guard_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1056,7 +1057,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a2716f00f906785478c2cdc01d2a6165
-    - name: Mud Guard_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1065,7 +1066,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: f5ecd964a08052948b3a66e1f95aec4d
-    - name: Mud Guard_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1074,7 +1075,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: b8cc99b416b211a4e8c6b588638f0044
-    - name: Mud Guard_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1083,7 +1084,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: cd24eaec0803ed5429a92fe9762acd10
-    - name: Mud Guard_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1092,7 +1093,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 9cb866efb4804b849a969802e51e8b85
-    - name: Mud Guard_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1101,7 +1102,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 32839babb126d3a4ca85a93c794f714d
-    - name: Mud Guard_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1110,7 +1111,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 56b408e0b7480644d8f214e44b55917e
-    - name: Mud Guard_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1126,3 +1127,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 192, y: 192}
+  previousTextureSize: {x: 1024, y: 2048}

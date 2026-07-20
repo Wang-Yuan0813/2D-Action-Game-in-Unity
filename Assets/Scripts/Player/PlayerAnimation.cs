@@ -26,18 +26,18 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void SetAnimation()
     {
-        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));//Ïò¶¯»­×´Ì¬Ê÷ÊäÈëºáÏòËÙ¶Èfloat
-        anim.SetFloat("velocityY", rb.velocity.y);//×İÏòµÄËÙ¶È
-        anim.SetBool("isGround", physicsCheck.isGround);//ÊÇ·ñ½Å²¿Î»ÓÚµØÃæ
+        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));//å‘åŠ¨ç”»çŠ¶æ€æ ‘è¾“å…¥æ¨ªå‘é€Ÿåº¦float
+        anim.SetFloat("velocityY", rb.velocity.y);//çºµå‘çš„é€Ÿåº¦
+        anim.SetBool("isGround", physicsCheck.isGround);//æ˜¯å¦è„šéƒ¨ä½äºåœ°é¢
         anim.SetBool("dodge", player_Control.dodge);
         anim.SetBool("isDodge", player_Control.isDodge);
-        anim.SetBool("isAttack",player_Control.isAttack);//´¦ÓÚ¹¥»÷×´Ì¬
-        anim.SetBool("isJumpAttack", player_Control.isJumpAttack);//´¦ÓÚÌøÔ¾¹¥»÷×´Ì¬£¬Çø·Ö¿ª±ÜÃâÂäµØÊ±ÓÉÓÚ¿ÕÖĞµÄ¶¯»­Ã»²¥·ÅÍêµ¼ÖÂ½ÓÁ¬²¥·ÅµØÃæ¶¯»­
-        anim.SetBool("attack", player_Control.attack);//¹¥»÷´¥·¢£¬ÕâÀïµÄbool¿ÉÒÔÀí½â³Étrigger£¬ÒòÎª¹¥»÷¶¯»­µÄ¿ªÊ¼Ö¡¾Í½«ÆäÖÃÎªfalse
+        anim.SetBool("isAttack",player_Control.isAttack);//å¤„äºæ”»å‡»çŠ¶æ€
+        anim.SetBool("isJumpAttack", player_Control.isJumpAttack);//å¤„äºè·³è·ƒæ”»å‡»çŠ¶æ€ï¼ŒåŒºåˆ†å¼€é¿å…è½åœ°æ—¶ç”±äºç©ºä¸­çš„åŠ¨ç”»æ²¡æ’­æ”¾å®Œå¯¼è‡´æ¥è¿æ’­æ”¾åœ°é¢åŠ¨ç”»
+        anim.SetBool("attack", player_Control.attack);//æ”»å‡»è§¦å‘ï¼Œè¿™é‡Œçš„boolå¯ä»¥ç†è§£æˆtriggerï¼Œå› ä¸ºæ”»å‡»åŠ¨ç”»çš„å¼€å§‹å¸§å°±å°†å…¶ç½®ä¸ºfalse
         anim.SetBool("getCatched", player_Control.getCatched);
-        anim.SetBool("takeHit", player_Control.takeHit);//ÊÜÉË
-        anim.SetBool("isTakeHit", player_Control.isTakeHit);//ÊÜÉË×´Ì¬
-        anim.SetBool("cantHit", player_Control.cantHit);//½ÇÉ«ÎŞµĞÖ¡
+        anim.SetBool("takeHit", player_Control.takeHit);//å—ä¼¤
+        anim.SetBool("isTakeHit", player_Control.isTakeHit);//å—ä¼¤çŠ¶æ€
+        anim.SetBool("cantHit", player_Control.cantHit);//è§’è‰²æ— æ•Œå¸§
     }
     public void DodgeStart()
     {
@@ -82,12 +82,13 @@ public class PlayerAnimation : MonoBehaviour
     {
         player_Control.attack = false;
         player_Control.isJumpAttack = true;
+        player_Control.JumpAttackLift();
     }
     public void JumpAttackOver()
     {
         player_Control.isJumpAttack = false;
     }
-    public void LandingStart()//ÕâÀïÊÇ·ÀÖ¹¿ÕÖĞ¹¥»÷ÂäµØºóÓÉÓÚÎª²¥·ÅÍêµ¼ÖÂÃ»ÓĞ½«isAttackÖÃ0£¬´Ó¶ø¶ş´Î²¥·Å¶¯»­
+    public void LandingStart()//è¿™é‡Œæ˜¯é˜²æ­¢ç©ºä¸­æ”»å‡»è½åœ°åç”±äºä¸ºæ’­æ”¾å®Œå¯¼è‡´æ²¡æœ‰å°†isAttackç½®0ï¼Œä»è€ŒäºŒæ¬¡æ’­æ”¾åŠ¨ç”»
     {
         Instantiate(landingFX, new Vector3(transform.position.x, transform.position.y - 0.2f, 0), Quaternion.identity, null);
         player_Control.isJumpAttack = false;

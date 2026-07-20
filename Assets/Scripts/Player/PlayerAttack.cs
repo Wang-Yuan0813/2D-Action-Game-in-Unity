@@ -1,14 +1,16 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [Header("需要挂载的对象")]
+    [Header("闇�瑕佹寕杞界殑瀵硅薄")]
     private GameObject counterFx;
     private GameObject counterFx1;
     private GameObject player;
-    private GameObject boss;
+
+    [Header("鏀诲嚮璁剧疆")]
+    [SerializeField, Min(1)] private int attackDamage = 10;
 
 
     private Cinemachine.CinemachineCollisionImpulseSource impulse;
@@ -18,7 +20,6 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         player = transform.parent.gameObject;
-        boss = GameObject.Find("Boss");
         impulse = GetComponent<Cinemachine.CinemachineCollisionImpulseSource>();
         counterFx = Resources.Load<GameObject>("FXPref/CounterFx");
         counterFx1 = Resources.Load<GameObject>("FXPref/CounterFx1");
@@ -26,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("EnemyAttack") && player.GetComponent<Player_Control>().attackValid)//攻击中了Attack的Tag的对象，优先判断是否counter
+        if (other.gameObject.CompareTag("EnemyAttack") && player.GetComponent<Player_Control>().attackValid)//鏀诲嚮涓簡Attack鐨凾ag鐨勫璞★紝浼樺厛鍒ゆ柇鏄惁counter
         {
             float counterSmash;
             float attackerX;
@@ -42,11 +43,17 @@ public class PlayerAttack : MonoBehaviour
             impulse.GenerateImpulse();
             player.GetComponent<Player_Control>().Counter(counterSmash, attackerX);
         }
-        if(other.gameObject.CompareTag("Enemy")&&!boss.GetComponent<Boss_Control>().cantHit && !player.GetComponent<Player_Control>().isCounter && player.GetComponent<Player_Control>().attackValid)  //boss处于非无敌状态且玩家处于非对刀状态时
-        {   
-            //没有counter且攻击中了敌人
+        if (other.gameObject.CompareTag("Enemy") && !player.GetComponent<Player_Control>().isCounter && player.GetComponent<Player_Control>().attackValid)
+        {
+            EnemyBase enemy = other.GetComponentInParent<EnemyBase>();
+            if (enemy == null)
+            {
+                Debug.LogWarning("Enemy-tagged object is missing an EnemyBase component.", other);
+                return;
+            }
+
             player.GetComponent<Player_Control>().attackValid = false;
-            boss.GetComponent<Boss_Control>().TakeHit();//传递攻击信号
+            enemy.TakeHit(attackDamage);
         }
         
     }

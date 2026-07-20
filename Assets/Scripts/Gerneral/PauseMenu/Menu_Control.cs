@@ -13,8 +13,8 @@ public class Menu_Control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.GetInstance();//»ñÈ¡GameManager
-        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//»ñÈ¡GameManager
+        gameManager = GameManager.GetInstance();//è·å–GameManager
+        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//è·å–GameManager
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class Menu_Control : MonoBehaviour
             pauseMenuBackground.SetActive(true);
             menuList.SetActive(true);
             gameManager.PauseGame(true);
-            EventSystem.current.SetSelectedGameObject(null);//Çå³ıÑ¡ÖĞµÄ¶ÔÏó
+            EventSystem.current.SetSelectedGameObject(null);//æ¸…é™¤é€‰ä¸­çš„å¯¹è±¡
             EventSystem.current.SetSelectedGameObject(selectOption);
 
         }

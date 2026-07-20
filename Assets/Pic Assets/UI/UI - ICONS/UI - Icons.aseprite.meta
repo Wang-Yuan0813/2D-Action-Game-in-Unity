@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -487,13 +488,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1137236403
+    guid: -1614829631
     name: UI - Icons
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: UI - Icons_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -502,7 +503,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 6666aa912f15d3941a35ec895ce5d27a
-    - name: UI - Icons_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -511,7 +512,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: fd473e7f713393542975749d2fbb0c84
-    - name: UI - Icons_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -520,7 +521,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: f6ec14d7dda13504b99e50791db73de6
-    - name: UI - Icons_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -529,7 +530,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 323932f2a74249c48938458948d67aca
-    - name: UI - Icons_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -538,7 +539,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: eb720e3e049a6ff4ba80cf0f89d12313
-    - name: UI - Icons_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -547,7 +548,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 699847ae8d6ff2043b3011a9c4ce4aec
-    - name: UI - Icons_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -556,7 +557,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 7e96cf0c7ef356d45a236743603d3019
-    - name: UI - Icons_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -565,7 +566,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: d78c6174bd900cd47a99372585b2b063
-    - name: UI - Icons_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -574,7 +575,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 14963675a9244084d951c31248f498c9
-    - name: UI - Icons_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -583,7 +584,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 99bd36128b8cfb345a9557f6a69f7d91
-    - name: UI - Icons_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -592,7 +593,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 2657eedd9198bbf4a87ec5d4848d0460
-    - name: UI - Icons_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -601,7 +602,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 888ec27afff247a4888afe443380cea8
-    - name: UI - Icons_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -610,7 +611,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: e2a9550060f99494f9d79a1dd0f3bddf
-    - name: UI - Icons_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -619,7 +620,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 1ff71bde3ce987041b84e9de73f70448
-    - name: UI - Icons_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -628,7 +629,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: eca3b66f40ba4424980d1dc9a86fa623
-    - name: UI - Icons_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -637,7 +638,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: b02274b4d25262c46aac59fd108057b3
-    - name: UI - Icons_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -646,7 +647,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 30ebe71a01e21a1418632d81c7e1513a
-    - name: UI - Icons_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -662,3 +663,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 256}

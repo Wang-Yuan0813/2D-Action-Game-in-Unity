@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -607,13 +608,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 676108343
+    guid: -1404709421
     name: Flower Enemy
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Flower Enemy_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -622,7 +623,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 5707e04283f916e43bcd5a54324f2171
-    - name: Flower Enemy_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -631,7 +632,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: dacae8e2122fb524aa89bac7c1b3fb7c
-    - name: Flower Enemy_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -640,7 +641,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: f124e0e2825559f4280afdd92609e2bf
-    - name: Flower Enemy_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -649,7 +650,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 5af2c3f639cdacd4187addbb75ccbd20
-    - name: Flower Enemy_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -658,7 +659,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 14f1270032c867b4fbbe9cd92b23fec5
-    - name: Flower Enemy_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -667,7 +668,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 9d95daeb77834b049b8db9162810dc4a
-    - name: Flower Enemy_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -676,7 +677,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: c5e30e4d935f6904bb46f0d993bfbf17
-    - name: Flower Enemy_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -685,7 +686,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: b4eeecd99b38ac04bbd4745a4a5bb66c
-    - name: Flower Enemy_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -694,7 +695,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: f4c78321a268ada45bddc8862176b5ba
-    - name: Flower Enemy_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -703,7 +704,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 67c22d3d9a3568b4990bbd6734a5d04b
-    - name: Flower Enemy_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -712,7 +713,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 18b2449bb2e58a04fb435fc0db99215d
-    - name: Flower Enemy_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -721,7 +722,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 71353998aacd6a4408be06c36eaf2f6e
-    - name: Flower Enemy_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -730,7 +731,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 69a342538ff92e042b17366a899f4201
-    - name: Flower Enemy_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -739,7 +740,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 69cd6fd2e339d484e81549a6beac0ab6
-    - name: Flower Enemy_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -748,7 +749,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: d391716e3bb5f274eaca9f002341568b
-    - name: Flower Enemy_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -757,7 +758,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: fbfb3595b0183754ebf656c5a254e6f8
-    - name: Flower Enemy_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -766,7 +767,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: da9cb15afcdff4a43a00835199fbb885
-    - name: Flower Enemy_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -775,7 +776,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: d09879919590bbc4689ddd87bf85a4e3
-    - name: Flower Enemy_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -784,7 +785,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: d9d620d7bd0dd5148a9a27a61fe957c2
-    - name: Flower Enemy_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -793,7 +794,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: aedaae9ffaffcbc439e776be9c2e6bc9
-    - name: Flower Enemy_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -802,7 +803,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 82da2d2b944dbc746a8767468a34a619
-    - name: Flower Enemy_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -811,7 +812,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 74630e52ec1387e4e8ef40c411456dc1
-    - name: Flower Enemy_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -820,7 +821,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 8b5ec23136103cc4cb1c41b1799a148f
-    - name: Flower Enemy_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -836,3 +837,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 256, y: 256}

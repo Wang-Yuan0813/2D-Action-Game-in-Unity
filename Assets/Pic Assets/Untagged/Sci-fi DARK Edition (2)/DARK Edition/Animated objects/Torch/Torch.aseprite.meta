@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -247,13 +248,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -2102477512
+    guid: 795277336
     name: Torch
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Torch_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -262,7 +263,7 @@ ScriptedImporter:
         width: 5
         height: 10
       spriteId: 8777ac5f20366f64fac5a123bad24da9
-    - name: Torch_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -271,7 +272,7 @@ ScriptedImporter:
         width: 6
         height: 11
       spriteId: 174ed7bb86bea3443b2344f203e3ba9a
-    - name: Torch_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -280,7 +281,7 @@ ScriptedImporter:
         width: 6
         height: 9
       spriteId: 31f743b3c94e5e24b8359c377f975681
-    - name: Torch_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -289,7 +290,7 @@ ScriptedImporter:
         width: 5
         height: 10
       spriteId: a017051be526cd348b11e155ebc6fe9f
-    - name: Torch_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -298,7 +299,7 @@ ScriptedImporter:
         width: 6
         height: 11
       spriteId: eebbadf7bd75b26479d4c9efe8706d83
-    - name: Torch_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -314,3 +315,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 32, y: 64}

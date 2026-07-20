@@ -7,86 +7,88 @@ public class Player_Control : MonoBehaviour
 {
     private Rigidbody2D Rb;
     private GameObject energyBar;
-    [Header("È«¾Ö¿ØÖÆµÄÊôĞÔ")]
+    [Header("å…¨å±€æ§åˆ¶çš„å±æ€§")]
     public bool attackAllow;
     public bool dodgeAllow;
 
-    [Header("ÒÆ¶¯²ÎÊı")]
+    [Header("ç§»åŠ¨å‚æ•°")]
     public float Speed;//10
     public float moveAcc;
-    [Header("ÒÆ¶¯¼ì²âÊôĞÔ")]
-    public int facedirection;//-1£º×ó,1£ºÓÒ
+    [Header("ç§»åŠ¨æ£€æµ‹å±æ€§")]
+    public int facedirection;//-1ï¼šå·¦,1ï¼šå³
     public float moveDir;
-    [Header("ÌøÔ¾²ÎÊı")]
+    [Header("è·³è·ƒå‚æ•°")]
     public float JumpForce;//15
     public float JumpHoldForce;//6
     public float JumpHoldDuration;//0.05
-    [Header("ÌøÔ¾¼ì²âÊôĞÔ")]
+    [Header("è·³è·ƒæ”»å‡»å‚æ•°")]
+    [SerializeField] private float jumpAttackLiftSpeed = 6f;
+    [Header("è·³è·ƒæ£€æµ‹å±æ€§")]
     public bool JumpPressed;
-    public bool JumpHeld;//³¤°´ÌøÔ¾¼ü
+    public bool JumpHeld;//é•¿æŒ‰è·³è·ƒé”®
     public bool IsJump;
-    private float JumpTime;//ÌøÔ¾Ê±¼ä¼ÇÂ¼
-    [Header("¶ã±Ü²ÎÊı")]
+    private float JumpTime;//è·³è·ƒæ—¶é—´è®°å½•
+    [Header("èº²é¿å‚æ•°")]
 
     public float DodgeSpeed;
-    [Header("¶ã±Ü¼ì²âÊôĞÔ")]
+    [Header("èº²é¿æ£€æµ‹å±æ€§")]
     public bool isDodge;
     public bool dodge;
 
 
 
-    [Header("»·¾³¼ì²â")]
+    [Header("ç¯å¢ƒæ£€æµ‹")]
     private Physics_Check physicsCheck;
 
-    [Header("Õ½¶·ÊôĞÔ")]
+    [Header("æˆ˜æ–—å±æ€§")]
     public bool preAttack;
-    public float counterTime;//counter¹¥»÷ºóÊÕµ½³å»÷µÄÊ±¼ä
+    public float counterTime;//counteræ”»å‡»åæ”¶åˆ°å†²å‡»çš„æ—¶é—´
 
     private float preAttackExist;
     private float lastAttack = -10f;
 
-    [Header("ÊÜÉËÊôĞÔ")]
+    [Header("å—ä¼¤å±æ€§")]
     public bool cantHit;
     public bool isTakeHit;
     public bool takeHit;
     public bool getCatched;
 
-    [Header("Õ½¶·¼ì²â")]
-    public bool isAttack;//´¦ÓÚ¹¥»÷×´Ì¬
+    [Header("æˆ˜æ–—æ£€æµ‹")]
+    public bool isAttack;//å¤„äºæ”»å‡»çŠ¶æ€
     public bool isJumpAttack;
-    public bool canAttack;//¿ÉÒÔ¹¥»÷
-    public bool attack;//µØÃæÉÏÊ±¹¥»÷±»°´ÏÂ
+    public bool canAttack;//å¯ä»¥æ”»å‡»
+    public bool attack;//åœ°é¢ä¸Šæ—¶æ”»å‡»è¢«æŒ‰ä¸‹
     public bool isCounter;
     public bool attackValid;
 
-    [Header("ÌåÁ¦ÊôĞÔÉèÖÃ")]
+    [Header("ä½“åŠ›å±æ€§è®¾ç½®")]
     private float energyLeft;
 
     private GameObject cameraControl;
     private GameManager gameManager;
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//»ñÈ¡GameManager
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//è·å–GameManager
         cameraControl = GameObject.Find("Main Camera");
         Rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<Physics_Check>();
         energyBar = transform.Find("EnergyBar").gameObject;
-        //¹¥»÷ÓĞ¹Ø³õÊ¼»¯
+        //æ”»å‡»æœ‰å…³åˆå§‹åŒ–
         canAttack = true;
-        preAttackExist = 0.2f;//Ô¤ÊäÈë¹¥»÷±êÖ¾´æÔÚÊ±¼ä
+        preAttackExist = 0.2f;//é¢„è¾“å…¥æ”»å‡»æ ‡å¿—å­˜åœ¨æ—¶é—´
         
-        //ÏÂÃæÕâ3¸öÖ®ºóÉ¾µôà»£¬ÏÖÔÚ¾ÍÊÇ·½±ãµ÷ÊÔÊ±ºòÓÃÒ»ÏÂ
+        //ä¸‹é¢è¿™3ä¸ªä¹‹ååˆ æ‰å—·ï¼Œç°åœ¨å°±æ˜¯æ–¹ä¾¿è°ƒè¯•æ—¶å€™ç”¨ä¸€ä¸‹
         attackAllow = true;
         dodgeAllow = true;
     }
     void Update()
     {
-        //ÔË¶¯Ïà¹Ø
+        //è¿åŠ¨ç›¸å…³
         if (gameManager.playerCanMove)
         {
             if (!isTakeHit)
             {
-                if (Input.GetButtonDown("Jump"))//ÌøÔ¾±»°´ÏÂÊ±
+                if (Input.GetButtonDown("Jump"))//è·³è·ƒè¢«æŒ‰ä¸‹æ—¶
                 {
                     JumpPressed = true;
                 }
@@ -104,9 +106,9 @@ public class Player_Control : MonoBehaviour
                     }
                 }
             }
-            CheckHorzontalMove();//¼ì²âÒÆ¶¯µÄ·½Ïò
+            CheckHorzontalMove();//æ£€æµ‹ç§»åŠ¨çš„æ–¹å‘
             EnergyUpdate();
-            //¹¥»÷
+            //æ”»å‡»
             if (attackAllow)
                 AttackCheck();
         }
@@ -126,7 +128,7 @@ public class Player_Control : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         moveDir = h;
     }
-    void GroundMovement()//µØÃæÒÆ¶¯´úÂë
+    void GroundMovement()//åœ°é¢ç§»åŠ¨ä»£ç 
     {
         if(moveDir == 0)
         {
@@ -160,7 +162,7 @@ public class Player_Control : MonoBehaviour
         {
             IsJump = true;
 
-            isAttack = false;//ÌøÔ¾»á´ò¶Ïµ±Ç°¹¥»÷¶¯»­
+            isAttack = false;//è·³è·ƒä¼šæ‰“æ–­å½“å‰æ”»å‡»åŠ¨ç”»
 
             JumpTime = Time.time + JumpHoldDuration;
             Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
@@ -176,7 +178,7 @@ public class Player_Control : MonoBehaviour
             JumpPressed = false;
         }
     }
-    void Dodge()//¶ã±Ü
+    void Dodge()//èº²é¿
     {
         if(isDodge)
         {
@@ -190,7 +192,7 @@ public class Player_Control : MonoBehaviour
         dodge = true;
         energyBar.GetComponent<EnergyBarControl>().EnergyConsume(3);
     }
-    void AttackCheck()//¼ì²âÊÇ·ñÓĞ¹¥»÷ÊäÈë
+    void AttackCheck()//æ£€æµ‹æ˜¯å¦æœ‰æ”»å‡»è¾“å…¥
     {
         if (lastAttack + preAttackExist < Time.time)
         {
@@ -210,7 +212,7 @@ public class Player_Control : MonoBehaviour
             }
             
         }
-        //µ±Ã»ÓĞ°´¼üµ«ÊÇ´¦ÓÚÔ¤¹¥»÷×´Ì¬Ê±
+        //å½“æ²¡æœ‰æŒ‰é”®ä½†æ˜¯å¤„äºé¢„æ”»å‡»çŠ¶æ€æ—¶
         if(preAttack && energyLeft > 0 && canAttack && !isDodge && !dodge)
         {
             Attack();
@@ -218,10 +220,18 @@ public class Player_Control : MonoBehaviour
     }
     void Attack()
     {
-        energyBar.GetComponent<EnergyBarControl>().EnergyConsume(1);//ÏûºÄµÄÁ¿
+        energyBar.GetComponent<EnergyBarControl>().EnergyConsume(1);//æ¶ˆè€—çš„é‡
         attack = true;
         canAttack = false;
         preAttack = false;
+    }
+
+    public void JumpAttackLift()
+    {
+        if (physicsCheck.isGround || isDodge || isTakeHit)
+            return;
+
+        Rb.velocity = new Vector2(Rb.velocity.x, Mathf.Max(Rb.velocity.y, jumpAttackLiftSpeed));
     }
 
     void EnergyUpdate()
@@ -229,7 +239,7 @@ public class Player_Control : MonoBehaviour
         energyLeft = energyBar.GetComponent<EnergyBarControl>().energyLeft;
     }
 
-    void FaceDirection()//×ªÏò¿ØÖÆ
+    void FaceDirection()//è½¬å‘æ§åˆ¶
     {
         if (moveDir > 0) 
             facedirection = 1;
@@ -237,18 +247,18 @@ public class Player_Control : MonoBehaviour
             facedirection = -1;
         switch (facedirection)
         {
-            case 1: transform.localScale = new Vector2(1, 1); break;//³¯ÓÒ,Ê¹ÓÃsr.flipÎŞ·¨¸Ä±äÅö×²Ìå
-            case -1: transform.localScale = new Vector2(-1, 1); break;//³¯×ó
+            case 1: transform.localScale = new Vector2(1, 1); break;//æœå³,ä½¿ç”¨sr.flipæ— æ³•æ”¹å˜ç¢°æ’ä½“
+            case -1: transform.localScale = new Vector2(-1, 1); break;//æœå·¦
             default: break;
         }
     }
-    //ÊÜÉË¶¯»­ÒÔ¼°ÊÕµ½µÄ³å»÷´óĞ¡
+    //å—ä¼¤åŠ¨ç”»ä»¥åŠæ”¶åˆ°çš„å†²å‡»å¤§å°
     public void TakeHit(float smash, float attackerX)
     {
         float hitDir;
         hitDir = transform.position.x - attackerX;
         takeHit = true;
-        if (hitDir > 0)//ÊÕµ½ÏòÓÒ²àµÄ³å»÷
+        if (hitDir > 0)//æ”¶åˆ°å‘å³ä¾§çš„å†²å‡»
         {
             Rb.velocity = new Vector2(smash, Rb.velocity.y);
         }
@@ -262,7 +272,7 @@ public class Player_Control : MonoBehaviour
         float hitDir;
         hitDir = transform.position.x - attackerX;
         //isCounter = true;
-        if (hitDir > 0)//ÊÕµ½ÏòÓÒ²àµÄ³å»÷
+        if (hitDir > 0)//æ”¶åˆ°å‘å³ä¾§çš„å†²å‡»
         {
             Rb.velocity = new Vector2(smash, Rb.velocity.y);
         }
@@ -280,14 +290,14 @@ public class Player_Control : MonoBehaviour
             hitDir = transform.position.x - attackerX;
             getCatched = true;
             
-            if (hitDir > 0)//ÊÕµ½ÏòÓÒ²àµÄ³å»÷
+            if (hitDir > 0)//æ”¶åˆ°å‘å³ä¾§çš„å†²å‡»
                 facedirection = -1;
             else
                 facedirection = 1;
             switch (facedirection)
             {
-                case 1: transform.localScale = new Vector2(1, 1); break;//³¯ÓÒ,Ê¹ÓÃsr.flipÎŞ·¨¸Ä±äÅö×²Ìå
-                case -1: transform.localScale = new Vector2(-1, 1); break;//³¯×ó
+                case 1: transform.localScale = new Vector2(1, 1); break;//æœå³,ä½¿ç”¨sr.flipæ— æ³•æ”¹å˜ç¢°æ’ä½“
+                case -1: transform.localScale = new Vector2(-1, 1); break;//æœå·¦
                 default: break;
             }
 

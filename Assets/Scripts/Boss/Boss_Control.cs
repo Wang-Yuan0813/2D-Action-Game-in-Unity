@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Control : MonoBehaviour
+public class Boss_Control : EnemyBase
 {
     
     [Header("绑定组件及对象")]
@@ -156,19 +156,19 @@ public class Boss_Control : MonoBehaviour
         isCatchPlayer = false;
 
     }
-    public void TakeHit()
+    public override void TakeHit(int damage)
     {
         if(!cantHit)//处于非攻击状态时
         {
             TakeHitFX();
-            TakeHitHP();
+            TakeHitHP(damage);
         }
         else//处于攻击无敌帧时，背后可以遭受攻击
         {
             if(!isTakeHit &&(player.transform.position.x - transform.position.x) * facedirection <= 0)
             {
                 TakeHitFX();
-                TakeHitHP();
+                TakeHitHP(damage);
             }
         }
     }
@@ -176,14 +176,13 @@ public class Boss_Control : MonoBehaviour
     {
         isTakeHit = true;
         Instantiate(hitFX, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity, null);
-        cameraControl.GetComponent<Camera_Control>().HitPause(0.1f);
         StartCoroutine(TurnColor(0.2f));
         impulse.GenerateImpulse();
     }
 
-    public void TakeHitHP()
+    private void TakeHitHP(int damage)
     {
-
+        base.TakeHit(damage);
     }
 
     IEnumerator TurnColor(float duration)

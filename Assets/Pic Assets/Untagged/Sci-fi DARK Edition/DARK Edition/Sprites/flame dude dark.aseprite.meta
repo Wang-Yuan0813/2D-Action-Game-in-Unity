@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -1027,13 +1028,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -510452245
+    guid: -2035174569
     name: flame dude dark
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: flame dude dark_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -1042,7 +1043,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 3ff7e48839780da4583b634609e0ce1c
-    - name: flame dude dark_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -1051,7 +1052,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 1d60b6a469e9fa246a8c2020ab7ce3dc
-    - name: flame dude dark_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -1060,7 +1061,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: b29c0ed8ef227064a90948ca290a4f27
-    - name: flame dude dark_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -1069,7 +1070,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 36172e9e980c45042ad9c84589eac970
-    - name: flame dude dark_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -1078,7 +1079,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: e80fb71628a1342408a255481fdf3d8a
-    - name: flame dude dark_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -1087,7 +1088,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 15b143185bbdde841887ece78d7b09bd
-    - name: flame dude dark_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -1096,7 +1097,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: e170e279278b6f648ba8cf64011adadf
-    - name: flame dude dark_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -1105,7 +1106,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 6957852001ad48e47939afd9e6c522e0
-    - name: flame dude dark_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -1114,7 +1115,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a71c42494b185f848989cf19df6ebc58
-    - name: flame dude dark_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -1123,7 +1124,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: f43a11d0e255575458b7b8b2ca0c88eb
-    - name: flame dude dark_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -1132,7 +1133,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 0a7e2dca16786af4bac806be918f1669
-    - name: flame dude dark_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -1141,7 +1142,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 016e9845eb1f063429ba6029d6d49a0c
-    - name: flame dude dark_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -1150,7 +1151,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a9b2953684db1da4782ea6bfbc682bf8
-    - name: flame dude dark_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -1159,7 +1160,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: f37873c4cd85f194581d68a2146a0a09
-    - name: flame dude dark_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -1168,7 +1169,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: edc0ef2b94af9ed47963412cc5eef020
-    - name: flame dude dark_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -1177,7 +1178,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: fc0b2e0b73c83ba43a3a1c3b501ea6a3
-    - name: flame dude dark_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -1186,7 +1187,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: e4d82947067d0ad4aa4e6a735618b534
-    - name: flame dude dark_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -1195,7 +1196,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: e24251b440a81924eb7378f7c446ee49
-    - name: flame dude dark_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -1204,7 +1205,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 82a2ebd212e5b2046ab54d121057d48d
-    - name: flame dude dark_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1213,7 +1214,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 16bb4accee6b83b43a894a1699f32214
-    - name: flame dude dark_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1222,7 +1223,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 46c9a4fd3da132542ac53e4803466a54
-    - name: flame dude dark_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1231,7 +1232,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 65975b50de2c4c545b645fb9a5274e06
-    - name: flame dude dark_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1240,7 +1241,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: e20c2aef9909b1f4ebabe5c768ad356c
-    - name: flame dude dark_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1249,7 +1250,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 95ce05330693d27449ebaa089d12babe
-    - name: flame dude dark_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1258,7 +1259,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: f3f4814175364cd48b1cda3918a5597f
-    - name: flame dude dark_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1267,7 +1268,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 0ecf40edbcb846a45be9ffe9d0093893
-    - name: flame dude dark_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1276,7 +1277,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 7d0a537aed23410468141df12727cfde
-    - name: flame dude dark_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1285,7 +1286,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 0c05ac7c4c91bb14c806f0a9d1391814
-    - name: flame dude dark_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1294,7 +1295,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a6c626f341196ab40bb9a3f8137142ef
-    - name: flame dude dark_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1303,7 +1304,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: c14f78c48e01f9844adcb19c48faa758
-    - name: flame dude dark_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1312,7 +1313,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: d62595c22f5045c4b9025021ee701941
-    - name: flame dude dark_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1321,7 +1322,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 198f70f84c4e2b84988fa45842f5a20e
-    - name: flame dude dark_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1330,7 +1331,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 45256859c24db1844a9fe1d6a9ebb7c1
-    - name: flame dude dark_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1339,7 +1340,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 0780b4674620fe64eb19cbbfd0e45df9
-    - name: flame dude dark_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1348,7 +1349,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: c5434b1951044f348824a801affbadea
-    - name: flame dude dark_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
@@ -1357,7 +1358,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 677b440744f0d0d4690195afaeb75ff2
-    - name: flame dude dark_Frame_36
+    - name: Frame_36
       frameIndex: 36
       additiveSortOrder: 0
       cellRect:
@@ -1366,7 +1367,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 57b61091a3df2e64cbd6bcb40ebde1b8
-    - name: flame dude dark_Frame_37
+    - name: Frame_37
       frameIndex: 37
       additiveSortOrder: 0
       cellRect:
@@ -1375,7 +1376,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 01b098df6d50cf9469b60fd21c096948
-    - name: flame dude dark_Frame_38
+    - name: Frame_38
       frameIndex: 38
       additiveSortOrder: 0
       cellRect:
@@ -1384,7 +1385,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: faa1bd87a86403548b67c2e499ff6eb5
-    - name: flame dude dark_Frame_39
+    - name: Frame_39
       frameIndex: 39
       additiveSortOrder: 0
       cellRect:
@@ -1393,7 +1394,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 86a22cc47fc38214ab241337aca0cd0b
-    - name: flame dude dark_Frame_40
+    - name: Frame_40
       frameIndex: 40
       additiveSortOrder: 0
       cellRect:
@@ -1402,7 +1403,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 00f4d523af84457429f7dbbd53f6a303
-    - name: flame dude dark_Frame_41
+    - name: Frame_41
       frameIndex: 41
       additiveSortOrder: 0
       cellRect:
@@ -1411,7 +1412,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: fe6b603641073ff4589d0ab4d439a916
-    - name: flame dude dark_Frame_42
+    - name: Frame_42
       frameIndex: 42
       additiveSortOrder: 0
       cellRect:
@@ -1420,7 +1421,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: a7b0dbe3e4a88f64b823cb1a37df6d69
-    - name: flame dude dark_Frame_43
+    - name: Frame_43
       frameIndex: 43
       additiveSortOrder: 0
       cellRect:
@@ -1429,7 +1430,7 @@ ScriptedImporter:
         width: 192
         height: 192
       spriteId: 8cb5ebe1ccc859243bfc172badfd6cff
-    - name: flame dude dark_Frame_44
+    - name: Frame_44
       frameIndex: 44
       additiveSortOrder: 0
       cellRect:
@@ -1445,3 +1446,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 94, y: 64}
+  previousTextureSize: {x: 1024, y: 2048}

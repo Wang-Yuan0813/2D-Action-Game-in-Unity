@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -927,13 +928,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1649701952
+    guid: 1218341568
     name: Hell Bot Dark
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Hell Bot Dark_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -942,7 +943,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: a3c195132e1e14843afcac12d56e7aa2
-    - name: Hell Bot Dark_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -951,7 +952,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: 7da2e2b114466264d8391fd122273caf
-    - name: Hell Bot Dark_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -960,7 +961,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: f1ead047795374d4da54e46aaf225454
-    - name: Hell Bot Dark_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -969,7 +970,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: 174aef7809fc2484dbd76fbd9742e997
-    - name: Hell Bot Dark_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -978,7 +979,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: b774e5d34d73c56419c7370ed756c413
-    - name: Hell Bot Dark_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -987,7 +988,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: 261682ac84da1034f921fef63d60343d
-    - name: Hell Bot Dark_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -996,7 +997,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: fe34e1e414d5f7b498227b78506c52ef
-    - name: Hell Bot Dark_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -1005,7 +1006,7 @@ ScriptedImporter:
         width: 25
         height: 28
       spriteId: a81bea5bdfb85314ba3a24bc1cafa1e9
-    - name: Hell Bot Dark_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -1014,7 +1015,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: 3ee314037e344d24fa39595c453f63f5
-    - name: Hell Bot Dark_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -1023,7 +1024,7 @@ ScriptedImporter:
         width: 23
         height: 27
       spriteId: 2f774390da313cb41b1047a44f84574c
-    - name: Hell Bot Dark_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -1032,7 +1033,7 @@ ScriptedImporter:
         width: 25
         height: 27
       spriteId: ff7b3ed00b0286c4e87cdaea506587be
-    - name: Hell Bot Dark_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -1041,7 +1042,7 @@ ScriptedImporter:
         width: 27
         height: 28
       spriteId: 5d624bc6704e9174bacf75bf000cd151
-    - name: Hell Bot Dark_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -1050,7 +1051,7 @@ ScriptedImporter:
         width: 24
         height: 28
       spriteId: c892e70b85ec9974da240d3ec1a09314
-    - name: Hell Bot Dark_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -1059,7 +1060,7 @@ ScriptedImporter:
         width: 25
         height: 27
       spriteId: 96bc4bdba62447a4c92731aab78c7ae6
-    - name: Hell Bot Dark_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -1068,7 +1069,7 @@ ScriptedImporter:
         width: 27
         height: 28
       spriteId: fa85cc93cac48f1419a7da023419a8e3
-    - name: Hell Bot Dark_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -1077,7 +1078,7 @@ ScriptedImporter:
         width: 85
         height: 29
       spriteId: 1ceda0436ccecf94b99e6066809e5813
-    - name: Hell Bot Dark_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -1086,7 +1087,7 @@ ScriptedImporter:
         width: 85
         height: 29
       spriteId: 3fdb2412327e78d469f88d49b8bf41f3
-    - name: Hell Bot Dark_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -1095,7 +1096,7 @@ ScriptedImporter:
         width: 83
         height: 29
       spriteId: ad1bb5cc695ba6f4a91348fc499259f5
-    - name: Hell Bot Dark_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -1104,7 +1105,7 @@ ScriptedImporter:
         width: 82
         height: 29
       spriteId: d730e027c19261146a04f5d98b3fbe8d
-    - name: Hell Bot Dark_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1113,7 +1114,7 @@ ScriptedImporter:
         width: 65
         height: 29
       spriteId: da5fc25278a005b4ba5e50333492d882
-    - name: Hell Bot Dark_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1122,7 +1123,7 @@ ScriptedImporter:
         width: 65
         height: 29
       spriteId: 2ccad802ac64a4a4c95d58e2945e49aa
-    - name: Hell Bot Dark_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1131,7 +1132,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: 52a80f7992db03140872ee4449cfd93e
-    - name: Hell Bot Dark_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1140,7 +1141,7 @@ ScriptedImporter:
         width: 22
         height: 28
       spriteId: eabb59ed46378454294b86bf13dd8bc2
-    - name: Hell Bot Dark_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1149,7 +1150,7 @@ ScriptedImporter:
         width: 30
         height: 30
       spriteId: 8f7f54e418aeb92438e65dca9ca14bf2
-    - name: Hell Bot Dark_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1158,7 +1159,7 @@ ScriptedImporter:
         width: 33
         height: 31
       spriteId: 219868d83c06cf14283686755cab3b53
-    - name: Hell Bot Dark_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1167,7 +1168,7 @@ ScriptedImporter:
         width: 33
         height: 31
       spriteId: 1fe9fa5ccea515e43932a8e8932472de
-    - name: Hell Bot Dark_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1176,7 +1177,7 @@ ScriptedImporter:
         width: 37
         height: 28
       spriteId: bd499a301c69034459b075ef70103f02
-    - name: Hell Bot Dark_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1185,7 +1186,7 @@ ScriptedImporter:
         width: 35
         height: 29
       spriteId: 8ca5f032a33c40f4794cfd221cc7a27b
-    - name: Hell Bot Dark_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1194,7 +1195,7 @@ ScriptedImporter:
         width: 34
         height: 29
       spriteId: 5f3845a86ee5f3e49b4a269e042fa87b
-    - name: Hell Bot Dark_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1203,7 +1204,7 @@ ScriptedImporter:
         width: 20
         height: 28
       spriteId: 030216592a2dfd044813ebd5bddb8e70
-    - name: Hell Bot Dark_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1212,7 +1213,7 @@ ScriptedImporter:
         width: 20
         height: 28
       spriteId: ee60b50458bbb3e479aafd9ccf483fd1
-    - name: Hell Bot Dark_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1221,7 +1222,7 @@ ScriptedImporter:
         width: 20
         height: 28
       spriteId: 16339256de16d5840ad3cda8b8bbaba6
-    - name: Hell Bot Dark_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1230,7 +1231,7 @@ ScriptedImporter:
         width: 23
         height: 28
       spriteId: d8ebf97131381754ab94c85005cfe14b
-    - name: Hell Bot Dark_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1239,7 +1240,7 @@ ScriptedImporter:
         width: 23
         height: 28
       spriteId: dbefe9325a66dbd4d9c74748aa57cd61
-    - name: Hell Bot Dark_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1248,7 +1249,7 @@ ScriptedImporter:
         width: 21
         height: 28
       spriteId: c6ee7787caefabc4a8494e3abc6db75c
-    - name: Hell Bot Dark_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
@@ -1257,7 +1258,7 @@ ScriptedImporter:
         width: 71
         height: 33
       spriteId: 750950ec93166e642bda7ddccec40096
-    - name: Hell Bot Dark_Frame_36
+    - name: Frame_36
       frameIndex: 36
       additiveSortOrder: 0
       cellRect:
@@ -1266,7 +1267,7 @@ ScriptedImporter:
         width: 70
         height: 34
       spriteId: 8e2cc071536de0946bd03e2ac481f846
-    - name: Hell Bot Dark_Frame_37
+    - name: Frame_37
       frameIndex: 37
       additiveSortOrder: 0
       cellRect:
@@ -1275,7 +1276,7 @@ ScriptedImporter:
         width: 68
         height: 34
       spriteId: abe53a151ac0bf642ad9c25f2cab4d58
-    - name: Hell Bot Dark_Frame_38
+    - name: Frame_38
       frameIndex: 38
       additiveSortOrder: 0
       cellRect:
@@ -1284,7 +1285,7 @@ ScriptedImporter:
         width: 68
         height: 34
       spriteId: fb290644b5ca16e4cb86c2797da8a145
-    - name: Hell Bot Dark_Frame_39
+    - name: Frame_39
       frameIndex: 39
       additiveSortOrder: 0
       cellRect:
@@ -1300,3 +1301,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 92, y: 36}
+  previousTextureSize: {x: 256, y: 512}

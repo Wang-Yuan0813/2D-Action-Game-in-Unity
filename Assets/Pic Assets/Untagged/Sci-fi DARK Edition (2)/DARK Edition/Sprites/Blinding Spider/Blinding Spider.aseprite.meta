@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -567,13 +568,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -528302160
+    guid: -672081296
     name: Blinding Spider
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Blinding Spider_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -582,7 +583,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 44e56abc689654a40bd262dc2d44c081
-    - name: Blinding Spider_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -591,7 +592,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: e7f54249d2b188242bcdd9f655254b93
-    - name: Blinding Spider_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -600,7 +601,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 83ae4021ccff7ef4a82b78ee0e418848
-    - name: Blinding Spider_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -609,7 +610,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 7aa39d98b857d024bb05d23bff8c7db6
-    - name: Blinding Spider_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -618,7 +619,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: af6b17f928216ee4eac5844775c5067b
-    - name: Blinding Spider_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -627,7 +628,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: dccdf429664ff7e409924bef51f95d2f
-    - name: Blinding Spider_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -636,7 +637,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 4ea4450a6ffa06849aedb50e561d9cbd
-    - name: Blinding Spider_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -645,7 +646,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 1a0c5c8377204c04195331083abc9802
-    - name: Blinding Spider_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -654,7 +655,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 6d3d427010854ee4183d76de90f16f1a
-    - name: Blinding Spider_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -663,7 +664,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: ff39c2b9091c7bf4787b44683e91b51d
-    - name: Blinding Spider_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -672,7 +673,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: a6b1b15007446ef42aa5ac48664d04d8
-    - name: Blinding Spider_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -681,7 +682,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 87fc234c158d28741b70cae7f527d501
-    - name: Blinding Spider_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -690,7 +691,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 358c72abc3492e945bba19f5d13585fb
-    - name: Blinding Spider_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -699,7 +700,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 69a06d8343f5d3640a1c3747632204ea
-    - name: Blinding Spider_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -708,7 +709,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 73d3b255cd554eb4bae8acf31c787964
-    - name: Blinding Spider_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -717,7 +718,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 100c786e8ada87642ad96b011d29e87b
-    - name: Blinding Spider_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -726,7 +727,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 3f840122379c2884288c292511663fd1
-    - name: Blinding Spider_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -735,7 +736,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: d50453a5fa23ca9439ffc317c82f08bc
-    - name: Blinding Spider_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -744,7 +745,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 1dfd1114f85fe594188a610f2a61061f
-    - name: Blinding Spider_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -753,7 +754,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: 6ae53a9b118c1d64489028e32857029b
-    - name: Blinding Spider_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -762,7 +763,7 @@ ScriptedImporter:
         width: 20
         height: 18
       spriteId: c8534cf02e14e5a46a0816560caae866
-    - name: Blinding Spider_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -778,3 +779,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 128, y: 256}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -427,13 +428,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1910036562
+    guid: -1670869018
     name: door
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: door_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +443,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: 56916278cb8d9f64b93ac468ae9a83f3
-    - name: door_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +452,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: afdcbb888eb25634196c2d30d935539f
-    - name: door_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +461,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: 942dfdc8435ebe34fbc575d7f1773efd
-    - name: door_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +470,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: 2565bcd1ec81b284aaefd1e209cd1dce
-    - name: door_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -478,7 +479,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: 7ea01ee5b58b859468a226e10c63aaaf
-    - name: door_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -487,7 +488,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: b464503cead95f84eb7be5c039dc16e3
-    - name: door_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -496,7 +497,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: f5b9607ef97f2c447bfd08c6473ccc4a
-    - name: door_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -505,7 +506,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: f7b5970f736502a4aa18e159b02c5a32
-    - name: door_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -514,7 +515,7 @@ ScriptedImporter:
         width: 31
         height: 48
       spriteId: a8c6e50e626b58a44afb7b9fd4b6ab60
-    - name: door_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -523,7 +524,7 @@ ScriptedImporter:
         width: 37
         height: 48
       spriteId: 81264885489ece942b96aa00491e7e01
-    - name: door_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -532,7 +533,7 @@ ScriptedImporter:
         width: 39
         height: 48
       spriteId: 5a2947780df5b4c448235860e5e200ad
-    - name: door_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -541,7 +542,7 @@ ScriptedImporter:
         width: 41
         height: 48
       spriteId: dd7f4b2d3b717584c9c4a9c70ab7c465
-    - name: door_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -550,7 +551,7 @@ ScriptedImporter:
         width: 35
         height: 48
       spriteId: c13702aa1e1d17441b24c4b61b8db694
-    - name: door_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -559,7 +560,7 @@ ScriptedImporter:
         width: 7
         height: 48
       spriteId: 17f75d1e8c2e55b4685c548a7dd36274
-    - name: door_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -575,3 +576,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 41, y: 48}
+  previousTextureSize: {x: 128, y: 256}
