@@ -5,15 +5,15 @@ using UnityEngine;
 public class ShadowPool : MonoBehaviour
 {
     public static ShadowPool instance;
-    [Header("残影数量")]
+    [Header("娈嬪奖鏁伴噺")]
     public int shadowCount;
-    private Queue<GameObject> availableObjects = new Queue<GameObject>();//对象队列
+    private Queue<GameObject> availableObjects = new Queue<GameObject>();//瀵硅薄闃熷垪
     private GameObject shadowPrefab;
     private void Awake()
     {
         shadowPrefab = Resources.Load<GameObject>("FXPref/Shadow");
         instance = this;
-        //初始化对象池
+        //鍒濆鍖栧璞℃睜
         FillPool();
     }
     public void FillPool()
@@ -22,7 +22,7 @@ public class ShadowPool : MonoBehaviour
         {
             var newShadow = Instantiate(shadowPrefab);
             newShadow.transform.SetParent(transform);
-            //取消启用，返回对象池
+            //鍙栨秷鍚敤锛岃繑鍥炲璞℃睜
             ReturnPool(newShadow);
         }
     }

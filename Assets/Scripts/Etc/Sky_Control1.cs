@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sky_Control1 : MonoBehaviour
 {
-    [Header("¶ÔÏó°ó¶¨")]
+    [Header("å¯¹è±¡ç»‘å®š")]
     public GameObject Player;
     // Start is called before the first frame update
     void Start()

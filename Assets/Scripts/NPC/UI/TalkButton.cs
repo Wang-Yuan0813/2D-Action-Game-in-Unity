@@ -20,7 +20,7 @@ public class TalkButton : MonoBehaviour
     public void SelectThisChoice()
     {
         DialogueManager.GetInstance().CloseAllButtonChosenBlock();
-        Debug.Log("选中的按钮：" + this.transform.Find("Text").gameObject.GetComponent<Text>().text);
+        Debug.Log("閫変腑鐨勬寜閽細" + this.transform.Find("Text").gameObject.GetComponent<Text>().text);
 
         this.transform.Find("ChosenBlock").gameObject.SetActive(true);
         Color buttonColor = this.GetComponent<Image>().color;

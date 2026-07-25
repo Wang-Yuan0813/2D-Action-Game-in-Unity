@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Text dialogueText;
     [SerializeField] private Button buttonPrefab;
-    [SerializeField] private GameObject buttonContainer;//Õâ¸öÓÃÓÚ·ÅÖÃ°´Å¥
+    [SerializeField] private GameObject buttonContainer;//è¿™ä¸ªç”¨äºæ”¾ç½®æŒ‰é’®
     private static DialogueManager instance;
     private bool dialogueIsPlaying;
     private Story currentStory;
@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         GameManager.GetInstance().playerCanMove = true;
         currentNPC.GetComponent<NPC_Control>().StopDialogue();
 
-        //Ê¹ÓÃĞ­³ÌÀ´±ÜÃâ¶Ô»°½áÊøºóÓÖÑ¸ËÙ¿ªÆô
+        //ä½¿ç”¨åç¨‹æ¥é¿å…å¯¹è¯ç»“æŸååˆè¿…é€Ÿå¼€å¯
         StartCoroutine(ChangeDialogueStute());
         dialoguePanel.SetActive(false);
  
@@ -81,10 +81,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            //ÏÈÇå¿ÕÄÚÈİ
+            //å…ˆæ¸…ç©ºå†…å®¹
             RemoveButtonandText();
             dialogueText.text = currentStory.Continue();
-            if(dialogueText.text == "")//¿Õ°×Ê±Ö±½Ó½áÊø¶Ô»°
+            if(dialogueText.text == "")//ç©ºç™½æ—¶ç›´æ¥ç»“æŸå¯¹è¯
             {
                 ExitDialogueMode();
                 return;
@@ -100,13 +100,13 @@ public class DialogueManager : MonoBehaviour
             ExitDialogueMode();
         }
     }
-    public bool DialogueIsPlaying//ÓÃ»§ÆäËû½Å±¾µ÷È¡
+    public bool DialogueIsPlaying//ç”¨æˆ·å…¶ä»–è„šæœ¬è°ƒå–
     {
         get { return dialogueIsPlaying; }
     }
     IEnumerator ChangeDialogueStute()
     {
-        yield return null;//µÈ´ıÒ»Ö¡
+        yield return null;//ç­‰å¾…ä¸€å¸§
         dialogueIsPlaying = !dialogueIsPlaying;
     }
     void RemoveButtonandText()
@@ -136,7 +136,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choice.index);
         ContinueStory();
     }
-    public void CloseAllButtonChosenBlock()//¹Ø±ÕËùÓĞ°´Å¥µÄÑ¡ÖĞ×´Ì¬
+    public void CloseAllButtonChosenBlock()//å…³é—­æ‰€æœ‰æŒ‰é’®çš„é€‰ä¸­çŠ¶æ€
     {
         
         for (int i = 0; i < buttonContainer.transform.childCount; i++)
@@ -158,9 +158,13 @@ public class DialogueManager : MonoBehaviour
                 OnClickChoiceButton(choice);
             });
         }
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            buttonContainer.GetComponent<RectTransform>());
+
         CloseAllButtonChosenBlock();
-        //Ñ¡ÔñµÚÒ»¸ö°´Å¥
-        EventSystem.current.SetSelectedGameObject(null);//Çå³ıÑ¡ÖĞµÄ¶ÔÏó
+        //é€‰æ‹©ç¬¬ä¸€ä¸ªæŒ‰é’®
+        EventSystem.current.SetSelectedGameObject(null);//æ¸…é™¤é€‰ä¸­çš„å¯¹è±¡
         EventSystem.current.SetSelectedGameObject(buttonContainer.transform.GetChild(0).gameObject);
         isChoosing = true;
     }

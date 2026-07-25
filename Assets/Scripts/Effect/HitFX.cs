@@ -12,7 +12,7 @@ public class HitFX : MonoBehaviour
         type = Random.Range(1, 4);
         anim.SetInteger("type", type);
     }
-    public void AnimStart()//ÕâÀï¼ÓÁËÒ»µãÔëÉù£¬Ä¿µÄÊÇÈÃÌØĞ§³öÏÖµÄÎ»ÖÃÂÔÎ¢²»Ò»ÑùÒ»µã
+    public void AnimStart()//è¿™é‡ŒåŠ äº†ä¸€ç‚¹å™ªå£°ï¼Œç›®çš„æ˜¯è®©ç‰¹æ•ˆå‡ºç°çš„ä½ç½®ç•¥å¾®ä¸ä¸€æ ·ä¸€ç‚¹
     {
         float noisy_x = Random.Range(-0.8f, 0.8f);
         float noisy_y = Random.Range(-0.1f, 0.1f);

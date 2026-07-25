@@ -16,12 +16,12 @@ public class InventoryManager : MonoBehaviour
         instance.itemInformation.text = "";
     }
 
-    public static void UpdateItemInfo(string itemDescription)//¸üĞÂĞÅÏ¢¿òÄÚÈİ
+    public static void UpdateItemInfo(string itemDescription)//æ›´æ–°ä¿¡æ¯æ¡†å†…å®¹
     {
         instance.itemInformation.text = itemDescription;
     }
 
-    public static void CloseChosenBlock()//¹Ø±ÕËùÓĞµÄÑ¡ÖĞ¿ò
+    public static void CloseChosenBlock()//å…³é—­æ‰€æœ‰çš„é€‰ä¸­æ¡†
     {
         for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
             instance.slotGrid.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject.SetActive(false);
@@ -34,7 +34,7 @@ public class InventoryManager : MonoBehaviour
         instance = this;
     }
 
-    public static void CreateNewItem(Item item, int i)//´´Ôì±³°üÎïÆ·-new
+    public static void CreateNewItem(Item item, int i)//åˆ›é€ èƒŒåŒ…ç‰©å“-new
     {
         Slot newItem = instance.slotGrid.transform.GetChild(i).gameObject.GetComponent<Slot>();
         newItem.slotItem = item;
@@ -43,7 +43,7 @@ public class InventoryManager : MonoBehaviour
 
 
     }
-    public static void RefreshItem()//Ë¢ĞÂÎïÆ·-new
+    public static void RefreshItem()//åˆ·æ–°ç‰©å“-new
     {
         for (int i = 1; i < instance.slotGrid.transform.childCount; i++)
         {

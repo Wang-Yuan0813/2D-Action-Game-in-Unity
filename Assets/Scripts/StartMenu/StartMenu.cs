@@ -20,11 +20,11 @@ public class StartMenu : MonoBehaviour
 
     private void Start()
     {
-        EventSystem.current.SetSelectedGameObject(null);//Çå³ýÑ¡ÖÐµÄ¶ÔÏó
+        EventSystem.current.SetSelectedGameObject(null);//æ¸…é™¤é€‰ä¸­çš„å¯¹è±¡
         EventSystem.current.SetSelectedGameObject(firstChose);
     }
 
-    public static void CloseChosenBlock()//¹Ø±ÕËùÓÐµÄÑ¡ÖÐ¿ò
+    public static void CloseChosenBlock()//å…³é—­æ‰€æœ‰çš„é€‰ä¸­æ¡†
     {
         for (int i = 0; i < instance.buttons.transform.childCount; i++)
         {

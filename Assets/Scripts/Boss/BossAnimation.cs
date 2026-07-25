@@ -7,7 +7,7 @@ public class BossAnimation : MonoBehaviour
     private Boss_Control boss_Control;
     private Animator anim;
     private Rigidbody2D rb;
-    public int maxAttackTypes;//IdleAttackµÄ¹¥»÷¶¯»­ÓĞ¼¸ÖÖ
+    public int maxAttackTypes;//IdleAttackçš„æ”»å‡»åŠ¨ç”»æœ‰å‡ ç§
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class BossAnimation : MonoBehaviour
         boss_Control.isTeleport = false;
         rb.velocity = Vector2.zero;
     }
-    //²âÊÔÓÃ¹¥»÷º¯Êı
+    //æµ‹è¯•ç”¨æ”»å‡»å‡½æ•°
     public void AttackStart()
     {
         boss_Control.isWalk = false;

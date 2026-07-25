@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BossBloodBoom : MonoBehaviour
 {
-    [Header("¹¥»÷ÊôĞÔ")]
+    [Header("æ”»å‡»å±æ€§")]
     public float smash;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))//¹¥»÷ÃüÖĞÁËÍæ¼Ò¶ÔÏó£¬ĞèÒªÔÚÕâÀïÅĞ¶¨Ò»ÏÂÊÇ·ñÓĞ¹¥»÷
+        if (other.gameObject.CompareTag("Player"))//æ”»å‡»å‘½ä¸­äº†ç©å®¶å¯¹è±¡ï¼Œéœ€è¦åœ¨è¿™é‡Œåˆ¤å®šä¸€ä¸‹æ˜¯å¦æœ‰æ”»å‡»
         {
             GameObject Player = other.gameObject;
-            Player.GetComponent<Player_Control>().TakeHit(smash, transform.position.x);//µ÷ÓÃµĞÈËÊÜÉËº¯Êı£¬´«µİÉËº¦²ÎÊıÓë¹¥»÷ÕßÎ»ÖÃ
+            Player.GetComponent<Player_Control>().TakeHit(smash, transform.position.x);//è°ƒç”¨æ•Œäººå—ä¼¤å‡½æ•°ï¼Œä¼ é€’ä¼¤å®³å‚æ•°ä¸æ”»å‡»è€…ä½ç½®
         }
     }
     public void AnimEnd()

@@ -11,9 +11,9 @@ public class Camera_Control : MonoBehaviour
         Time.timeScale = 1;
     }
     /// <summary>
-    /// 攻击顿帧时间控制
+    /// 鏀诲嚮椤垮抚鏃堕棿鎺у埗
     /// </summary>
-    /// <param name="duration">顿帧持续时间，秒</param>
+    /// <param name="duration">椤垮抚鎸佺画鏃堕棿锛岀</param>
     public void HitPause(float duration)
     {
        StartCoroutine(Pause(duration));

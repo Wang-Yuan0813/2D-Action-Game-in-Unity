@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TextBox : MonoBehaviour
 {
-    [Header("ÎÄ±¾¿òµ÷Õû")]
+    [Header("æ–‡æœ¬æ¡†è°ƒæ•´")]
     public float height;
     public float weight;
     // Start is called before the first frame update

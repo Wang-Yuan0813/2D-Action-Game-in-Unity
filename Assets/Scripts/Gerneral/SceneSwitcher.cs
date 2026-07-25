@@ -7,7 +7,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public string sceneName;
     public float delay = 3f;
-    public List<GameObject> gameObjectsToStayAlive;//ÇĞ»»ºóÒª±£´æµÄ¶ÔÏó
+    public List<GameObject> gameObjectsToStayAlive;//åˆ‡æ¢åè¦ä¿å­˜çš„å¯¹è±¡
     private float startTime = 0f;
     private bool isSwitching = false;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class SceneSwitcher : MonoBehaviour
         if(Input.GetKeyDown("1")&&!isSwitching)
         {
             startTime = Time.time;
-            Debug.Log("3sºóÇĞ»»");
+            Debug.Log("3sååˆ‡æ¢");
             isSwitching = true;
         }
         if (isSwitching)
@@ -30,7 +30,7 @@ public class SceneSwitcher : MonoBehaviour
             float elapsedTime = Time.time - startTime;
             if (elapsedTime >= delay)
             {
-                SceneManager.LoadScene(sceneName);//»á×Ô¶¯Ğ¶ÔØÇ°ÃæµÄ³¡¾°
+                SceneManager.LoadScene(sceneName);//ä¼šè‡ªåŠ¨å¸è½½å‰é¢çš„åœºæ™¯
                 isSwitching = false;
             }
         }

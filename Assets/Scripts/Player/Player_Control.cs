@@ -23,6 +23,7 @@ public class Player_Control : MonoBehaviour
     public float JumpHoldDuration;//0.05
     [Header("跳跃攻击参数")]
     [SerializeField] private float jumpAttackLiftSpeed = 6f;
+    [SerializeField, Min(0.1f)] private float jumpAttackFailSafeDuration = 0.75f;
     [Header("跳跃检测属性")]
     public bool JumpPressed;
     public bool JumpHeld;//长按跳跃键
@@ -46,6 +47,7 @@ public class Player_Control : MonoBehaviour
 
     private float preAttackExist;
     private float lastAttack = -10f;
+    private float jumpAttackEndTime;
 
     [Header("受伤属性")]
     public bool cantHit;
@@ -83,6 +85,8 @@ public class Player_Control : MonoBehaviour
     }
     void Update()
     {
+        UpdateJumpAttackState();
+
         //运动相关
         if (gameManager.playerCanMove)
         {
@@ -232,6 +236,41 @@ public class Player_Control : MonoBehaviour
             return;
 
         Rb.velocity = new Vector2(Rb.velocity.x, Mathf.Max(Rb.velocity.y, jumpAttackLiftSpeed));
+    }
+
+    public void BeginJumpAttack()
+    {
+        attack = false;
+        isJumpAttack = true;
+        jumpAttackEndTime = Time.time + jumpAttackFailSafeDuration;
+    }
+
+    public void EndJumpAttack()
+    {
+        if (!isJumpAttack)
+            return;
+
+        isJumpAttack = false;
+        isAttack = false;
+        attack = false;
+        attackValid = false;
+        preAttack = false;
+
+        if (!isDodge && !dodge && !isTakeHit)
+        {
+            canAttack = true;
+        }
+    }
+
+    private void UpdateJumpAttackState()
+    {
+        if (!isJumpAttack)
+            return;
+
+        if ((physicsCheck != null && physicsCheck.isGround) || Time.time >= jumpAttackEndTime)
+        {
+            EndJumpAttack();
+        }
     }
 
     void EnergyUpdate()

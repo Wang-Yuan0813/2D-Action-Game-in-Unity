@@ -20,9 +20,9 @@ public class ItemOnWorld : MonoBehaviour
     {
         if (!playInventory.itemList.Contains(thisItem))
         {
-            for(int i = 1; i < 8; i++)//因为只有8个槽位，偷懒
+            for(int i = 1; i < 8; i++)//鍥犱负鍙湁8涓Ы浣嶏紝鍋锋噿
             {
-                if (playInventory.itemList[i].isEmpty)//替换
+                if (playInventory.itemList[i].isEmpty)//鏇挎崲
                 {
                     playInventory.itemList[i] = thisItem;
                     break;

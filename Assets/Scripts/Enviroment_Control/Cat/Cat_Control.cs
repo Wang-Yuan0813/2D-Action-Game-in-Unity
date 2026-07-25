@@ -1,91 +1,175 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cat_Control : MonoBehaviour
 {
-    [Header("��������")]
+    [Header("属性设置")]
     public float walkSpeed;
     public float runSpeed;
     public float idleRange;
     public float walkRange;
-    [Header("��������")]
+
+    [Header("传送设置")]
+    [SerializeField] private float teleportDistance = 12f;
+    [SerializeField] private float teleportOffset = 2f;
+    [SerializeField] private float groundCheckHeight = 4f;
+    [SerializeField] private float groundCheckDistance = 8f;
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("公共变量")]
     public bool idle;
     public bool walk;
     public bool run;
-
-    private Animator anim;
-    private GameObject player;
     public float distance;
-    private bool isWalk;
-    private bool isRun;
-    private int facedirection;
+    public bool isFollowingPlayer;
+
+    private GameObject player;
     private Rigidbody2D rb;
-    private float idleLastTime;
-    public bool isIdle;
-    // Start is called before the first frame update
-    void Start()
+    private Collider2D catCollider;
+    private int facedirection;
+    
+
+    private void Awake()
     {
-        player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        catCollider = GetComponent<Collider2D>();
+
+        if (groundLayer.value == 0)
+        {
+            groundLayer = LayerMask.GetMask("Ground");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {        
+    private void Start()
+    {
+        FindPlayer();
+        SetIdle();
+    }
+
+    private void Update()
+    {
+        if (player == null && !FindPlayer())
+        {
+            SetIdle();
+            return;
+        }
+
+        if (!isFollowingPlayer)
+        {
+            SetIdle();
+            return;
+        }
+
         distance = transform.position.x - player.transform.position.x;
-        
+
+        if (Mathf.Abs(distance) > teleportDistance && TeleportNearPlayer())
+        {
+            distance = transform.position.x - player.transform.position.x;
+        }
+
         Movement();
     }
-    
+
     /// <summary>
-    /// �������
+    /// 开始跟随玩家。未调用此函数时，猫会停留在原地。
+    /// </summary>
+    public void StartFollowingPlayer()
+    {
+        isFollowingPlayer = true;
+    }
+
+    /// <summary>
+    /// 停止跟随玩家，并立即进入静止状态。
+    /// </summary>
+    public void StopFollowingPlayer()
+    {
+        isFollowingPlayer = false;
+        SetIdle();
+    }
+
+    private bool FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+
+        return player != null;
+    }
+
+    /// <summary>
+    /// 面向玩家。
     /// </summary>
     public void FaceDirection()
     {
-        if (distance <= 0)
-            facedirection = 1;
-        else
-            facedirection = -1;
-        switch (facedirection)
-        {
-            case 1: transform.localScale = new Vector2(1, 1); break;
-            case -1: transform.localScale = new Vector2(-1, 1); break;
-            default: break;
-        }
+        facedirection = distance <= 0 ? 1 : -1;
+        transform.localScale = new Vector2(facedirection, 1);
     }
+
     private void Movement()
     {
         FaceDirection();
-        if (Mathf.Abs(distance)<=idleRange)
+
+        if (Mathf.Abs(distance) <= idleRange)
         {
-            rb.velocity = new Vector2(0, 0);
-            idle = true;
-            walk = false;
-            run = false;
-            
+            SetIdle();
         }
-        else if(Mathf.Abs(distance) <= walkRange)
-        { 
-            rb.velocity = new Vector2(walkSpeed * facedirection, 0);
+        else if (Mathf.Abs(distance) <= walkRange)
+        {
+            rb.velocity = new Vector2(walkSpeed * facedirection, rb.velocity.y);
             idle = false;
             walk = true;
             run = false;
         }
         else
         {
-            rb.velocity = new Vector2(runSpeed * facedirection, 0);
+            rb.velocity = new Vector2(runSpeed * facedirection, rb.velocity.y);
             idle = false;
             walk = false;
             run = true;
-        }   
+        }
     }
 
-    private float lastTime;
-    private void StretchCD()
+    private bool TeleportNearPlayer()
     {
-        
+        int playerDirection = GetPlayerFacingDirection();
+        float targetX = player.transform.position.x - playerDirection * teleportOffset;
+        Vector2 rayOrigin = new Vector2(targetX, player.transform.position.y + groundCheckHeight);
+        RaycastHit2D groundHit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
+
+        // 找不到地面时继续正常追随，避免把猫传送到悬空或墙体内部。
+        if (groundHit.collider == null)
+        {
+            return false;
+        }
+
+        float catHalfHeight = catCollider != null ? catCollider.bounds.extents.y : 0f;
+        rb.position = new Vector2(targetX, groundHit.point.y + catHalfHeight);
+        rb.velocity = Vector2.zero;
+        SetIdle();
+        return true;
     }
 
+    private int GetPlayerFacingDirection()
+    {
+        Player_Control playerControl = player.GetComponent<Player_Control>();
+        if (playerControl != null && playerControl.facedirection != 0)
+        {
+            return playerControl.facedirection;
+        }
+
+        return player.transform.localScale.x >= 0 ? 1 : -1;
+    }
+
+    private void SetIdle()
+    {
+        if (rb != null)
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+
+        idle = true;
+        walk = false;
+        run = false;
+    }
 }

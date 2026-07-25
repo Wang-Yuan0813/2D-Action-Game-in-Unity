@@ -21,7 +21,7 @@ public class MenuButton : MonoBehaviour
         }
     }
 
-    private void ButtonOnSelect()//Ñ¡È¡³öÏÖÑ¡È¡¿ò
+    private void ButtonOnSelect()//é€‰å–å‡ºç°é€‰å–æ¡†
     {
         StartMenu.CloseChosenBlock();
         chosenBlock.SetActive(true);

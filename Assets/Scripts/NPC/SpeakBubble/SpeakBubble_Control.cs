@@ -17,7 +17,7 @@ public class SpeakBubble_Control : MonoBehaviour
         backGround = canvas.transform.Find("BG").gameObject;
         content = backGround.transform.Find("Text").gameObject.GetComponent<Text>();
         arrow = transform.Find("Arrow").gameObject.GetComponent<SpriteRenderer>();
-        //³õÊ¼»¯
+        //åˆå§‹åŒ–
         arrow.enabled = false;
         backGround.GetComponent<Image>().enabled = false;
         content.enabled = false;
@@ -31,7 +31,7 @@ public class SpeakBubble_Control : MonoBehaviour
     }
     public void BubbleDisappear(float delay)
     {
-        StartCoroutine(HideBubbleAfterDelay(delay));//ÑÓÊ±¹Ø±Õ
+        StartCoroutine(HideBubbleAfterDelay(delay));//å»¶æ—¶å…³é—­
     }
     private void BubbleAppear()
     {
@@ -42,8 +42,8 @@ public class SpeakBubble_Control : MonoBehaviour
             backGround.GetComponent<Image>().enabled = true;
             content.enabled = true;
 
-            AdjustBackgroundSize(content.preferredWidth, content.preferredHeight);//ÉèÖÃ±³¾°´óĞ¡¹ı¶É¶¯»­
-            BubbleDisappear(3.0f);//ÑÓÊ±¹Ø±Õ
+            AdjustBackgroundSize(content.preferredWidth, content.preferredHeight);//è®¾ç½®èƒŒæ™¯å¤§å°è¿‡æ¸¡åŠ¨ç”»
+            BubbleDisappear(3.0f);//å»¶æ—¶å…³é—­
         }
     }
     private void AdjustBackgroundSize(float width, float height)
@@ -51,17 +51,17 @@ public class SpeakBubble_Control : MonoBehaviour
         RectTransform rectTransform = backGround.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            rectTransform.sizeDelta = new Vector2(width / 10 + 5, 0); // Ìí¼ÓÒ»Ğ©Ìî³ä²»È»²»ºÃ¿´
+            rectTransform.sizeDelta = new Vector2(width / 10 + 5, 0); // æ·»åŠ ä¸€äº›å¡«å……ä¸ç„¶ä¸å¥½çœ‹
 
             StartCoroutine(AnimateBackgroundHeight(height / 10 + 3));
         }
     }
-    private IEnumerator AnimateBackgroundHeight(float targetHeight)//³öÏÖ
+    private IEnumerator AnimateBackgroundHeight(float targetHeight)//å‡ºç°
     {
         RectTransform rectTransform = backGround.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            float duration = 0.1f; // ¶¯»­³ÖĞøÊ±¼ä
+            float duration = 0.1f; // åŠ¨ç”»æŒç»­æ—¶é—´
             float elapsedTime = 0f;
             float initialHeight = rectTransform.sizeDelta.y;
 
@@ -85,9 +85,9 @@ public class SpeakBubble_Control : MonoBehaviour
             isBubbleActive = false;
         }
     }
-    private IEnumerator FadeOut()//½¥Òş
+    private IEnumerator FadeOut()//æ¸éš
     {
-        float duration = 0.5f; // ½¥Òş³ÖĞøÊ±¼ä
+        float duration = 0.5f; // æ¸éšæŒç»­æ—¶é—´
         float elapsedTime = 0f;
 
         Image backGroundImage = backGround.GetComponent<Image>();

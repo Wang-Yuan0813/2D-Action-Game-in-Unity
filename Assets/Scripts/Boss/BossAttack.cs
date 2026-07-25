@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    [Header("¹¥»÷ÊôĞÔ")]
+    [Header("æ”»å‡»å±æ€§")]
     public float smash;
     public float counterSmash;
     public float attackerX;
@@ -22,7 +22,7 @@ public class BossAttack : MonoBehaviour
         
         attackerX = this.transform.parent.transform.position.x;
         
-        if (other.gameObject.CompareTag("Player") && boss.GetComponent<Boss_Control>().attackValid)//¹¥»÷ÃüÖĞÁËÍæ¼Ò¶ÔÏó£¬ĞèÒªÔÚÕâÀïÅĞ¶¨Ò»ÏÂÊÇ·ñÓĞ¹¥»÷
+        if (other.gameObject.CompareTag("Player") && boss.GetComponent<Boss_Control>().attackValid)//æ”»å‡»å‘½ä¸­äº†ç©å®¶å¯¹è±¡ï¼Œéœ€è¦åœ¨è¿™é‡Œåˆ¤å®šä¸€ä¸‹æ˜¯å¦æœ‰æ”»å‡»
         {
             boss.GetComponent<Boss_Control>().attackValid = false;
 
@@ -30,11 +30,11 @@ public class BossAttack : MonoBehaviour
             {
                 if(!isStab)
                 {
-                    player.GetComponent<Player_Control>().TakeHit(smash, attackerX);//µ÷ÓÃµĞÈËÊÜÉËº¯Êı£¬´«µİÉËº¦²ÎÊıÓë¹¥»÷ÕßÎ»ÖÃ
+                    player.GetComponent<Player_Control>().TakeHit(smash, attackerX);//è°ƒç”¨æ•Œäººå—ä¼¤å‡½æ•°ï¼Œä¼ é€’ä¼¤å®³å‚æ•°ä¸æ”»å‡»è€…ä½ç½®
                 }
                 else
                 {
-                    player.GetComponent<Player_Control>().GetCatched(attackerX);//µ÷ÓÃÍæ¼Ò×¥È¡£¬Íæ¼Ò²¥·Å±»×¥µÄ¶¯»­
+                    player.GetComponent<Player_Control>().GetCatched(attackerX);//è°ƒç”¨ç©å®¶æŠ“å–ï¼Œç©å®¶æ’­æ”¾è¢«æŠ“çš„åŠ¨ç”»
                     boss.GetComponent<Boss_Control>().catchPlayer = true;
                     boss.GetComponent<Boss_Control>().isCatchPlayer = true;
                 }

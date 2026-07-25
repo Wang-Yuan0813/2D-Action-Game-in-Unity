@@ -10,18 +10,18 @@ public class ShadowSprite : MonoBehaviour
     private SpriteRenderer playerSprite;
     private Color color;
 
-    [Header("Ê±¼ä¿ØÖÆ")]
+    [Header("æ—¶é—´æ§åˆ¶")]
     public float activeTime;
     public float activeStart;
 
-    [Header("²»Í¸Ã÷¶È¿ØÖÆ")]
+    [Header("ä¸é€æ˜åº¦æ§åˆ¶")]
     private float alpha;
     public float alphaSet;
     public float alphaMultiplier;
 
-    private void OnEnable()//Ò»µ©±»SetActiveÉèÖÃÎªture¼´¿Éµ÷ÓÃ¸Ã·½·¨
+    private void OnEnable()//ä¸€æ—¦è¢«SetActiveè®¾ç½®ä¸ºtureå³å¯è°ƒç”¨è¯¥æ–¹æ³•
     {
-        //»ñÈ¡¶ÔÏó×é¼ş
+        //è·å–å¯¹è±¡ç»„ä»¶
         player = GameObject.FindGameObjectWithTag("Player").transform;
         thisSprite = GetComponent<SpriteRenderer>();
         playerSprite = player.GetComponent<SpriteRenderer>();
@@ -40,14 +40,14 @@ public class ShadowSprite : MonoBehaviour
     {
         alpha *= alphaMultiplier;
 
-        color = new Color(0.5f, 0.5f, 1, alpha);//ÍêÈ«ÏÔÊ¾Í¼ÏñÑÕÉ«£¬1±íÊ¾100%
+        color = new Color(0.5f, 0.5f, 1, alpha);//å®Œå…¨æ˜¾ç¤ºå›¾åƒé¢œè‰²ï¼Œ1è¡¨ç¤º100%
         //color = new Color(1, 1, 1, 1);
 
         thisSprite.color = color;
 
         if(Time.time>=activeStart+activeTime)
         {
-            //·µ»Ø¶ÔÏó³Ø
+            //è¿”å›å¯¹è±¡æ± 
             ShadowPool.instance.ReturnPool(this.gameObject);
         }
     }

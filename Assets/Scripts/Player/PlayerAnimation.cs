@@ -41,9 +41,9 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void DodgeStart()
     {
+        player_Control.EndJumpAttack();
         player_Control.isAttack = false;
         player_Control.canAttack = false;
-        player_Control.isJumpAttack = false;
         player_Control.isTakeHit = false;
         player_Control.takeHit = false;
         player_Control.attack = false;
@@ -80,18 +80,17 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void JumpAttackStart()
     {
-        player_Control.attack = false;
-        player_Control.isJumpAttack = true;
+        player_Control.BeginJumpAttack();
         player_Control.JumpAttackLift();
     }
     public void JumpAttackOver()
     {
-        player_Control.isJumpAttack = false;
+        player_Control.EndJumpAttack();
     }
     public void LandingStart()//这里是防止空中攻击落地后由于为播放完导致没有将isAttack置0，从而二次播放动画
     {
         Instantiate(landingFX, new Vector3(transform.position.x, transform.position.y - 0.2f, 0), Quaternion.identity, null);
-        player_Control.isJumpAttack = false;
+        player_Control.EndJumpAttack();
         player_Control.canAttack = true;
         player_Control.cantHit = false;
     }
@@ -103,10 +102,10 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void TakeHitStart()
     {
+        player_Control.EndJumpAttack();
         player_Control.takeHit = false;
         player_Control.isAttack = false;
         player_Control.attack = false;
-        player_Control.isJumpAttack = false;
         player_Control.preAttack = false;
         player_Control.canAttack = false;
         
@@ -120,6 +119,7 @@ public class PlayerAnimation : MonoBehaviour
     public void GetCatchedStart()
     {
         rb.velocity = new Vector2(0, 0);
+        player_Control.EndJumpAttack();
         player_Control.isTakeHit = true;
         player_Control.cantHit = true;
 
@@ -127,7 +127,6 @@ public class PlayerAnimation : MonoBehaviour
         player_Control.takeHit = false;
         player_Control.isAttack = false;
         player_Control.attack = false;
-        player_Control.isJumpAttack = false;
         player_Control.preAttack = false;
         player_Control.canAttack = false;
 

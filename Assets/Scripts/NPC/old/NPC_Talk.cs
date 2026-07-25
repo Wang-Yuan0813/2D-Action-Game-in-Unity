@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class NPC_Talk : MonoBehaviour
 {
 
-    [Header("对话提示")]
+    [Header("瀵硅瘽鎻愮ず")]
     public GameObject talkSign;
-    [Header("对话框UI")]
+    [Header("瀵硅瘽妗哢I")]
     public GameObject talkUI;   
-    [Header("头像")]
+    [Header("澶村儚")]
     public Image headImage;
-    [Header("文本文件")]
+    [Header("鏂囨湰鏂囦欢")]
     public TextAsset textFile;
-    [Header("头像")]
+    [Header("澶村儚")]
     public Sprite head01,head02;
-    [Header("文本显示速度")]
+    [Header("鏂囨湰鏄剧ず閫熷害")]
     public float textSpeed;
 
     public bool textFinished;
@@ -25,7 +25,7 @@ public class NPC_Talk : MonoBehaviour
     
     
     List<string> textList = new List<string>();
-    //内部参数
+    //鍐呴儴鍙傛暟
     void Start()
     {
         //Text textLable = talkUI.GetComponentInChildren<Text>();

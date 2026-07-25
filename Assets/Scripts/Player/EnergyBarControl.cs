@@ -14,7 +14,7 @@ public class EnergyBarControl : MonoBehaviour
     private float energyCon;
     private float disappearSpeed = 3;
     public float energyMax;
-    public float energyLeft;//Ö®ºó¸Ä³Éprivate
+    public float energyLeft;//ä¹‹åæ”¹æˆprivate
     public float reSpeed;
     public bool useFlag;
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class EnergyBarControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(useFlag)//ÌåÁ¦ÏûºÄ
+        if(useFlag)//ä½“åŠ›æ¶ˆè€—
         {
             disappearFlag = false;
             this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
@@ -43,17 +43,17 @@ public class EnergyBarControl : MonoBehaviour
         }
         else
         {
-            if(lastUseTime + reCD <= Time.time)//µ±Ê¹ÓÃÌåÁ¦ºó£¬1s²ÅÄÜ»Ö¸´
+            if(lastUseTime + reCD <= Time.time)//å½“ä½¿ç”¨ä½“åŠ›åï¼Œ1sæ‰èƒ½æ¢å¤
             {
-                if (energyLeft < energyMax)//Ã»»Ö¸´ÂúÊ±
+                if (energyLeft < energyMax)//æ²¡æ¢å¤æ»¡æ—¶
                 {
-                    energyLeft += reSpeed * Time.deltaTime;//ÌåÁ¦»Ö¸´
+                    energyLeft += reSpeed * Time.deltaTime;//ä½“åŠ›æ¢å¤
                     fullFlag = false;
                 }
-                else//»Ö¸´Âúºó
+                else//æ¢å¤æ»¡å
                 {
                     energyLeft = energyMax;
-                    if(!fullFlag)//¼ÇÂ¼×´Ì¬Ìõ³ÉÎªÂú×´Ì¬Ê±µÄÊ±¿Ì
+                    if(!fullFlag)//è®°å½•çŠ¶æ€æ¡æˆä¸ºæ»¡çŠ¶æ€æ—¶çš„æ—¶åˆ»
                     {
                         lastFullTime = Time.time;
                         fullFlag = true;
@@ -65,14 +65,14 @@ public class EnergyBarControl : MonoBehaviour
                             disappearFlag = true;
                             anim.SetTrigger("disappear");
                         } 
-                        BarDisappear();//Âú×´Ì¬Á½ÃëºóÌåÁ¦ÌõÏûÊ§
+                        BarDisappear();//æ»¡çŠ¶æ€ä¸¤ç§’åä½“åŠ›æ¡æ¶ˆå¤±
                     }
                 }
             }
         }
         content.GetComponent<Transform>().localScale=new Vector2(1,energyLeft/energyMax);
 
-        if(energyLeft <= energyMax/2)//ÌåÁ¦ÌõĞ¡ÓÚÒ»°ëÊ±ÑÕÉ«¸Ä±ä
+        if(energyLeft <= energyMax/2)//ä½“åŠ›æ¡å°äºä¸€åŠæ—¶é¢œè‰²æ”¹å˜
         {
             BarColorTurn();
         }
