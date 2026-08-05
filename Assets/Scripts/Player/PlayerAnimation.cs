@@ -41,6 +41,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void DodgeStart()
     {
+        player_Control.MeleeParryEnd();
         player_Control.EndJumpAttack();
         player_Control.isAttack = false;
         player_Control.canAttack = false;
@@ -71,6 +72,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void AttackOver()
     {
+        player_Control.MeleeParryEnd();
         player_Control.isAttack = false;
         player_Control.attackValid = false;
     }
@@ -85,10 +87,12 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void JumpAttackOver()
     {
+        player_Control.MeleeParryEnd();
         player_Control.EndJumpAttack();
     }
     public void LandingStart()//这里是防止空中攻击落地后由于为播放完导致没有将isAttack置0，从而二次播放动画
     {
+        player_Control.MeleeParryEnd();
         Instantiate(landingFX, new Vector3(transform.position.x, transform.position.y - 0.2f, 0), Quaternion.identity, null);
         player_Control.EndJumpAttack();
         player_Control.canAttack = true;
@@ -97,11 +101,13 @@ public class PlayerAnimation : MonoBehaviour
 
     public void JumpStart()
     {
+        player_Control.MeleeParryEnd();
         player_Control.isAttack = false;
         player_Control.canAttack = true;
     }
     public void TakeHitStart()
     {
+        player_Control.MeleeParryEnd();
         player_Control.EndJumpAttack();
         player_Control.takeHit = false;
         player_Control.isAttack = false;
@@ -118,6 +124,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void GetCatchedStart()
     {
+        player_Control.MeleeParryEnd();
         rb.velocity = new Vector2(0, 0);
         player_Control.EndJumpAttack();
         player_Control.isTakeHit = true;

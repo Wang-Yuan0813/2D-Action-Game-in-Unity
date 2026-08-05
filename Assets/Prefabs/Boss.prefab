@@ -75,6 +75,8 @@ MonoBehaviour:
   counterSmash: 12
   attackerX: 0
   isStab: 0
+  attackType: 0
+  canBeParried: 1
 --- !u!1 &1076946462
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +152,8 @@ MonoBehaviour:
   counterSmash: 25
   attackerX: 0
   isStab: 1
+  attackType: 0
+  canBeParried: 1
 --- !u!1 &1164730908
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +229,8 @@ MonoBehaviour:
   counterSmash: 23
   attackerX: 0
   isStab: 0
+  attackType: 0
+  canBeParried: 1
 --- !u!1 &1317170819
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +306,8 @@ MonoBehaviour:
   counterSmash: 14
   attackerX: 0
   isStab: 0
+  attackType: 0
+  canBeParried: 1
 --- !u!1 &8852022973316682717
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,3 +683,5 @@ MonoBehaviour:
   counterSmash: 14
   attackerX: 0
   isStab: 0
+  attackType: 0
+  canBeParried: 1

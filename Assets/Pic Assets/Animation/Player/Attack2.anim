@@ -188,7 +188,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.016666668
-    functionName: InvincibleStart
+    functionName: MeleeParryStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -202,7 +202,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.35
-    functionName: InvincibleOver
+    functionName: MeleeParryEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

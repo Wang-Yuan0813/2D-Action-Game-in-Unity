@@ -156,6 +156,13 @@ public class Boss_Control : EnemyBase
         isCatchPlayer = false;
 
     }
+    public void OnParried()
+    {
+        attackValid = false;
+        catchPlayer = false;
+        isCatchPlayer = false;
+    }
+
     public override void TakeHit(int damage)
     {
         if(!cantHit)//处于非攻击状态时

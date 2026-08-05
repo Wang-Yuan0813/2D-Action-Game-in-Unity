@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAttack : MonoBehaviour
@@ -10,35 +8,74 @@ public class BossAttack : MonoBehaviour
     public float attackerX;
     public bool isStab;
 
-    private GameObject player;
-    private GameObject boss;
+    [Header("防御交互")]
+    [SerializeField] private EnemyAttackType attackType = EnemyAttackType.Melee;
+    [SerializeField] private bool canBeParried = true;
+
+    private Boss_Control boss;
+
+    public EnemyAttackType AttackType => attackType;
+    public bool CanBeParried => canBeParried;
+    public float CounterSmash => counterSmash;
+    public float AttackerX => transform.parent != null ? transform.parent.position.x : transform.position.x;
+
     private void Awake()
     {
-        player = GameObject.Find("Player");
-        boss = this.gameObject.transform.parent.gameObject;
+        boss = GetComponentInParent<Boss_Control>();
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        attackerX = this.transform.parent.transform.position.x;
-        
-        if (other.gameObject.CompareTag("Player") && boss.GetComponent<Boss_Control>().attackValid)//攻击命中了玩家对象，需要在这里判定一下是否有攻击
-        {
-            boss.GetComponent<Boss_Control>().attackValid = false;
+        if (!other.CompareTag("Player") || boss == null || !boss.attackValid)
+            return;
 
-            if (!player.GetComponent<Player_Control>().cantHit)
-            {
-                if(!isStab)
-                {
-                    player.GetComponent<Player_Control>().TakeHit(smash, attackerX);//调用敌人受伤函数，传递伤害参数与攻击者位置
-                }
-                else
-                {
-                    player.GetComponent<Player_Control>().GetCatched(attackerX);//调用玩家抓取，玩家播放被抓的动画
-                    boss.GetComponent<Boss_Control>().catchPlayer = true;
-                    boss.GetComponent<Boss_Control>().isCatchPlayer = true;
-                }
-            } 
-        } 
+        Player_Control player = other.GetComponentInParent<Player_Control>();
+        if (player == null)
+            return;
+
+        attackerX = AttackerX;
+        PlayerDefenseResult defense = player.ResolveIncomingAttack(attackType, canBeParried, attackerX);
+
+        if (defense == PlayerDefenseResult.Parried)
+        {
+            PlayerParryController parryController = player.GetComponent<PlayerParryController>();
+            if (parryController != null && parryController.TryParry(this))
+                return;
+
+            // Missing feedback controller must never turn a valid parry window into damage.
+            TryConsumeAsParried();
+            return;
+        }
+
+        // Invulnerability and successful-parry protection consume this Boss hit without damage.
+        boss.attackValid = false;
+        if (defense == PlayerDefenseResult.Invulnerable)
+            return;
+
+        if (!isStab)
+        {
+            player.TakeHit(smash, attackerX);
+        }
+        else
+        {
+            player.GetCatched(attackerX);
+            boss.catchPlayer = true;
+            boss.isCatchPlayer = true;
+        }
+    }
+
+    public bool TryConsumeAsParried()
+    {
+        if (boss == null || !boss.attackValid || attackType != EnemyAttackType.Melee || !canBeParried)
+            return false;
+
+        boss.attackValid = false;
+        return true;
+    }
+
+    public void ApplyParryReaction()
+    {
+        if (boss != null)
+            boss.OnParried();
     }
 }

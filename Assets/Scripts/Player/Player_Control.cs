@@ -48,9 +48,12 @@ public class Player_Control : MonoBehaviour
     private float preAttackExist;
     private float lastAttack = -10f;
     private float jumpAttackEndTime;
+    private float meleeProtectionUntil;
 
     [Header("受伤属性")]
     public bool cantHit;
+    [Tooltip("Only parries attacks classified as parryable melee. It is not full invulnerability.")]
+    public bool meleeParryActive;
     public bool isTakeHit;
     public bool takeHit;
     public bool getCatched;
@@ -167,6 +170,7 @@ public class Player_Control : MonoBehaviour
             IsJump = true;
 
             isAttack = false;//跳跃会打断当前攻击动画
+            MeleeParryEnd();
 
             JumpTime = Time.time + JumpHoldDuration;
             Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
@@ -251,6 +255,7 @@ public class Player_Control : MonoBehaviour
             return;
 
         isJumpAttack = false;
+        MeleeParryEnd();
         isAttack = false;
         attack = false;
         attackValid = false;
@@ -292,6 +297,44 @@ public class Player_Control : MonoBehaviour
         }
     }
     //受伤动画以及收到的冲击大小
+    public void MeleeParryStart()
+    {
+        meleeParryActive = true;
+    }
+
+    public void MeleeParryEnd()
+    {
+        meleeParryActive = false;
+    }
+
+    public void RegisterSuccessfulMeleeParry(float protectionDuration)
+    {
+        meleeProtectionUntil = Mathf.Max(meleeProtectionUntil, Time.time + Mathf.Max(0f, protectionDuration));
+    }
+
+    public PlayerDefenseResult ResolveIncomingAttack(EnemyAttackType attackType, bool canBeParried, float attackerX)
+    {
+        if (cantHit)
+            return PlayerDefenseResult.Invulnerable;
+
+        if (attackType != EnemyAttackType.Melee)
+            return PlayerDefenseResult.Hit;
+
+        if (canBeParried && meleeParryActive && IsAttackerInFront(attackerX))
+            return PlayerDefenseResult.Parried;
+
+        if (Time.time < meleeProtectionUntil)
+            return PlayerDefenseResult.Invulnerable;
+
+        return PlayerDefenseResult.Hit;
+    }
+
+    private bool IsAttackerInFront(float attackerX)
+    {
+        float horizontalDistance = attackerX - transform.position.x;
+        return Mathf.Abs(horizontalDistance) < 0.05f || horizontalDistance * facedirection > 0f;
+    }
+
     public void TakeHit(float smash, float attackerX)
     {
         float hitDir;
