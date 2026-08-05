@@ -1,17 +1,18 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!1 &1000000000000000000
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4000000000000000000}
   - component: {fileID: 6100000000000000000}
   - component: {fileID: 1140000000000000000}
   m_Layer: 10
+  m_HasEditorInfo: 1
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,6 +44,25 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -72,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningDuration: 0.8
-  beamDuration: 0.4
+  beamDuration: 0.15
   ignitionDuration: 0.08
   visualFadeDuration: 0.12
   minimumLength: 40
@@ -83,7 +103,7 @@ MonoBehaviour:
   beamWidth: 0.3
   glowWidth: 0.65
   lockRadius: 0.48
-  damageWidth: 0.28
+  damageWidth: 0.15
   damage: 10
   fallbackKnockback: 8
   warningColor: {r: 1, g: 0.08, b: 0.04, a: 0.55}

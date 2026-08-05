@@ -46,8 +46,6 @@ public sealed class LaserObject : MonoBehaviour
     private LineRenderer beamInner;
     private LineRenderer beamCore;
     private LineRenderer lockRing;
-    private LineRenderer lockHorizontal;
-    private LineRenderer lockVertical;
     private Action<LaserObject> returnToPool;
     private bool isFiring;
     private int lifecycleId;
@@ -147,7 +145,7 @@ public sealed class LaserObject : MonoBehaviour
 
             float animatedRadius = Mathf.Lerp(lockRadius * 1.45f, lockRadius * 0.68f, urgency);
             animatedRadius *= Mathf.Lerp(0.94f, 1.05f, pulse);
-            UpdateLockMarker(animatedRadius, animatedWarning, progress * 220f);
+            UpdateLockMarker(animatedRadius, animatedWarning);
 
             elapsed += Time.deltaTime;
             yield return null;
@@ -292,7 +290,7 @@ public sealed class LaserObject : MonoBehaviour
 
         damageCollider.offset = Vector2.zero;
         damageCollider.size = new Vector2(length, damageWidth);
-        UpdateLockMarker(lockRadius, warningColor, 0f);
+        UpdateLockMarker(lockRadius, warningColor);
     }
 
     private void ConfigureLine(LineRenderer line, Vector3 start, Vector3 end, float width, Color color)
@@ -310,20 +308,9 @@ public sealed class LaserObject : MonoBehaviour
         line.endColor = color;
     }
 
-    private void UpdateLockMarker(float radius, Color color, float rotation)
+    private void UpdateLockMarker(float radius, Color color)
     {
         UpdateRing(radius, color, warningWidth * 0.7f);
-
-        float inner = radius * 0.45f;
-        float outer = radius * 1.25f;
-        lockHorizontal.SetPosition(0, new Vector3(-outer, 0f, 0f));
-        lockHorizontal.SetPosition(1, new Vector3(-inner, 0f, 0f));
-        lockVertical.SetPosition(0, new Vector3(0f, inner, 0f));
-        lockVertical.SetPosition(1, new Vector3(0f, outer, 0f));
-        lockHorizontal.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
-        lockVertical.transform.localRotation = Quaternion.Euler(0f, 0f, rotation);
-        SetLineAppearance(lockHorizontal, warningWidth * 0.75f, color);
-        SetLineAppearance(lockVertical, warningWidth * 0.75f, color);
     }
 
     private void UpdateRing(float radius, Color color, float width)
@@ -340,8 +327,6 @@ public sealed class LaserObject : MonoBehaviour
     {
         warningLine.enabled = true;
         lockRing.enabled = true;
-        lockHorizontal.enabled = true;
-        lockVertical.enabled = true;
         beamGlow.enabled = false;
         beamInner.enabled = false;
         beamCore.enabled = false;
@@ -352,8 +337,6 @@ public sealed class LaserObject : MonoBehaviour
     private void ShowBeam()
     {
         warningLine.enabled = false;
-        lockHorizontal.enabled = false;
-        lockVertical.enabled = false;
         beamGlow.enabled = true;
         beamInner.enabled = true;
         beamCore.enabled = true;
@@ -375,8 +358,6 @@ public sealed class LaserObject : MonoBehaviour
         SetEnabled(beamInner, false);
         SetEnabled(beamCore, false);
         SetEnabled(lockRing, false);
-        SetEnabled(lockHorizontal, false);
-        SetEnabled(lockVertical, false);
         if (damageCollider != null)
             damageCollider.enabled = false;
     }
@@ -400,8 +381,6 @@ public sealed class LaserObject : MonoBehaviour
         beamInner = EnsureLine(beamInner, "BeamInner", 22, true, 2);
         beamCore = EnsureLine(beamCore, "BeamCore", 23, true, 2);
         lockRing = EnsureLine(lockRing, "LockRing", 24, false, LockSegments + 1);
-        lockHorizontal = EnsureLine(lockHorizontal, "LockHorizontal", 24, false, 2);
-        lockVertical = EnsureLine(lockVertical, "LockVertical", 24, false, 2);
     }
 
     private LineRenderer EnsureLine(LineRenderer current, string childName, int sortingOrder, bool beamMaterial, int positionCount)

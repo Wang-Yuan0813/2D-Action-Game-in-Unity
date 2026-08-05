@@ -53,6 +53,29 @@ public sealed class LaserPool : MonoBehaviour
         return laser;
     }
 
+    /// <summary>
+    /// Captures the target's world position at spawn time. The laser does not retain or follow the target.
+    /// </summary>
+    public LaserObject Spawn(Transform target, float angle)
+    {
+        return Spawn(target, Vector2.zero, angle);
+    }
+
+    /// <summary>
+    /// Captures the target's world position plus a world-space offset at spawn time.
+    /// </summary>
+    public LaserObject Spawn(Transform target, Vector2 offset, float angle)
+    {
+        if (target == null)
+        {
+            Debug.LogWarning("LaserPool cannot spawn a target-locked laser because the target is null.", this);
+            return null;
+        }
+
+        Vector2 lockedCenter = (Vector2)target.position + offset;
+        return Spawn(lockedCenter, angle);
+    }
+
     public void Release(LaserObject laser)
     {
         if (laser == null || !active.Remove(laser))

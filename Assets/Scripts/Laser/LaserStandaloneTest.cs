@@ -1,20 +1,20 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>Keyboard-only harness for testing the laser pool without any Boss logic.</summary>
 public sealed class LaserStandaloneTest : MonoBehaviour
 {
     [SerializeField] private LaserPool laserPool;
-    [SerializeField] private Camera targetCamera;
+    [SerializeField] private Transform target;
     [SerializeField, Range(0f, 180f)] private float angle;
-    [SerializeField] private Vector2 centerOffset;
+    [FormerlySerializedAs("centerOffset")]
+    [SerializeField] private Vector2 targetOffset;
     [SerializeField, Min(1f)] private float angleStep = 15f;
 
     private void Awake()
     {
         if (laserPool == null)
             laserPool = FindObjectOfType<LaserPool>();
-        if (targetCamera == null)
-            targetCamera = Camera.main;
     }
 
     private void Update()
@@ -24,10 +24,10 @@ public sealed class LaserStandaloneTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
             angle = Mathf.Repeat(angle + angleStep, 180f);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            SpawnAtScreenCenter(angle);
+        if (Input.GetKeyDown(KeyCode.L))
+            SpawnAtTarget(angle);
         if (Input.GetKeyDown(KeyCode.R))
-            SpawnAtScreenCenter(Random.Range(0f, 180f));
+            SpawnAtTarget(Random.Range(0f, 180f));
         if (Input.GetKeyDown(KeyCode.C) && laserPool != null)
             laserPool.ReleaseAll();
     }
@@ -36,10 +36,10 @@ public sealed class LaserStandaloneTest : MonoBehaviour
     public void SpawnTestLaser()
     {
         if (Application.isPlaying)
-            SpawnAtScreenCenter(angle);
+            SpawnAtTarget(angle);
     }
 
-    private void SpawnAtScreenCenter(float spawnAngle)
+    private void SpawnAtTarget(float spawnAngle)
     {
         if (laserPool == null)
         {
@@ -47,14 +47,8 @@ public sealed class LaserStandaloneTest : MonoBehaviour
             return;
         }
 
-        Vector2 center = transform.position;
-        if (targetCamera != null)
-        {
-            float depth = Mathf.Abs(targetCamera.transform.position.z);
-            center = targetCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, depth));
-        }
-
-        laserPool.Spawn(center + centerOffset, spawnAngle);
+        Transform spawnTarget = target != null ? target : transform;
+        laserPool.Spawn(spawnTarget, targetOffset, spawnAngle);
     }
 
     private void OnGUI()
@@ -62,7 +56,8 @@ public sealed class LaserStandaloneTest : MonoBehaviour
         if (laserPool == null)
             return;
 
-        GUI.Label(new Rect(12f, 12f, 520f, 24f),
-            $"Laser test: Space=spawn, R=random, Left/Right=angle, C=release all | Angle {angle:0} | Active {laserPool.ActiveCount} | Ready {laserPool.AvailableCount}");
+        string targetName = target != null ? target.name : $"{name} (self fallback)";
+        GUI.Label(new Rect(12f, 12f, 680f, 24f),
+            $"Laser test: L=spawn, R=random, Left/Right=angle, C=release all | Target {targetName} | Angle {angle:0} | Active {laserPool.ActiveCount} | Ready {laserPool.AvailableCount}");
     }
 }
