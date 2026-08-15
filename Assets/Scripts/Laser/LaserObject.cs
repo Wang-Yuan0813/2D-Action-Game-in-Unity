@@ -50,6 +50,7 @@ public sealed class LaserObject : MonoBehaviour
     private bool isFiring;
     private int lifecycleId;
     private float flickerOffset;
+    private float timingScale = 1f;
 
     public bool IsFiring => isFiring;
 
@@ -73,6 +74,12 @@ public sealed class LaserObject : MonoBehaviour
     /// <summary>Called by LaserPool. The angle is normalized to the undirected 0-180 range.</summary>
     public void Play(Vector2 center, float angle, Action<LaserObject> releaseCallback)
     {
+        Play(center, angle, 1f, releaseCallback);
+    }
+
+    /// <summary>Plays one laser with per-instance timing without modifying prefab settings.</summary>
+    public void Play(Vector2 center, float angle, float lifecycleTimingScale, Action<LaserObject> releaseCallback)
+    {
         StopAllCoroutines();
         EnsureComponents();
 
@@ -81,6 +88,7 @@ public sealed class LaserObject : MonoBehaviour
         hitReceivers.Clear();
         isFiring = false;
         flickerOffset = lifecycleId * 1.618f;
+        timingScale = Mathf.Max(0.05f, lifecycleTimingScale);
 
         transform.SetPositionAndRotation(center, Quaternion.Euler(0f, 0f, Mathf.Repeat(angle, 180f)));
 
@@ -126,10 +134,11 @@ public sealed class LaserObject : MonoBehaviour
 
     private IEnumerator AnimateWarning(int expectedLifecycleId)
     {
+        float scaledWarningDuration = warningDuration * timingScale;
         float elapsed = 0f;
-        while (elapsed < warningDuration && expectedLifecycleId == lifecycleId)
+        while (elapsed < scaledWarningDuration && expectedLifecycleId == lifecycleId)
         {
-            float progress = warningDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / warningDuration);
+            float progress = scaledWarningDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / scaledWarningDuration);
             float frequency = Mathf.Lerp(2.5f, 11f, progress * progress);
             float pulse = Mathf.Sin(elapsed * frequency * Mathf.PI * 2f + flickerOffset) * 0.5f + 0.5f;
             float urgency = Mathf.SmoothStep(0f, 1f, progress);
@@ -154,10 +163,13 @@ public sealed class LaserObject : MonoBehaviour
 
     private IEnumerator AnimateBeam(int expectedLifecycleId)
     {
+        float scaledBeamDuration = beamDuration * timingScale;
+        float scaledIgnitionDuration = ignitionDuration * timingScale;
+        float scaledBurstDuration = BurstDuration * timingScale;
         float elapsed = 0f;
-        while (elapsed < beamDuration && expectedLifecycleId == lifecycleId)
+        while (elapsed < scaledBeamDuration && expectedLifecycleId == lifecycleId)
         {
-            float ignition = Mathf.Clamp01(elapsed / ignitionDuration);
+            float ignition = Mathf.Clamp01(elapsed / scaledIgnitionDuration);
             float expansion = Mathf.Lerp(1.45f, 1f, Mathf.SmoothStep(0f, 1f, ignition));
             float flicker = 1f
                 + Mathf.Sin((elapsed + flickerOffset) * 73f) * 0.025f
@@ -167,9 +179,9 @@ public sealed class LaserObject : MonoBehaviour
             SetLineAppearance(beamInner, beamWidth * expansion * flicker, innerBeamColor);
             SetLineAppearance(beamCore, coreWidth * expansion, beamColor);
 
-            if (elapsed < BurstDuration)
+            if (elapsed < scaledBurstDuration)
             {
-                float burstProgress = Mathf.Clamp01(elapsed / BurstDuration);
+                float burstProgress = Mathf.Clamp01(elapsed / scaledBurstDuration);
                 Color burstColor = beamColor;
                 burstColor.a = 1f - burstProgress;
                 lockRing.enabled = true;
@@ -190,13 +202,14 @@ public sealed class LaserObject : MonoBehaviour
         beamCore.enabled = false;
         lockRing.enabled = false;
 
-        if (visualFadeDuration <= 0f)
+        float scaledFadeDuration = visualFadeDuration * timingScale;
+        if (scaledFadeDuration <= 0f)
             yield break;
 
         float elapsed = 0f;
-        while (elapsed < visualFadeDuration && expectedLifecycleId == lifecycleId)
+        while (elapsed < scaledFadeDuration && expectedLifecycleId == lifecycleId)
         {
-            float progress = Mathf.Clamp01(elapsed / visualFadeDuration);
+            float progress = Mathf.Clamp01(elapsed / scaledFadeDuration);
             float alpha = 1f - Mathf.SmoothStep(0f, 1f, progress);
 
             Color fadedInner = innerBeamColor;

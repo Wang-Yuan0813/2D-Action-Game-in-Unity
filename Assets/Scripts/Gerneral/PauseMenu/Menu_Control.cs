@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,10 +24,10 @@ public class Menu_Control : MonoBehaviour
         {
             SwitchPause(exitOption);
         }
-        if (Input.GetKeyDown(KeyCode.B))
+        /*if (Input.GetKeyDown(KeyCode.B))
         {
             SwitchPause(bagOption);
-        }
+        }*/
     }
     private void SwitchPause(GameObject selectOption)
     {

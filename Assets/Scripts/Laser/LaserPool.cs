@@ -40,6 +40,11 @@ public sealed class LaserPool : MonoBehaviour
 
     public LaserObject Spawn(Vector2 center, float angle)
     {
+        return Spawn(center, angle, 1f);
+    }
+
+    public LaserObject Spawn(Vector2 center, float angle, float timingScale)
+    {
         if (laserPrefab == null)
             return null;
 
@@ -49,7 +54,7 @@ public sealed class LaserPool : MonoBehaviour
         LaserObject laser = available.Dequeue();
         active.Add(laser);
         laser.gameObject.SetActive(true);
-        laser.Play(center, angle, Release);
+        laser.Play(center, angle, timingScale, Release);
         return laser;
     }
 

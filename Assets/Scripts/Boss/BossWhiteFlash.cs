@@ -2,24 +2,21 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Applies the Boss white-flash shader while Boss_Control reports a hit.
-/// Added automatically at runtime so existing Boss prefabs need no changes.
+/// Applies the Boss white-flash shader when PlayFlash is called by a damage receiver.
 /// </summary>
-[RequireComponent(typeof(SpriteRenderer), typeof(Boss_Control))]
+[RequireComponent(typeof(SpriteRenderer))]
 public sealed class BossWhiteFlash : MonoBehaviour
 {
     private static readonly int FlashAmount = Shader.PropertyToID("_FlashAmount");
 
     [SerializeField, Min(0.01f)] private float flashDuration = 0.2f;
 
-    private Boss_Control boss;
     private SpriteRenderer spriteRenderer;
     private Material materialInstance;
-    private bool wasTakingHit;
+    private Coroutine flashRoutine;
 
     private void Awake()
     {
-        boss = GetComponent<Boss_Control>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         Material flashMaterial = Resources.Load<Material>("Materials/BossWhiteFlash");
@@ -35,15 +32,14 @@ public sealed class BossWhiteFlash : MonoBehaviour
         materialInstance.SetFloat(FlashAmount, 0f);
     }
 
-    private void Update()
+    public void PlayFlash()
     {
-        if (boss.isTakeHit && !wasTakingHit)
-        {
-            StopAllCoroutines();
-            StartCoroutine(Flash());
-        }
+        if (materialInstance == null)
+            return;
 
-        wasTakingHit = boss.isTakeHit;
+        if (flashRoutine != null)
+            StopCoroutine(flashRoutine);
+        flashRoutine = StartCoroutine(Flash());
     }
 
     private IEnumerator Flash()
@@ -51,25 +47,24 @@ public sealed class BossWhiteFlash : MonoBehaviour
         materialInstance.SetFloat(FlashAmount, 1f);
         yield return new WaitForSeconds(flashDuration);
         materialInstance.SetFloat(FlashAmount, 0f);
+        flashRoutine = null;
     }
 
     private void OnDisable()
     {
+        if (flashRoutine != null)
+        {
+            StopCoroutine(flashRoutine);
+            flashRoutine = null;
+        }
+
         if (materialInstance != null)
             materialInstance.SetFloat(FlashAmount, 0f);
     }
-}
 
-/// <summary>Installs the white-flash controller on any Boss_Control loaded in a scene.</summary>
-public static class BossWhiteFlashInstaller
-{
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void Install()
+    private void OnDestroy()
     {
-        foreach (Boss_Control boss in Object.FindObjectsOfType<Boss_Control>())
-        {
-            if (boss.GetComponent<BossWhiteFlash>() == null)
-                boss.gameObject.AddComponent<BossWhiteFlash>();
-        }
+        if (materialInstance != null)
+            Destroy(materialInstance);
     }
 }

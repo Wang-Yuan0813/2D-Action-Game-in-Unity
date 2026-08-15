@@ -5,16 +5,20 @@ using UnityEngine.Serialization;
 public sealed class LaserStandaloneTest : MonoBehaviour
 {
     [SerializeField] private LaserPool laserPool;
+    [SerializeField] private LaserBarrageAttack laserBarrage;
     [SerializeField] private Transform target;
     [SerializeField, Range(0f, 180f)] private float angle;
     [FormerlySerializedAs("centerOffset")]
     [SerializeField] private Vector2 targetOffset;
     [SerializeField, Min(1f)] private float angleStep = 15f;
+    [SerializeField] private KeyCode barrageKey = KeyCode.B;
 
     private void Awake()
     {
         if (laserPool == null)
             laserPool = FindObjectOfType<LaserPool>();
+        if (laserBarrage == null)
+            laserBarrage = GetComponent<LaserBarrageAttack>();
     }
 
     private void Update()
@@ -28,8 +32,13 @@ public sealed class LaserStandaloneTest : MonoBehaviour
             SpawnAtTarget(angle);
         if (Input.GetKeyDown(KeyCode.R))
             SpawnAtTarget(Random.Range(0f, 180f));
-        if (Input.GetKeyDown(KeyCode.C) && laserPool != null)
-            laserPool.ReleaseAll();
+        if (Input.GetKeyDown(barrageKey) && laserBarrage != null)
+            laserBarrage.StartLaserBarrage();
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            laserBarrage?.StopLaserBarrage();
+            laserPool?.ReleaseAll();
+        }
     }
 
     [ContextMenu("Spawn Test Laser")]
@@ -57,7 +66,8 @@ public sealed class LaserStandaloneTest : MonoBehaviour
             return;
 
         string targetName = target != null ? target.name : $"{name} (self fallback)";
-        GUI.Label(new Rect(12f, 12f, 680f, 24f),
-            $"Laser test: L=spawn, R=random, Left/Right=angle, C=release all | Target {targetName} | Angle {angle:0} | Active {laserPool.ActiveCount} | Ready {laserPool.AvailableCount}");
+        string barrageState = laserBarrage != null && laserBarrage.IsRunning ? "Running" : "Ready";
+        GUI.Label(new Rect(12f, 12f, 900f, 24f),
+            $"Laser test: L=spawn, {barrageKey}=barrage, R=random, Left/Right=angle, C=stop all | Barrage {barrageState} | Target {targetName} | Angle {angle:0} | Active {laserPool.ActiveCount} | Ready {laserPool.AvailableCount}");
     }
 }

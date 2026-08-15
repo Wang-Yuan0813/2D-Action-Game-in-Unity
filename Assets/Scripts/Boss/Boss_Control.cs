@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Control : EnemyBase
+public class Boss_Control : EnemyBase, IEnemyAttackOwner
 {
     
     [Header("绑定组件及对象")]
     private GameObject player;
     private Rigidbody2D rb;
-    private SpriteRenderer sr;
+    private BossWhiteFlash whiteFlash;
     private GameObject cameraControl;
     private Cinemachine.CinemachineCollisionImpulseSource impulse;
     private GameObject hitFX;
@@ -37,6 +37,7 @@ public class Boss_Control : EnemyBase
     public bool catchPlayer;
     public bool isCatchPlayer;
     public bool attackValid;
+    public bool AttackValid => attackValid;
 
     [Header("受伤设置")]
     public bool isTakeHit;
@@ -54,7 +55,7 @@ public class Boss_Control : EnemyBase
         bloodBoom = Resources.Load<GameObject>("FXPref/BloodBoom");
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        whiteFlash = GetComponent<BossWhiteFlash>();
     }
     void Update()
     {
@@ -163,6 +164,20 @@ public class Boss_Control : EnemyBase
         isCatchPlayer = false;
     }
 
+    public bool TryConsumeAttackWindow()
+    {
+        if (!attackValid)
+            return false;
+
+        attackValid = false;
+        return true;
+    }
+
+    public void OnAttackParried()
+    {
+        OnParried();
+    }
+
     public override void TakeHit(int damage)
     {
         if(!cantHit)//处于非攻击状态时
@@ -182,6 +197,7 @@ public class Boss_Control : EnemyBase
     private void TakeHitFX()
     {
         isTakeHit = true;
+        whiteFlash?.PlayFlash();
         Instantiate(hitFX, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity, null);
         StartCoroutine(TurnColor(0.2f));
         impulse.GenerateImpulse();
@@ -197,12 +213,10 @@ public class Boss_Control : EnemyBase
         while(duration>0)
         {
             duration -= Time.deltaTime;
-            sr.color = new Color(0,0,0,1);
             isTakeHit = true;
             yield return null;
         }
         isTakeHit = false;
-        sr.color = new Color(1, 1, 1, 1);
         yield return null;
     }
     

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAttack : MonoBehaviour
@@ -12,7 +13,11 @@ public class BossAttack : MonoBehaviour
     [SerializeField] private EnemyAttackType attackType = EnemyAttackType.Melee;
     [SerializeField] private bool canBeParried = true;
 
+    private IEnemyAttackOwner attackOwner;
     private Boss_Control boss;
+    private Collider2D attackCollider;
+    private readonly List<Collider2D> overlapResults = new List<Collider2D>(8);
+    private ContactFilter2D overlapFilter;
 
     public EnemyAttackType AttackType => attackType;
     public bool CanBeParried => canBeParried;
@@ -21,12 +26,69 @@ public class BossAttack : MonoBehaviour
 
     private void Awake()
     {
-        boss = GetComponentInParent<Boss_Control>();
+        attackCollider = GetComponent<Collider2D>();
+        overlapFilter = new ContactFilter2D();
+        overlapFilter.NoFilter();
+        overlapFilter.useTriggers = true;
+        ResolveAttackOwner();
+    }
+
+    private void OnEnable()
+    {
+        ResolveAttackOwner();
+    }
+
+    private void ResolveAttackOwner()
+    {
+        if (attackOwner != null)
+            return;
+
+        foreach (MonoBehaviour behaviour in GetComponentsInParent<MonoBehaviour>(true))
+        {
+            if (!(behaviour is IEnemyAttackOwner owner))
+                continue;
+
+            attackOwner = owner;
+            boss = behaviour as Boss_Control;
+            break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") || boss == null || !boss.attackValid)
+        TryResolveHit(other);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        // An animated attack area can become active while already overlapping a stationary player.
+        TryResolveHit(other);
+    }
+
+    private void FixedUpdate()
+    {
+        ResolveAttackOwner();
+        if (attackCollider == null || !attackCollider.enabled || attackOwner == null || !attackOwner.AttackValid)
+            return;
+
+        // Trigger callbacks can be skipped when the player Rigidbody2D is asleep and an
+        // already-overlapping attack area is enabled. Query the attack shape explicitly so
+        // a stationary player is evaluated exactly like a moving player.
+        attackCollider.OverlapCollider(overlapFilter, overlapResults);
+        for (int i = 0; i < overlapResults.Count && attackOwner.AttackValid; i++)
+        {
+            Collider2D candidate = overlapResults[i];
+            if (candidate != null)
+                TryResolveHit(candidate);
+        }
+
+        overlapResults.Clear();
+    }
+
+    private void TryResolveHit(Collider2D other)
+    {
+        ResolveAttackOwner();
+        if (!other.CompareTag("Player") || attackOwner == null || !attackOwner.AttackValid)
             return;
 
         Player_Control player = other.GetComponentInParent<Player_Control>();
@@ -48,7 +110,7 @@ public class BossAttack : MonoBehaviour
         }
 
         // Invulnerability and successful-parry protection consume this Boss hit without damage.
-        boss.attackValid = false;
+        attackOwner.TryConsumeAttackWindow();
         if (defense == PlayerDefenseResult.Invulnerable)
             return;
 
@@ -59,23 +121,24 @@ public class BossAttack : MonoBehaviour
         else
         {
             player.GetCatched(attackerX);
-            boss.catchPlayer = true;
-            boss.isCatchPlayer = true;
+            if (boss != null)
+            {
+                boss.catchPlayer = true;
+                boss.isCatchPlayer = true;
+            }
         }
     }
 
     public bool TryConsumeAsParried()
     {
-        if (boss == null || !boss.attackValid || attackType != EnemyAttackType.Melee || !canBeParried)
+        if (attackOwner == null || !attackOwner.AttackValid || attackType != EnemyAttackType.Melee || !canBeParried)
             return false;
 
-        boss.attackValid = false;
-        return true;
+        return attackOwner.TryConsumeAttackWindow();
     }
 
     public void ApplyParryReaction()
     {
-        if (boss != null)
-            boss.OnParried();
+        attackOwner?.OnAttackParried();
     }
 }
