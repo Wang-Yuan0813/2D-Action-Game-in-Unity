@@ -5,13 +5,18 @@ using UnityEngine;
 public class BossBloodBoom : MonoBehaviour
 {
     [Header("攻击属性")]
+    [SerializeField, Min(1)] private int damage = 10;
     public float smash;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))//攻击命中了玩家对象，需要在这里判定一下是否有攻击
         {
-            GameObject Player = other.gameObject;
-            Player.GetComponent<Player_Control>().TakeHit(smash, transform.position.x);//调用敌人受伤函数，传递伤害参数与攻击者位置
+            Player_Control player = other.GetComponentInParent<Player_Control>();
+            if (player == null ||
+                player.ResolveIncomingAttack(EnemyAttackType.Hazard, false, transform.position.x) != PlayerDefenseResult.Hit)
+                return;
+
+            player.TakeDamage(damage, smash, transform.position.x);
         }
     }
     public void AnimEnd()

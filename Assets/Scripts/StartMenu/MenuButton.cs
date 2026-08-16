@@ -28,6 +28,7 @@ public class MenuButton : MonoBehaviour
         Color color = chosenBlock.transform.parent.GetComponent<Image>().color;
         color.a = 1f;
         chosenBlock.transform.parent.GetComponent<Image>().color = color;
+        StartMenu.PlayButtonSelectedSound(gameObject);
     }
     public void SelectStart()
     {

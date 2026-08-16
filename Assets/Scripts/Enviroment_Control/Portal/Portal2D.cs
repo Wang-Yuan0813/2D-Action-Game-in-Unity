@@ -19,6 +19,12 @@ public sealed class Portal2D : MonoBehaviour
     [Header("交互")]
     [SerializeField] private string requiredTag = "Player";
 
+    [Tooltip("传送门是否在场景开始时就可以使用。条件传送门应关闭此项。")]
+    [SerializeField] private bool startsOpen = true;
+
+    [Tooltip("使用后删除当前传送门和目标传送门，使这次传送只能执行一次。")]
+    [SerializeField] private bool consumePairOnUse = true;
+
     [Tooltip("可选的“按交互键进入”提示对象。")]
     [SerializeField] private GameObject interactionPrompt;
 
@@ -42,13 +48,20 @@ public sealed class Portal2D : MonoBehaviour
         new HashSet<Collider2D>();
 
     private Collider2D interactionTrigger;
+    private Renderer[] portalRenderers;
+    private WorldInteractionPrompt worldInteractionPrompt;
     private Rigidbody2D playerBodyInRange;
     private Rigidbody2D playerBlockedUntilExit;
     private float nextInteractionTime;
     private bool teleportInProgress;
+    private bool isOpen;
+    private bool isConsumed;
 
     public Transform ArrivalPoint => arrivalPoint;
     public MapParallaxGroup OwningMap => owningMap;
+    public Portal2D DestinationPortal => destinationPortal;
+    public bool IsOpen => isOpen && !isConsumed;
+    public bool ConsumePairOnUse => consumePairOnUse;
 
     private void Reset()
     {
@@ -68,8 +81,13 @@ public sealed class Portal2D : MonoBehaviour
     private void Awake()
     {
         interactionTrigger = GetComponent<Collider2D>();
+        portalRenderers = GetComponentsInChildren<Renderer>(true);
+        worldInteractionPrompt = GetComponent<WorldInteractionPrompt>();
+        if (worldInteractionPrompt == null)
+            worldInteractionPrompt = gameObject.AddComponent<WorldInteractionPrompt>();
+        worldInteractionPrompt.SetLocalOffset(new Vector3(0f, 1.35f, 0f));
         ResolveSystemReferences();
-        SetInteractionPrompt(false);
+        SetOpenState(startsOpen);
     }
 
     private void Update()
@@ -85,7 +103,7 @@ public sealed class Portal2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!IsPlayerCollider(other))
+        if (!IsOpen || !IsPlayerCollider(other))
         {
             return;
         }
@@ -134,7 +152,8 @@ public sealed class Portal2D : MonoBehaviour
 
     private bool CanCurrentPlayerInteract()
     {
-        if (teleportInProgress
+        if (!IsOpen
+            || teleportInProgress
             || playerBodyInRange == null
             || playerBodyInRange == playerBlockedUntilExit
             || Time.unscaledTime < nextInteractionTime)
@@ -163,15 +182,26 @@ public sealed class Portal2D : MonoBehaviour
             return;
         }
 
+        PortalTransitionController transition = PortalTransitionController.GetOrCreate();
+        if (transition != null && transition.BeginTeleport(this, playerBody))
+        {
+            teleportInProgress = true;
+            nextInteractionTime = Time.unscaledTime + interactionCooldown;
+            ClosePortal();
+        }
+    }
+
+    internal bool PerformTeleport(Rigidbody2D playerBody)
+    {
+        if (playerBody == null || destinationPortal == null)
+            return false;
+
         Transform destinationPoint = destinationPortal.ArrivalPoint;
         if (destinationPoint == null)
         {
             Debug.LogWarning("目标传送门没有配置 Arrival Point。", destinationPortal);
-            return;
+            return false;
         }
-
-        teleportInProgress = true;
-        nextInteractionTime = Time.unscaledTime + interactionCooldown;
 
         Vector2 oldPosition = playerBody.position;
         Vector2 destinationPosition = destinationPoint.position;
@@ -187,7 +217,8 @@ public sealed class Portal2D : MonoBehaviour
         Physics2D.SyncTransforms();
 
         NotifyCameraWarp(playerBody.transform, warpDelta);
-        destinationPortal.PrepareForArrival(playerBody);
+        if (!consumePairOnUse)
+            destinationPortal.PrepareForArrival(playerBody);
         ScheduleParallaxSynchronization();
 
         if (logTeleport)
@@ -197,7 +228,81 @@ public sealed class Portal2D : MonoBehaviour
                 this);
         }
 
+        return true;
+    }
+
+    internal void CancelTeleport()
+    {
         teleportInProgress = false;
+        if (!isConsumed)
+            OpenPortal();
+    }
+
+    internal void ConsumePortalPair()
+    {
+        Portal2D target = destinationPortal;
+        MarkConsumedAndDestroy();
+
+        if (target != null && target != this)
+            target.MarkConsumedAndDestroy();
+    }
+
+    private void MarkConsumedAndDestroy()
+    {
+        if (isConsumed)
+            return;
+
+        isConsumed = true;
+        SetOpenState(false);
+        Destroy(GetPortalRoot());
+    }
+
+    private GameObject GetPortalRoot()
+    {
+        if (arrivalPoint != null
+            && transform.parent != null
+            && arrivalPoint.parent == transform.parent)
+        {
+            return transform.parent.gameObject;
+        }
+
+        return gameObject;
+    }
+
+    public void OpenPortal()
+    {
+        if (!isConsumed)
+            SetOpenState(true);
+    }
+
+    public void ClosePortal()
+    {
+        SetOpenState(false);
+    }
+
+    private void SetOpenState(bool open)
+    {
+        isOpen = open && !isConsumed;
+
+        if (interactionTrigger == null)
+            interactionTrigger = GetComponent<Collider2D>();
+        if (interactionTrigger != null)
+            interactionTrigger.enabled = isOpen;
+
+        if (portalRenderers == null || portalRenderers.Length == 0)
+            portalRenderers = GetComponentsInChildren<Renderer>(true);
+        for (int i = 0; i < portalRenderers.Length; i++)
+        {
+            if (portalRenderers[i] != null)
+                portalRenderers[i].enabled = isOpen;
+        }
+
+        if (!isOpen)
+        {
+            playerCollidersInRange.Clear();
+            playerBodyInRange = null;
+        }
+
         SetInteractionPrompt(false);
     }
 
@@ -314,6 +419,7 @@ public sealed class Portal2D : MonoBehaviour
 
     private void SetInteractionPrompt(bool isVisible)
     {
+        worldInteractionPrompt?.SetVisible(isVisible);
         if (interactionPrompt != null
             && interactionPrompt.activeSelf != isVisible)
         {

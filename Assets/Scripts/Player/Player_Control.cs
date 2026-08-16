@@ -7,6 +7,7 @@ public class Player_Control : MonoBehaviour
 {
     private Rigidbody2D Rb;
     private GameObject energyBar;
+    private EnergyBarControl energyBarControl;
     [Header("全局控制的属性")]
     public bool attackAllow;
     public bool dodgeAllow;
@@ -51,6 +52,7 @@ public class Player_Control : MonoBehaviour
     private float meleeProtectionUntil;
 
     [Header("受伤属性")]
+    [SerializeField, Min(0f)] private float laserKnockback = 8f;
     public bool cantHit;
     [Tooltip("Only parries attacks classified as parryable melee. It is not full invulnerability.")]
     public bool meleeParryActive;
@@ -69,8 +71,44 @@ public class Player_Control : MonoBehaviour
     [Header("体力属性设置")]
     private float energyLeft;
 
+    [Header("Player Combat Audio (MP3)")]
+    [Tooltip("Two sword-swing sounds. Both ground and aerial attacks use this pair.")]
+    [SerializeField] private AudioClip swordSwingSound1;
+    [SerializeField] private AudioClip swordSwingSound2;
+    [SerializeField, Range(0f, 1f)] private float swordSwingVolume = 1f;
+    [Tooltip("Two sounds played only after a successful melee parry.")]
+    [SerializeField] private AudioClip successfulParrySound1;
+    [SerializeField] private AudioClip successfulParrySound2;
+    [SerializeField, Range(0f, 1f)] private float successfulParryVolume = 1f;
+    [Tooltip("Optional. If left empty, a dedicated 2D AudioSource is created automatically.")]
+    [SerializeField] private AudioSource combatAudioSource;
+
+    private int lastSwordSwingSoundIndex = -1;
+    private int lastSuccessfulParrySoundIndex = -1;
+
     private GameObject cameraControl;
     private GameManager gameManager;
+    private PlayerHealth playerHealth;
+    private bool interactionMovementLocked;
+
+    public PlayerHealth Health => playerHealth;
+    public float LaserKnockback => laserKnockback;
+    public bool IsInteractionMovementLocked => interactionMovementLocked;
+
+    private void Awake()
+    {
+        playerHealth = GetComponent<PlayerHealth>();
+        if (playerHealth == null)
+            playerHealth = gameObject.AddComponent<PlayerHealth>();
+
+        if (combatAudioSource == null)
+            combatAudioSource = gameObject.AddComponent<AudioSource>();
+
+        combatAudioSource.playOnAwake = false;
+        combatAudioSource.loop = false;
+        combatAudioSource.spatialBlend = 0f;
+    }
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();//获取GameManager
@@ -78,6 +116,7 @@ public class Player_Control : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<Physics_Check>();
         energyBar = transform.Find("EnergyBar").gameObject;
+        energyBarControl = energyBar.GetComponent<EnergyBarControl>();
         //攻击有关初始化
         canAttack = true;
         preAttackExist = 0.2f;//预输入攻击标志存在时间
@@ -85,13 +124,23 @@ public class Player_Control : MonoBehaviour
         //下面这3个之后删掉嗷，现在就是方便调试时候用一下
         attackAllow = true;
         dodgeAllow = true;
+
+        PlayerHealthBarController.ShowFor(playerHealth, "PLAYER");
     }
     void Update()
     {
+        if (gameManager != null && !gameManager.playerCanMove)
+        {
+            EnterInteractionMovementLock();
+            MaintainInteractionStand();
+            return;
+        }
+
+        ExitInteractionMovementLock();
         UpdateJumpAttackState();
 
         //运动相关
-        if (gameManager.playerCanMove)
+        if (gameManager == null || gameManager.playerCanMove)
         {
             if (!isTakeHit)
             {
@@ -122,6 +171,13 @@ public class Player_Control : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (gameManager != null && !gameManager.playerCanMove)
+        {
+            EnterInteractionMovementLock();
+            MaintainInteractionStand();
+            return;
+        }
+
         Dodge();
         if (!isDodge && !isTakeHit)
         {
@@ -129,6 +185,58 @@ public class Player_Control : MonoBehaviour
             FaceDirection();
             GroundMovement();
         }
+    }
+
+    private void EnterInteractionMovementLock()
+    {
+        if (interactionMovementLocked)
+            return;
+
+        interactionMovementLocked = true;
+
+        bool wasDodging = isDodge || dodge;
+        moveDir = 0f;
+        JumpPressed = false;
+        JumpHeld = false;
+        IsJump = false;
+        dodge = false;
+        isDodge = false;
+        attack = false;
+        preAttack = false;
+        isAttack = false;
+        attackValid = false;
+        MeleeParryEnd();
+        EndJumpAttack();
+        canAttack = false;
+
+        if (wasDodging && !isTakeHit)
+            Physics2D.IgnoreLayerCollision(7, 9, false);
+    }
+
+    private void MaintainInteractionStand()
+    {
+        moveDir = 0f;
+        JumpPressed = false;
+        JumpHeld = false;
+        attack = false;
+        preAttack = false;
+        dodge = false;
+        isAttack = false;
+        attackValid = false;
+        canAttack = false;
+
+        if (Rb != null)
+            Rb.velocity = new Vector2(0f, Rb.velocity.y);
+    }
+
+    private void ExitInteractionMovementLock()
+    {
+        if (!interactionMovementLocked)
+            return;
+
+        interactionMovementLocked = false;
+        if (!isTakeHit && !isDodge && !dodge)
+            canAttack = true;
     }
     public void CheckHorzontalMove()
     {
@@ -232,6 +340,7 @@ public class Player_Control : MonoBehaviour
         attack = true;
         canAttack = false;
         preAttack = false;
+        PlaySwordSwingSound();
     }
 
     public void JumpAttackLift()
@@ -310,6 +419,67 @@ public class Player_Control : MonoBehaviour
     public void RegisterSuccessfulMeleeParry(float protectionDuration)
     {
         meleeProtectionUntil = Mathf.Max(meleeProtectionUntil, Time.time + Mathf.Max(0f, protectionDuration));
+        PlaySuccessfulParrySound();
+
+        if (energyBarControl == null && energyBar != null)
+            energyBarControl = energyBar.GetComponent<EnergyBarControl>();
+        if (energyBarControl != null)
+        {
+            energyBarControl.RefillEnergy();
+            energyLeft = energyBarControl.energyLeft;
+        }
+    }
+
+    private void PlaySwordSwingSound()
+    {
+        PlayCombatSound(
+            swordSwingSound1,
+            swordSwingSound2,
+            swordSwingVolume,
+            ref lastSwordSwingSoundIndex);
+    }
+
+    private void PlaySuccessfulParrySound()
+    {
+        PlayCombatSound(
+            successfulParrySound1,
+            successfulParrySound2,
+            successfulParryVolume,
+            ref lastSuccessfulParrySoundIndex);
+    }
+
+    private void PlayCombatSound(
+        AudioClip firstClip,
+        AudioClip secondClip,
+        float volume,
+        ref int lastPlayedIndex)
+    {
+        if (combatAudioSource == null)
+            return;
+
+        AudioClip selectedClip;
+        if (firstClip == null && secondClip == null)
+            return;
+        if (firstClip == null)
+        {
+            selectedClip = secondClip;
+            lastPlayedIndex = 1;
+        }
+        else if (secondClip == null)
+        {
+            selectedClip = firstClip;
+            lastPlayedIndex = 0;
+        }
+        else
+        {
+            int selectedIndex = lastPlayedIndex < 0
+                ? Random.Range(0, 2)
+                : 1 - lastPlayedIndex;
+            selectedClip = selectedIndex == 0 ? firstClip : secondClip;
+            lastPlayedIndex = selectedIndex;
+        }
+
+        combatAudioSource.PlayOneShot(selectedClip, volume);
     }
 
     public PlayerDefenseResult ResolveIncomingAttack(EnemyAttackType attackType, bool canBeParried, float attackerX)
@@ -348,6 +518,15 @@ public class Player_Control : MonoBehaviour
         {
             Rb.velocity = new Vector2(-smash, Rb.velocity.y);
         }   
+    }
+
+    public bool TakeDamage(int damage, float smash, float attackerX)
+    {
+        if (playerHealth == null || !playerHealth.TakeDamage(damage))
+            return false;
+
+        TakeHit(smash, attackerX);
+        return true;
     }
     public void Counter(float smash, float attackerX)
     {

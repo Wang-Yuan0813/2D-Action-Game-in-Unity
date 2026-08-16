@@ -6,17 +6,9 @@ using UnityEngine.UI;
 public class PauseMenuButton : MonoBehaviour
 {
 
-    public GameObject bagPanel;
     public GameObject settingsPanel;
     public GameObject exitPanel;
     public GameObject chosenBlock;
-    public void SelectBag()
-    {
-        CloseAllPanel();
-        bagPanel.SetActive(true);
-        MenuListManager.ClosedAllChosenBlock();
-        chosenBlock.SetActive(true);
-    }
     public void SelectSettings()
     {
         CloseAllPanel();
@@ -33,7 +25,6 @@ public class PauseMenuButton : MonoBehaviour
     }
     private void CloseAllPanel()
     {
-        bagPanel.SetActive(false);
         settingsPanel.SetActive(false);
         exitPanel.SetActive(false);
     }

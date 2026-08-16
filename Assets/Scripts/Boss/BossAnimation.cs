@@ -9,12 +9,33 @@ public class BossAnimation : MonoBehaviour
     private Rigidbody2D rb;
     public int maxAttackTypes;//IdleAttack的攻击动画有几种
 
+    [Header("攻击音效 (MP3)")]
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip attack1Sound;
+    [SerializeField] private AudioClip dodgeAttackSound;
+    [SerializeField] private AudioClip stabSound;
+    [SerializeField] private AudioClip bloodBoomSound;
+    [SerializeField] private AudioClip throwOutSound;
+    [SerializeField, Range(0f, 1f)] private float attackVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float attack1Volume = 1f;
+    [SerializeField, Range(0f, 1f)] private float dodgeAttackVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float stabVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float bloodBoomVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float throwOutVolume = 1f;
+    [Tooltip("可选。留空时会在运行时自动创建一个独立的 2D AudioSource。")]
+    [SerializeField] private AudioSource attackAudioSource;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         //physicsCheck = GetComponent<Physics_Check>();
         boss_Control = GetComponent<Boss_Control>();
         rb = GetComponent<Rigidbody2D>();
+        if (attackAudioSource == null)
+            attackAudioSource = gameObject.AddComponent<AudioSource>();
+        attackAudioSource.playOnAwake = false;
+        attackAudioSource.loop = false;
+        attackAudioSource.spatialBlend = 0f;
         InvokeRepeating("ChooseAttackType", 1, 0.05f);
     }
 
@@ -115,5 +136,43 @@ public class BossAnimation : MonoBehaviour
     public void BloodBoomStart()
     {
         rb.velocity = Vector2.zero;
+    }
+
+    public void PlayBoss1AttackSound()
+    {
+        PlayAttackSound(attackSound, attackVolume);
+    }
+
+    public void PlayBoss1Attack1Sound()
+    {
+        PlayAttackSound(attack1Sound, attack1Volume);
+    }
+
+    public void PlayBoss1DodgeAttackSound()
+    {
+        PlayAttackSound(dodgeAttackSound, dodgeAttackVolume);
+    }
+
+    public void PlayBoss1StabSound()
+    {
+        PlayAttackSound(stabSound, stabVolume);
+    }
+
+    public void PlayBoss1BloodBoomSound()
+    {
+        PlayAttackSound(bloodBoomSound, bloodBoomVolume);
+    }
+
+    public void PlayBoss1ThrowOutSound()
+    {
+        PlayAttackSound(throwOutSound, throwOutVolume);
+    }
+
+    private void PlayAttackSound(AudioClip clip, float volume)
+    {
+        if (clip == null || attackAudioSource == null)
+            return;
+
+        attackAudioSource.PlayOneShot(clip, volume);
     }
 }

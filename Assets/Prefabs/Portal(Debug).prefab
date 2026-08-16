@@ -223,6 +223,8 @@ MonoBehaviour:
   arrivalPoint: {fileID: 8682681182431298804}
   owningMap: {fileID: 0}
   requiredTag: Player
+  startsOpen: 1
+  consumePairOnUse: 1
   interactionPrompt: {fileID: 0}
   interactionCooldown: 0.25
   resetVelocity: 1

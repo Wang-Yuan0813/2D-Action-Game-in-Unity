@@ -1,0 +1,239 @@
+Interaction Map Dialogue Log
+Started: 2026-08-16T18:38:43.6456204+01:00
+Scene: MainGameScene
+Map: map-interaction
+Puzzle: cat-dream-v2
+Game version: 1.0
+Log path: D:\unityprojects\Action2DGame\game\logs\interaction_20260816_183843_645_eb7947.txt
+
+============================================================
+[2026-08-16T18:39:06.4764615+01:00] [ASK] [REQUEST] [R0001]
+
+Player input:
+小女孩是遭受了什么吗
+
+[2026-08-16T18:39:06.6972316+01:00] [ASK] [SUCCESS] [R0001]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:39:23.7062980+01:00] [ASK] [REQUEST] [R0002]
+
+Player input:
+小女孩是现实中遭受了悲剧吗
+
+[2026-08-16T18:39:23.9223225+01:00] [ASK] [SUCCESS] [R0002]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:39:36.5395627+01:00] [ASK] [REQUEST] [R0003]
+
+Player input:
+小女孩是为了逃避吗
+
+[2026-08-16T18:39:36.7579840+01:00] [ASK] [SUCCESS] [R0003]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:39:59.8503507+01:00] [ASK] [REQUEST] [R0004]
+
+Player input:
+小女孩是被霸凌了吗
+
+[2026-08-16T18:40:00.0748885+01:00] [ASK] [SUCCESS] [R0004]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-16T18:40:06.2793920+01:00] [ASK] [REQUEST] [R0005]
+
+Player input:
+小女孩有爸爸妈妈吗
+
+[2026-08-16T18:40:06.4916866+01:00] [ASK] [SUCCESS] [R0005]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:40:19.2811205+01:00] [ASK] [REQUEST] [R0006]
+
+Player input:
+小女孩有朋友吗
+
+[2026-08-16T18:40:19.5008898+01:00] [ASK] [SUCCESS] [R0006]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:40:32.3399900+01:00] [ASK] [REQUEST] [R0007]
+
+Player input:
+小女孩是被霸凌了所以在逃避现实吗
+
+[2026-08-16T18:40:32.5604791+01:00] [ASK] [SUCCESS] [R0007]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-16T18:41:05.3786207+01:00] [ASK] [REQUEST] [R0008]
+
+Player input:
+我打败黑衣刀客是为了直面现实吗
+
+[2026-08-16T18:41:05.5988178+01:00] [ASK] [SUCCESS] [R0008]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-16T18:41:13.4671029+01:00] [ASK] [REQUEST] [R0009]
+
+Player input:
+小猫是我吗
+
+[2026-08-16T18:41:13.6827831+01:00] [ASK] [SUCCESS] [R0009]
+
+Model output:
+否
+
+Model diagnostics:
+label: B
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+B
+
+============================================================
+[2026-08-16T18:41:18.1165660+01:00] [ASK] [REQUEST] [R0010]
+
+Player input:
+小猫是小女孩吗
+
+[2026-08-16T18:41:18.3288339+01:00] [ASK] [SUCCESS] [R0010]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:41:22.3043970+01:00] [ASK] [REQUEST] [R0011]
+
+Player input:
+我是小女孩吗
+
+[2026-08-16T18:41:22.5242117+01:00] [ASK] [SUCCESS] [R0011]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-16T18:41:26.6423117+01:00] [ASK] [REQUEST] [R0012]
+
+Player input:
+黑衣刀客是小女孩吗
+
+[2026-08-16T18:41:26.8554078+01:00] [ASK] [SUCCESS] [R0012]
+
+Model output:
+否
+
+Model diagnostics:
+label: B
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+B
+
+============================================================
+Ended: 2026-08-16T18:42:05.1159804+01:00
+Reason: Application quit

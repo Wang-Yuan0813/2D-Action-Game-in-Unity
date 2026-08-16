@@ -4,6 +4,8 @@ using UnityEngine;
 public sealed class BossActivationTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject boss;
+    [SerializeField] private string bossDisplayName = "BOSS";
+    [SerializeField] private BossEncounterType encounterType;
     private bool activated;
 
     private void Reset()
@@ -28,6 +30,16 @@ public sealed class BossActivationTrigger : MonoBehaviour
             boss.AddComponent<BossWhiteFlash>();
 
         boss.SetActive(true);
+
+        EnemyBase bossHealth = boss.GetComponent<EnemyBase>();
+        if (bossHealth != null)
+        {
+            BossHealthBarController.ShowFor(bossHealth, bossDisplayName);
+            GameFlowEndingController.Instance?.BeginBossEncounter(encounterType, bossHealth);
+        }
+        else
+            Debug.LogWarning("Activated Boss has no EnemyBase component, so its health bar cannot be shown.", boss);
+
         gameObject.SetActive(false);
     }
 }

@@ -1,5 +1,5 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11,8 +11,16 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c71f0377b148969ced032cf2dcafaf, type: 3}
   m_Name: Boss2Speech
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   lines:
-  - "\u76EE\u6807\u9501\u5B9A\u3002"
-  - "\u56DE\u907F\u7A0B\u5E8F\u542F\u52A8\u3002"
-  - "\u6E05\u9664\u5165\u4FB5\u8005\u3002"
+  - "\u3002\u3002\u3002\u3002\u3002\u3002\u3002"
+  - "\u6211\u4EEC\u3002\u3002\u628A\u5979\u7684\u4E66\u5305\u4E22\u6389\u5427"
+  - "\u54C8\u3002\u3002\u54C8\u54C8\u7231\u54ED\u7684\u9F3B\u6D95\u866B"
+  - "\u8001\u5E08\u6765\u4E86\uFF0C\u5FEB\u8DD1"
+  - "\u554A\uFF01\uFF01"
+  - "\u522B\u6253\u5B69\u5B50\uFF0C\u522B\u6253\u5B69\u5B50"
+  - "\uFF08\u810F\u8BDD\uFF09"
+  - "\u597D\u75DB"
+  - "\u6EDA\u51FA\u8FD9\u4E2A\u5BB6"
+  - "\u4E3A\u4EC0\u4E48\u4ED6\u4EEC\u4E0D\u6B3A\u8D1F\u522B\u4EBA\u5C31\u6B3A\u8D1F\u4F60\u5462"
+  - "\u5BF9\u3002\u3002\u4E0D\u8D77\u3002\u3002"

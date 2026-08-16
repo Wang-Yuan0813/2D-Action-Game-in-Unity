@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [DefaultExecutionOrder(1000)]
 public sealed class ParallaxManager : MonoBehaviour
 {
+    public event Action<MapParallaxGroup> ActiveMapChanged;
     [Header("移动参考")]
     [Tooltip("用于判断当前地图的输出相机。为空时自动使用 Camera.main。")]
     [SerializeField] private Camera outputCamera;
@@ -110,6 +112,7 @@ public sealed class ParallaxManager : MonoBehaviour
 
         activeMap = mapGroup;
         activeMap.Activate(GetMovementReferencePosition());
+        ActiveMapChanged?.Invoke(activeMap);
 
         if (logMapChanges)
         {

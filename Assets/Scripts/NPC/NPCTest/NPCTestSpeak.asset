@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NPCTestSpeak
   m_EditorClassIdentifier: 
   bubbleList:
-  - "\u6211\u4E0D\u77E5\u9053\u8BF4\u4EC0\u4E48"
-  - "\u5728\u7B49\u6587\u6848\u586B\u8BCD"
-  - fuck off
+  - "\u4F60\u53C8\u6765\u5566\u3002\u3002"
+  - "\u6765\u542C\u6545\u4E8B\u5417\uFF1F"
+  - "\u8FD9\u4E2A\u5B69\u5B50\u5C31\u4EA4\u7ED9\u4F60\u4E86"
+  - "\u4F60\u66F4\u52A0\u5F3A\u5927\u4E86"
   mainList: []

@@ -23,6 +23,7 @@ public class NPC_Control : MonoBehaviour
     private Transform playerTransform;
     private SpeakBubble_Control bubbleControl;
     private bool playerIsWithinBubbleDistance;
+    private WorldInteractionPrompt interactionPrompt;
     [Header("对话JSON")]
     [SerializeField] private TextAsset inkJSON;
     // Start is called before the first frame update
@@ -39,6 +40,10 @@ public class NPC_Control : MonoBehaviour
         sp = gameObject.GetComponent<SpriteRenderer>();
         sp.color = new Color(normalColor, normalColor, normalColor, 1);
         choosingP = this.transform.Find("ChoosingParticle").gameObject.GetComponent<ParticleSystem>();
+        interactionPrompt = GetComponent<WorldInteractionPrompt>();
+        if (interactionPrompt == null)
+            interactionPrompt = gameObject.AddComponent<WorldInteractionPrompt>();
+        interactionPrompt.SetVisible(false);
 
         canInteracting = false;
         StartCoroutine(BubbleTriggerActionCoroutine());
@@ -60,6 +65,7 @@ public class NPC_Control : MonoBehaviour
     }
     public void StartDialogue()
     {
+        interactionPrompt?.SetVisible(false);
         bubbleControl.canBubbleActive = false;
         bubbleControl.BubbleDisappear(0.0f);
         DialogueManager.GetInstance().EnterDialoguemode(inkJSON,this.gameObject);
@@ -67,6 +73,7 @@ public class NPC_Control : MonoBehaviour
     public void StopDialogue()
     {
         bubbleControl.canBubbleActive = true;
+        interactionPrompt?.SetVisible(canInteracting);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -77,6 +84,7 @@ public class NPC_Control : MonoBehaviour
             StartCoroutine(TurnBright());
             // 启动选中粒子效果
             canInteracting = true;
+            interactionPrompt?.SetVisible(true);
             if (choosingP != null)
             {
                 choosingP.Play();
@@ -93,6 +101,7 @@ public class NPC_Control : MonoBehaviour
             StartCoroutine(TurnDark());
             // 停止选中粒子效果
             canInteracting = false;
+            interactionPrompt?.SetVisible(false);
             if (choosingP != null)
             {
                 choosingP.Stop();

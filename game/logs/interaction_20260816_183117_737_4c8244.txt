@@ -1,0 +1,11 @@
+Interaction Map Dialogue Log
+Started: 2026-08-16T18:31:17.7387932+01:00
+Scene: MainGameScene
+Map: map-interaction
+Puzzle: cat-dream-v2
+Game version: 1.0
+Log path: D:\unityprojects\Action2DGame\game\logs\interaction_20260816_183117_737_4c8244.txt
+
+============================================================
+Ended: 2026-08-16T18:31:17.7582461+01:00
+Reason: Left map-interaction

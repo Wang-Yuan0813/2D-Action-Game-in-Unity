@@ -644,6 +644,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAttackTypes: 200
+  attackSound: {fileID: 0}
+  attack1Sound: {fileID: 0}
+  dodgeAttackSound: {fileID: 0}
+  stabSound: {fileID: 0}
+  bloodBoomSound: {fileID: 0}
+  throwOutSound: {fileID: 0}
+  attackVolume: 1
+  attack1Volume: 1
+  dodgeAttackVolume: 1
+  stabVolume: 1
+  bloodBoomVolume: 1
+  throwOutVolume: 1
+  attackAudioSource: {fileID: 0}
 --- !u!114 &1598310929
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,68 @@
+Interaction Map Dialogue Log
+Started: 2026-08-16T18:23:59.6410615+01:00
+Scene: MainGameScene
+Map: map-interaction
+Puzzle: cat-dream-v2
+Game version: 1.0
+Log path: D:\unityprojects\Action2DGame\game\logs\interaction_20260816_182359_620_e9ee6a.txt
+
+============================================================
+[2026-08-16T18:26:48.6026271+01:00] [ASK] [REQUEST] [R0001]
+
+Player input:
+小猫重要吗
+
+[2026-08-16T18:26:50.1774187+01:00] [ASK] [SUCCESS] [R0001]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-16T18:27:00.1571510+01:00] [ASK] [REQUEST] [R0002]
+
+Player input:
+小猫是人吗
+
+[2026-08-16T18:27:00.3565772+01:00] [ASK] [SUCCESS] [R0002]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-16T18:27:20.2425742+01:00] [ASK] [REQUEST] [R0003]
+
+Player input:
+这里是梦境吗
+
+[2026-08-16T18:27:20.4540954+01:00] [ASK] [SUCCESS] [R0003]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+Ended: 2026-08-16T18:27:25.9229793+01:00
+Reason: Logger disabled or scene changed

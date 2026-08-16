@@ -26,6 +26,16 @@ public sealed class Boss2CombatController : MonoBehaviour
     [SerializeField] private GameObject landingAttackArea;
     [SerializeField] private LaserBarrageAttack laserBarrage;
 
+    [Header("Attack Audio (MP3)")]
+    [SerializeField] private AudioClip meleeAttackSound;
+    [SerializeField] private AudioClip jumpAttackSound;
+    [SerializeField] private AudioClip laserAttackSound;
+    [SerializeField, Range(0f, 1f)] private float meleeAttackVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float jumpAttackVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float laserAttackVolume = 1f;
+    [Tooltip("Optional. Leave empty to create a dedicated 2D AudioSource automatically.")]
+    [SerializeField] private AudioSource attackAudioSource;
+
     [Header("Movement")]
     [SerializeField, Min(0f)] private float walkSpeed = 3f;
     [SerializeField, Min(0f)] private float stopDistance = 3f;
@@ -36,6 +46,7 @@ public sealed class Boss2CombatController : MonoBehaviour
     [SerializeField, Min(0f)] private float meleeRange = 4f;
     [SerializeField, Range(0f, 1f)] private float meleeChanceInRange = 0.65f;
     [SerializeField, Range(0f, 1f)] private float laserChance = 0.4f;
+    [SerializeField, Range(0f, 1f)] private float laserHealthThreshold = 0.5f;
     [SerializeField, Min(0f)] private float initialAttackDelay = 1.5f;
     [SerializeField, Min(0f)] private float attackCooldown = 1.5f;
 
@@ -48,6 +59,10 @@ public sealed class Boss2CombatController : MonoBehaviour
     [SerializeField, Min(0.1f)] private float groundRayDistance = 12f;
     [SerializeField] private float bossGroundOffset = 0.05f;
 
+    [Header("Safe Reappearance")]
+    [SerializeField, Min(0f)] private float reappearClearance = 0.12f;
+    [SerializeField, Min(0f)] private float collisionRestoreTimeout = 0.75f;
+
     [Header("Animation Safety")]
     [SerializeField, Min(0.1f)] private float meleeTimeout = 2f;
     [SerializeField, Min(0.1f)] private float disappearTimeout = 1.6f;
@@ -58,6 +73,7 @@ public sealed class Boss2CombatController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Collider2D hurtCollider;
+    private Collider2D playerCollider;
     private Boss2LandingWarning landingWarning;
     private BossSpeechController speechController;
     private GameObject visualLight;
@@ -68,6 +84,10 @@ public sealed class Boss2CombatController : MonoBehaviour
     private bool meleeFinished;
     private bool disappearFinished;
     private bool appearFinished;
+    private bool playerCollisionIgnored;
+    private Coroutine collisionRestoreRoutine;
+    private float bossBottomOffset;
+    private float positionBeforeHideX;
     private readonly Dictionary<Sprite, Sprite> centeredSpriteCache = new Dictionary<Sprite, Sprite>();
     private readonly HashSet<Sprite> generatedCenteredSprites = new HashSet<Sprite>();
 
@@ -91,12 +111,24 @@ public sealed class Boss2CombatController : MonoBehaviour
                 player = playerObject.transform;
         }
 
+        if (player != null)
+            playerCollider = player.GetComponent<Collider2D>();
+
+        if (hurtCollider != null)
+            bossBottomOffset = hurtCollider.bounds.min.y - transform.position.y;
+
         if (meleeAttackArea == null)
             meleeAttackArea = transform.Find("MeleeAttackArea")?.gameObject;
         if (landingAttackArea == null)
             landingAttackArea = transform.Find("LandingAttackArea")?.gameObject;
         if (laserBarrage == null)
             laserBarrage = GetComponent<LaserBarrageAttack>();
+
+        if (attackAudioSource == null)
+            attackAudioSource = gameObject.AddComponent<AudioSource>();
+        attackAudioSource.playOnAwake = false;
+        attackAudioSource.loop = false;
+        attackAudioSource.spatialBlend = 0f;
 
         SetAttackAreasInactive();
         state = CombatState.Locomotion;
@@ -185,9 +217,18 @@ public sealed class Boss2CombatController : MonoBehaviour
             return;
         }
 
-        attackRoutine = UnityEngine.Random.value < laserChance && laserBarrage != null
+        bool canUseLaser = laserBarrage != null && IsAtOrBelowLaserHealthThreshold();
+        attackRoutine = canUseLaser && UnityEngine.Random.value < laserChance
             ? StartCoroutine(RunLaserAttack())
             : StartCoroutine(RunJumpAttack());
+    }
+
+    private bool IsAtOrBelowLaserHealthThreshold()
+    {
+        if (boss == null || boss.MaxHealth <= 0)
+            return false;
+
+        return (float)boss.CurrentHealth / boss.MaxHealth <= laserHealthThreshold;
     }
 
     private IEnumerator RunMeleeAttack()
@@ -209,7 +250,7 @@ public sealed class Boss2CombatController : MonoBehaviour
         BeginAttack();
         yield return DisappearAndHide();
         yield return WaitForDuration(jumpHiddenDelay);
-        yield return WarnAndAppear();
+        yield return WarnAndAppear(true);
         FinishAttack();
     }
 
@@ -219,14 +260,18 @@ public sealed class Boss2CombatController : MonoBehaviour
         yield return DisappearAndHide();
 
         if (laserBarrage != null && laserBarrage.StartLaserBarrage(laserBarrageDuration))
+        {
+            PlayAttackSound(laserAttackSound, laserAttackVolume);
             yield return new WaitUntil(() => !laserBarrage.IsRunning);
+        }
 
-        yield return WarnAndAppear();
+        yield return WarnAndAppear(false);
         FinishAttack();
     }
 
     private IEnumerator DisappearAndHide()
     {
+        positionBeforeHideX = transform.position.x;
         speechController?.SetSpeechEnabled(false);
         boss.SetInvincible(true);
         boss.CloseAttackWindow();
@@ -242,16 +287,19 @@ public sealed class Boss2CombatController : MonoBehaviour
             hurtCollider.enabled = false;
     }
 
-    private IEnumerator WarnAndAppear()
+    private IEnumerator WarnAndAppear(bool isJumpAttack)
     {
-        Vector2 landingPoint = FindPlayerGroundPoint();
-        yield return landingWarning.Show(landingPoint, landingWarningDuration);
+        float groundY;
+        Vector2 landingPoint = FindPlayerGroundPoint(out groundY);
+        yield return landingWarning.Show(new Vector2(landingPoint.x, groundY), landingWarningDuration);
 
         rb.position = landingPoint;
         FacePlayer(player != null ? player.position.x - transform.position.x : 1f);
 
         if (hurtCollider != null)
             hurtCollider.enabled = true;
+        SetPlayerCollisionIgnored(true);
+        Physics2D.SyncTransforms();
         spriteRenderer.enabled = true;
         if (visualLight != null)
             visualLight.SetActive(true);
@@ -259,27 +307,148 @@ public sealed class Boss2CombatController : MonoBehaviour
         state = CombatState.Attacking;
         appearFinished = false;
         boss.OpenAttackWindow();
+        if (isJumpAttack)
+            PlayAttackSound(jumpAttackSound, jumpAttackVolume);
         animator.Play(AppearState, 0, 0f);
         yield return WaitForSignal(() => appearFinished, appearTimeout, "appear");
 
         boss.CloseAttackWindow();
         SetAttackAreasInactive();
+        yield return RestorePlayerCollisionSafely();
         boss.SetInvincible(false);
         speechController?.SetSpeechEnabled(true);
     }
 
-    private Vector2 FindPlayerGroundPoint()
+    private void PlayAttackSound(AudioClip clip, float volume)
+    {
+        if (clip == null || attackAudioSource == null)
+            return;
+
+        attackAudioSource.PlayOneShot(clip, volume);
+    }
+
+    private Vector2 FindPlayerGroundPoint(out float groundY)
     {
         if (player == null)
+        {
+            groundY = transform.position.y + bossBottomOffset;
             return transform.position;
+        }
 
-        Vector2 origin = (Vector2)player.position + Vector2.up * groundRayHeight;
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundRayDistance, groundLayer);
-        if (hit.collider != null)
-            return new Vector2(player.position.x, hit.point.y + bossGroundOffset);
+        if (TryFindGround(player.position.x, out groundY))
+            return new Vector2(player.position.x, CalculateBossRootY(groundY));
 
         Debug.LogWarning("Boss2 could not find ground below the player; using the Boss current height.", this);
+        groundY = transform.position.y + bossBottomOffset;
         return new Vector2(player.position.x, transform.position.y);
+    }
+
+    private bool TryFindGround(float worldX, out float groundY)
+    {
+        float originY = player != null ? player.position.y + groundRayHeight : transform.position.y + groundRayHeight;
+        RaycastHit2D hit = Physics2D.Raycast(
+            new Vector2(worldX, originY),
+            Vector2.down,
+            groundRayDistance,
+            groundLayer);
+
+        if (hit.collider != null)
+        {
+            groundY = hit.point.y;
+            return true;
+        }
+
+        groundY = 0f;
+        return false;
+    }
+
+    private float CalculateBossRootY(float groundY)
+    {
+        return groundY - bossBottomOffset + bossGroundOffset;
+    }
+
+    private IEnumerator RestorePlayerCollisionSafely()
+    {
+        if (!playerCollisionIgnored || hurtCollider == null || playerCollider == null)
+            yield break;
+
+        float elapsed = 0f;
+        while (!HasPlayerClearance() && elapsed < collisionRestoreTimeout)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (!HasPlayerClearance())
+        {
+            TryMoveBossBesidePlayer();
+            Physics2D.SyncTransforms();
+        }
+
+        if (HasPlayerClearance())
+        {
+            SetPlayerCollisionIgnored(false);
+            yield break;
+        }
+
+        if (collisionRestoreRoutine != null)
+            StopCoroutine(collisionRestoreRoutine);
+        collisionRestoreRoutine = StartCoroutine(RestoreCollisionWhenClear());
+    }
+
+    private IEnumerator RestoreCollisionWhenClear()
+    {
+        while (playerCollisionIgnored && !HasPlayerClearance())
+            yield return new WaitForFixedUpdate();
+
+        SetPlayerCollisionIgnored(false);
+        collisionRestoreRoutine = null;
+    }
+
+    private bool HasPlayerClearance()
+    {
+        if (hurtCollider == null || playerCollider == null || !hurtCollider.enabled || !playerCollider.enabled)
+            return true;
+
+        ColliderDistance2D separation = hurtCollider.Distance(playerCollider);
+        return !separation.isOverlapped && separation.distance >= reappearClearance;
+    }
+
+    private void TryMoveBossBesidePlayer()
+    {
+        if (player == null || playerCollider == null || hurtCollider == null)
+            return;
+
+        float requiredCenterDistance =
+            hurtCollider.bounds.extents.x + playerCollider.bounds.extents.x + reappearClearance + 0.05f;
+        float bossCenterOffsetX = hurtCollider.bounds.center.x - rb.position.x;
+        float preferredDirection = positionBeforeHideX <= player.position.x ? -1f : 1f;
+
+        if (TryMoveBossToSide(preferredDirection, requiredCenterDistance, bossCenterOffsetX))
+            return;
+
+        TryMoveBossToSide(-preferredDirection, requiredCenterDistance, bossCenterOffsetX);
+    }
+
+    private bool TryMoveBossToSide(float direction, float centerDistance, float bossCenterOffsetX)
+    {
+        float targetBossCenterX = playerCollider.bounds.center.x + direction * centerDistance;
+        float targetRootX = targetBossCenterX - bossCenterOffsetX;
+        if (!TryFindGround(targetRootX, out float groundY))
+            return false;
+
+        rb.position = new Vector2(targetRootX, CalculateBossRootY(groundY));
+        Physics2D.SyncTransforms();
+        return HasPlayerClearance();
+    }
+
+    private void SetPlayerCollisionIgnored(bool ignored)
+    {
+        if (hurtCollider == null || playerCollider == null)
+            return;
+
+        Physics2D.IgnoreCollision(hurtCollider, playerCollider, ignored);
+        playerCollisionIgnored = ignored;
     }
 
     private void BeginAttack()
@@ -362,6 +531,11 @@ public sealed class Boss2CombatController : MonoBehaviour
         meleeFinished = true;
     }
 
+    public void PlayBoss2MeleeSound()
+    {
+        PlayAttackSound(meleeAttackSound, meleeAttackVolume);
+    }
+
     public void Boss2DisappearFinished()
     {
         disappearFinished = true;
@@ -379,6 +553,14 @@ public sealed class Boss2CombatController : MonoBehaviour
             StopCoroutine(attackRoutine);
             attackRoutine = null;
         }
+
+        if (collisionRestoreRoutine != null)
+        {
+            StopCoroutine(collisionRestoreRoutine);
+            collisionRestoreRoutine = null;
+        }
+
+        SetPlayerCollisionIgnored(false);
 
         laserBarrage?.StopLaserBarrage();
         landingWarning?.Hide();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -7,6 +8,10 @@ public class EnemyBase : MonoBehaviour
     [SerializeField, Min(0)] protected int attackPower = 10;
 
     protected int currentHealth;
+
+    public event Action<EnemyBase, int, int> HealthChanged;
+    public event Action<EnemyBase, int> Damaged;
+    public event Action<EnemyBase> Died;
 
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
@@ -19,13 +24,22 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void TakeHit(int damage)
     {
-        if (currentHealth <= 0)
+        int appliedDamage = Mathf.Max(0, damage);
+        if (currentHealth <= 0 || appliedDamage == 0)
             return;
 
-        currentHealth = Mathf.Max(0, currentHealth - Mathf.Max(0, damage));
+        int previousHealth = currentHealth;
+        currentHealth = Mathf.Max(0, currentHealth - appliedDamage);
+        int actualDamage = previousHealth - currentHealth;
+
+        Damaged?.Invoke(this, actualDamage);
+        HealthChanged?.Invoke(this, currentHealth, maxHealth);
 
         if (currentHealth == 0)
+        {
+            Died?.Invoke(this);
             Die();
+        }
     }
 
     protected virtual void Die()

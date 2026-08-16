@@ -88,6 +88,31 @@ public class EnergyBarControl : MonoBehaviour
         energyCon = consumption;
     }
 
+    public void RefillEnergy()
+    {
+        // Cancel a stamina cost that may still be queued from the strike which
+        // produced this parry, then make the full value visible immediately.
+        useFlag = false;
+        energyCon = 0f;
+        energyLeft = energyMax;
+        disappearFlag = false;
+        fullFlag = true;
+        lastFullTime = Time.time;
+
+        if (anim != null)
+            anim.SetTrigger("stay");
+
+        if (content != null)
+        {
+            content.transform.localScale = Vector2.one;
+            content.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        SpriteRenderer frameRenderer = GetComponent<SpriteRenderer>();
+        if (frameRenderer != null)
+            frameRenderer.color = Color.white;
+    }
+
     void BarDisappear()
     {
         disappearFlag = true;

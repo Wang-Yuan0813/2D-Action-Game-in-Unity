@@ -245,7 +245,7 @@ public sealed class LaserObject : MonoBehaviour
             return;
         }
 
-        // Temporary compatibility with the current player implementation, which has knockback but no HP.
+        // Compatibility fallback for damageable players that do not expose ILaserDamageReceiver.
         Player_Control player = other.GetComponentInParent<Player_Control>();
         if (player == null || player.cantHit)
             return;

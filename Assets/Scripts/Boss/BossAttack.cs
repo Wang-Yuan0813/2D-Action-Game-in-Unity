@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     [Header("攻击属性")]
+    [SerializeField, Min(1)] private int damage = 10;
     public float smash;
     public float counterSmash;
     public float attackerX;
@@ -116,10 +117,13 @@ public class BossAttack : MonoBehaviour
 
         if (!isStab)
         {
-            player.TakeHit(smash, attackerX);
+            player.TakeDamage(damage, smash, attackerX);
         }
         else
         {
+            if (player.Health == null || !player.Health.TakeDamage(damage))
+                return;
+
             player.GetCatched(attackerX);
             if (boss != null)
             {

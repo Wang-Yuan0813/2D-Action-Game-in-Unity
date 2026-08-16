@@ -1,5 +1,5 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11,8 +11,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c71f0377b148969ced032cf2dcafaf, type: 3}
   m_Name: Boss1Speech
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   lines:
   - "\u5230\u6B64\u4E3A\u6B62\u3002"
   - "\u8BA9\u6211\u770B\u770B\u4F60\u7684\u672C\u4E8B\u3002"
   - "\u522B\u60F3\u8D8A\u8FC7\u8FD9\u91CC\u3002"
+  - "\u6211\u8981\u7EE7\u7EED\u4FDD\u62A4\u5979"
+  - "\u8FD8\u8981\u7EE7\u7EED\u5417"
+  - "\u4E0D\u8981\u518D\u524D\u8FDB\u4E86\uFF01"
