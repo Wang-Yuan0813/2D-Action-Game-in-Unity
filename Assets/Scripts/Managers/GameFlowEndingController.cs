@@ -44,6 +44,17 @@ public sealed class GameFlowEndingController : MonoBehaviour
         "你触及了梦境深处的真相，也为这段旅程画下了句点。"
     };
 
+    [Header("Boss2 Final Ending")]
+    [SerializeField, TextArea(6, 15)] private string[] boss2FinalEndingTexts =
+    {
+        "漫长的梦境终于开始崩塌。\n\n那些被恐惧遮蔽的记忆并没有消失，它们只是等待着被重新看见。你越过守在梦境深处的机械蜘蛛，也终于明白，真正需要战胜的从来不是过去本身，而是不敢面对过去的自己。\n\n当最后一束微光穿过裂隙，女孩缓缓睁开了眼睛。梦已经结束，但属于她的道路才刚刚开始。"
+    };
+    [SerializeField, Min(0.1f)] private float boss2DeathAnimationFallbackDuration = 2.35f;
+    [SerializeField, Min(0f)] private float boss2FinalFadeToBlackDuration = 1.8f;
+    [SerializeField, Min(0f)] private float boss2FinalCharacterInterval = 0.075f;
+    [SerializeField, Min(0f)] private float boss2FinalTextHoldDuration = 5f;
+    [SerializeField, Min(12)] private int boss2FinalFontSize = 26;
+
     [Header("Game Entry Texts")]
     [SerializeField, TextArea(2, 5)] private string[] gameEntryTexts =
     {
@@ -190,7 +201,49 @@ public sealed class GameFlowEndingController : MonoBehaviour
         if (isEnding || isOpening || boss != currentBoss)
             return;
 
-        StartCoroutine(RunEnding(true));
+        if (currentEncounter == BossEncounterType.Boss2 && boss is Boss2_Control boss2)
+            StartCoroutine(RunBoss2FinalEnding(boss2));
+        else
+            StartCoroutine(RunEnding(true));
+    }
+
+    private IEnumerator RunBoss2FinalEnding(Boss2_Control boss2)
+    {
+        isEnding = true;
+        FreezeWorld(true);
+
+        endingCanvas.enabled = true;
+        endingText.text = string.Empty;
+        SetOverlayAlpha(0f);
+
+        float elapsed = 0f;
+        while (boss2 != null
+               && !boss2.DeathAnimationFinished
+               && elapsed < boss2DeathAnimationFallbackDuration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        if (boss2 != null && !boss2.DeathAnimationFinished)
+        {
+            Debug.LogWarning("Boss2 dead animation event timed out; continuing the final ending.", boss2);
+            boss2.Boss2DeadAnimationFinished();
+        }
+
+        PlayBlackScreenAudio();
+        yield return FadeToBlack(boss2FinalFadeToBlackDuration);
+
+        endingText.fontSize = boss2FinalFontSize;
+        string message = SelectRandomText(
+            boss2FinalEndingTexts,
+            "漫长的梦境终于结束。女孩睁开双眼，准备面对真正属于自己的明天。");
+        yield return TypeText(message, boss2FinalCharacterInterval);
+        yield return WaitUnscaled(boss2FinalTextHoldDuration);
+
+        StopBlackScreenAudio();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(mainMenuBuildIndex);
     }
 
     private IEnumerator RunEnding(bool victory)
@@ -206,7 +259,7 @@ public sealed class GameFlowEndingController : MonoBehaviour
             yield return PlayDeathAnimation();
 
         PlayBlackScreenAudio();
-        yield return FadeToBlack();
+        yield return FadeToBlack(fadeToBlackDuration);
 
         string message = SelectEndingText(victory);
         yield return TypeText(message, characterInterval);
@@ -298,7 +351,7 @@ public sealed class GameFlowEndingController : MonoBehaviour
         Time.timeScale = openingPreviousTimeScale;
     }
 
-    private void FreezeWorld()
+    private void FreezeWorld(bool forcePlayerIdle = false)
     {
         if (gameManager != null)
             gameManager.playerCanMove = false;
@@ -314,6 +367,13 @@ public sealed class GameFlowEndingController : MonoBehaviour
             playerBody.velocity = Vector2.zero;
             playerBody.angularVelocity = 0f;
             playerBody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        if (forcePlayerIdle && playerAnimator != null)
+        {
+            playerAnimator.Play("Idle", 0, 0f);
+            playerAnimator.Update(0f);
+            playerAnimator.speed = 0f;
         }
 
         Time.timeScale = 0f;
@@ -350,19 +410,19 @@ public sealed class GameFlowEndingController : MonoBehaviour
         playerAnimator.speed = 0f;
     }
 
-    private IEnumerator FadeToBlack()
+    private IEnumerator FadeToBlack(float duration)
     {
-        if (fadeToBlackDuration <= 0f)
+        if (duration <= 0f)
         {
             SetOverlayAlpha(1f);
             yield break;
         }
 
         float elapsed = 0f;
-        while (elapsed < fadeToBlackDuration)
+        while (elapsed < duration)
         {
             elapsed += Time.unscaledDeltaTime;
-            SetOverlayAlpha(Mathf.Clamp01(elapsed / fadeToBlackDuration));
+            SetOverlayAlpha(Mathf.Clamp01(elapsed / duration));
             yield return null;
         }
 

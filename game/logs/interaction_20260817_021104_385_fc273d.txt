@@ -1,0 +1,149 @@
+Interaction Map Dialogue Log
+Started: 2026-08-17T02:11:04.4072056+01:00
+Scene: MainGameScene
+Map: map-interaction
+Puzzle: cat-dream-v2
+Game version: 1.0
+Log path: D:\unityprojects\Action2DGame\game\logs\interaction_20260817_021104_385_fc273d.txt
+
+============================================================
+[2026-08-17T02:11:43.0698507+01:00] [ASK] [REQUEST] [R0001]
+
+Player input:
+小猫是女孩的化身吗
+
+[2026-08-17T02:11:43.3331385+01:00] [ASK] [SUCCESS] [R0001]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-17T02:11:47.5599204+01:00] [ASK] [REQUEST] [R0002]
+
+Player input:
+我是好人吗
+
+[2026-08-17T02:11:47.7668651+01:00] [ASK] [SUCCESS] [R0002]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-17T02:11:57.9259311+01:00] [ASK] [REQUEST] [R0003]
+
+Player input:
+这里出现了鬼魂之类的吗
+
+[2026-08-17T02:11:58.1538599+01:00] [ASK] [SUCCESS] [R0003]
+
+Model output:
+否
+
+Model diagnostics:
+label: B
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+B
+
+============================================================
+[2026-08-17T02:12:05.6146693+01:00] [ASK] [REQUEST] [R0004]
+
+Player input:
+我的身份重要吗
+
+[2026-08-17T02:12:05.8352919+01:00] [ASK] [SUCCESS] [R0004]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-17T02:12:13.3494519+01:00] [ASK] [REQUEST] [R0005]
+
+Player input:
+小猫是人类吗
+
+[2026-08-17T02:12:13.5672045+01:00] [ASK] [SUCCESS] [R0005]
+
+Model output:
+无法分辨
+
+Model diagnostics:
+label: C
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+C
+
+============================================================
+[2026-08-17T02:12:20.8083915+01:00] [ASK] [REQUEST] [R0006]
+
+Player input:
+小女孩在梦境中吗
+
+[2026-08-17T02:12:21.0229984+01:00] [ASK] [SUCCESS] [R0006]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-17T02:12:35.6214211+01:00] [FINAL_GUESS] [REQUEST] [R0007]
+
+Player input:
+我是好人，黑衣刀客也是好人
+
+[2026-08-17T02:12:36.4364197+01:00] [FINAL_GUESS] [SUCCESS] [R0007]
+
+Model output:
+推理尚未正确
+
+Model diagnostics:
+correct: False
+route: Boss1
+valid_extraction: True
+coverage_score: 0.00
+verdict: F
+decision_rule: M1=1 AND M2=1 AND X=0
+quality: m1m2x-development-candidate-step-100
+contradiction: 0
+
+Raw model output:
+M1=0;M2=0;X=0
+
+============================================================
+Ended: 2026-08-17T02:12:42.8701571+01:00
+Reason: Left map-interaction
