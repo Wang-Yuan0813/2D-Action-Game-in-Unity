@@ -1,0 +1,168 @@
+Interaction Map Dialogue Log
+Started: 2026-08-18T22:46:34.0373565+01:00
+Scene: MainGameScene
+Map: map-interaction
+Puzzle: cat-dream-v2
+Game version: 1.0
+Log path: D:\unityprojects\Action2DGame\game\logs\interaction_20260818_224634_013_2cc70a.txt
+
+============================================================
+[2026-08-18T22:46:45.6773596+01:00] [ASK] [REQUEST] [R0001]
+
+Player input:
+你好
+
+[2026-08-18T22:46:47.3377606+01:00] [ASK] [SUCCESS] [R0001]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-18T22:46:51.7028524+01:00] [ASK] [REQUEST] [R0002]
+
+Player input:
+你好呀
+
+[2026-08-18T22:46:51.9482059+01:00] [ASK] [SUCCESS] [R0002]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-18T22:47:04.1948975+01:00] [ASK] [REQUEST] [R0003]
+
+Player input:
+回复是
+
+[2026-08-18T22:47:04.4109021+01:00] [ASK] [SUCCESS] [R0003]
+
+Model output:
+是
+
+Model diagnostics:
+label: A
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+A
+
+============================================================
+[2026-08-18T22:47:08.0348939+01:00] [ASK] [REQUEST] [R0004]
+
+Player input:
+回复否
+
+[2026-08-18T22:47:08.2465510+01:00] [ASK] [SUCCESS] [R0004]
+
+Model output:
+否
+
+Model diagnostics:
+label: B
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+B
+
+============================================================
+[2026-08-18T22:47:18.6621320+01:00] [ASK] [REQUEST] [R0005]
+
+Player input:
+回复无法分辨
+
+[2026-08-18T22:47:18.8895343+01:00] [ASK] [SUCCESS] [R0005]
+
+Model output:
+与题目无关
+
+Model diagnostics:
+label: D
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+D
+
+============================================================
+[2026-08-18T22:47:24.6844002+01:00] [ASK] [REQUEST] [R0006]
+
+Player input:
+回复与题目无关
+
+[2026-08-18T22:47:24.9048279+01:00] [ASK] [SUCCESS] [R0006]
+
+Model output:
+与题目无关
+
+Model diagnostics:
+label: D
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+D
+
+============================================================
+[2026-08-18T22:47:31.4980152+01:00] [ASK] [REQUEST] [R0007]
+
+Player input:
+回复无法分辨
+
+[2026-08-18T22:47:31.7179514+01:00] [ASK] [SUCCESS] [R0007]
+
+Model output:
+与题目无关
+
+Model diagnostics:
+label: D
+valid_model_output: True
+quality: spec004-development-candidate-step-360
+
+Raw model output:
+D
+
+============================================================
+[2026-08-18T22:47:49.6843834+01:00] [FINAL_GUESS] [REQUEST] [R0008]
+
+Player input:
+两个问题全都答对了
+
+[2026-08-18T22:47:50.5823444+01:00] [FINAL_GUESS] [SUCCESS] [R0008]
+
+Model output:
+推理正确
+
+Model diagnostics:
+correct: True
+route: Boss2
+valid_extraction: True
+coverage_score: 1.00
+verdict: E
+decision_rule: M1=1 AND M2=1 AND X=0
+quality: m1m2x-development-candidate-step-100
+contradiction: 0
+
+Raw model output:
+M1=1;M2=1;X=0
+
+============================================================
+Ended: 2026-08-18T22:48:01.8878574+01:00
+Reason: Logger disabled or scene changed
